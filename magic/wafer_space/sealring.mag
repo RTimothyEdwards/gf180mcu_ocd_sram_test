@@ -1,0 +1,12 @@
+magic
+tech gf180mcuD
+timestamp 1765124814
+use sealring$1  sealring$1_0
+timestamp 1765124814
+transform 1 0 0 0 1 0
+box 0 0 78640 50620
+<< properties >>
+string GDS_END 28412362
+string GDS_FILE ../../gds/wafer_space_stuff.gds
+string GDS_START 28412324
+<< end >>

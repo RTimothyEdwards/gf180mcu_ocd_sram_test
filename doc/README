@@ -1,0 +1,101 @@
+3.3V SRAM and I/O test chip
+------------------------
+This chip uses a standard wafer.spice 1/2 size frame.
+However, to test the 3.3V libraries, the following
+changes are made:
+
+(1) Pads are changed to the equivalent ocd_io pad library
+    cells, except that the 24um drive pads are replaced
+    with standard selectable drive pads.
+
+(2) Every other pair of DVDD/DVSS pads are replaced with
+    VDD/VSS pads (3.3V).
+
+(3) The analog pads are not used
+
+(4) The padframe uses a local loopback scheme to provide
+    a fixed programming to each bidirectional pad to make
+    it either input or output.
+
+(5) Pad assignments are as follows, starting at the lower
+    left hand corner and working counter-clockwise:
+
+    Bottom row:
+     1 (input only) CLK
+     2 (input only) rst_n
+     3 GWEN
+     4 POR output
+     5 VSS
+     6 VDD
+     7 A7
+     8 A6
+     9 A5
+    10 A4
+    11 A3
+    12 A2
+    13 A1
+    14 A0
+    15 D7
+    16 D6
+    17 D5
+    18 D4
+    19 DVSS
+    20 DVDD
+    21 D3
+    22 D2
+    23 D1
+    24 D0
+
+   Right side
+    25 VSS
+    26 VDD
+    27 ENA (1st 512 byte SRAM)
+    28 ENA (2nd 512 byte SRAM)
+    29 ENA (1st 256 byte SRAM)
+    30 ENA (2nd 256 byte SRAM)
+    31 WEN7
+    32 WEN6
+    33 WEN5
+    34 WEN4
+    35 DVSS
+    36 DVDD
+
+   Top side
+    37 WEN3
+    38 WEN2
+    39 WEN1
+    40 WEN0
+    41 VDD
+    42 VSS
+    43 Q7 (512 byte)
+    44 Q6 (512 byte)
+    45 Q5 (512 byte)
+    46 Q4 (512 byte)
+    47 Q3 (512 byte)
+    48 Q2 (512 byte)
+    49 Q1 (512 byte)
+    50 Q0 (512 byte)
+    51 Q7 (256 byte)
+    52 Q6 (256 byte)
+    53 Q5 (256 byte)
+    54 Q4 (256 byte)
+    55 DVDD
+    56 DVSS
+    57 Q3 (256 byte)
+    58 Q2 (256 byte)
+    59 Q1 (256 byte)
+    60 Q0 (256 byte)
+
+   Left side
+    61 VDD
+    62 VSS
+    63 (analog, unused)
+    64 (analog, unused)
+    65 (analog, unused)
+    66 (analog, unused)
+    67 (input only) output select:  512 byte 1 or 2
+    68 (input only) output select:  256 byte 1 or 2
+    69 (input only) A8 (512 byte SRAMs only)
+    70 (input only) (unused)
+    71 DVDD
+    72 DVSS

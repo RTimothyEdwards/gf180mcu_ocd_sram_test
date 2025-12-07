@@ -1,0 +1,248 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1764012043
+<< fillblock >>
+rect 0 2420 19550 9198
+rect 0 570 8380 2420
+use font_4B  font_4B_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 14804 0 1 2909
+box 0 0 648 1512
+use font_4D  font_4D_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 4720 0 1 2912
+box 0 0 1080 1512
+use font_4E  font_4E_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 370 0 1 720
+box 0 0 864 1512
+use font_4F  font_4F_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 390 0 1 5162
+box 0 0 648 1512
+use font_4F  font_4F_1
+timestamp 1654634570
+transform 1 0 6530 0 1 7300
+box 0 0 648 1512
+use font_6C  font_6C_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 5567 0 1 7307
+box 0 0 216 1512
+use font_6D  font_6D_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 12460 0 1 7300
+box 0 0 1080 1080
+use font_6E  font_6E_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 11427 0 1 2908
+box 0 0 648 1080
+use font_6E  font_6E_1
+timestamp 1654634570
+transform 1 0 9060 0 1 7300
+box 0 0 648 1080
+use font_6E  font_6E_3
+timestamp 1654634570
+transform 1 0 2940 0 1 5172
+box 0 0 648 1080
+use font_6E  font_6E_4
+timestamp 1654634570
+transform 1 0 14790 0 1 5172
+box 0 0 648 1080
+use font_6F  font_6F_2 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 8844 0 1 2906
+box 0 0 648 1080
+use font_6F  font_6F_5
+timestamp 1654634570
+transform 1 0 1440 0 1 720
+box 0 0 648 1080
+use font_28  font_28_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 17383 0 1 7316
+box 0 0 432 1512
+use font_29  font_29_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 18883 0 1 7308
+box 0 0 432 1512
+use font_30  font_30_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 5352 0 1 732
+box 0 0 648 1512
+use font_30  font_30_1
+timestamp 1654634570
+transform 1 0 3840 0 1 2912
+box 0 0 648 1512
+use font_31  font_31_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 2110 0 1 2902
+box 0 0 648 1512
+use font_32  font_32_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 4482 0 1 733
+box 0 0 648 1512
+use font_32  font_32_1
+timestamp 1654634570
+transform 1 0 6232 0 1 734
+box 0 0 648 1512
+use font_35  font_35_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 7060 0 1 730
+box 0 0 648 1512
+use font_38  font_38_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 2960 0 1 2902
+box 0 0 648 1512
+use font_43  font_43_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 383 0 1 7306
+box 0 0 648 1512
+use font_43  font_43_1
+timestamp 1654634570
+transform 1 0 4440 0 1 5172
+box 0 0 648 1512
+use font_43  font_43_2
+timestamp 1654634570
+transform 1 0 6020 0 1 2912
+box 0 0 648 1512
+use font_44  font_44_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 13944 0 1 2909
+box 0 0 648 1512
+use font_44  font_44_1
+timestamp 1654634570
+transform 1 0 10800 0 1 5162
+box 0 0 648 1512
+use font_46  font_46_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 16150 0 1 7310
+box 0 0 648 1512
+use font_46  font_46_2
+timestamp 1654634570
+transform 1 0 1250 0 1 2912
+box 0 0 648 1512
+use font_47  font_47_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 390 0 1 2912
+box 0 0 648 1512
+use font_47  font_47_3
+timestamp 1654634570
+transform 1 0 15270 0 1 7310
+box 0 0 648 1512
+use font_50  font_50_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 13083 0 1 2917
+box 0 0 648 1512
+use font_55  font_55_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 6860 0 1 2912
+box 0 0 648 1512
+use font_61  font_61_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 1235 0 1 7307
+box 0 0 648 1080
+use font_61  font_61_1
+timestamp 1654634570
+transform 1 0 2966 0 1 7307
+box 0 0 648 1080
+use font_61  font_61_4
+timestamp 1654634570
+transform 1 0 11620 0 1 7300
+box 0 0 648 1080
+use font_63  font_63_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 18023 0 1 7496
+box 0 0 648 1080
+use font_63  font_63_1
+timestamp 1654634570
+transform 1 0 6810 0 1 5172
+box 0 0 648 1080
+use font_65  font_65_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 4706 0 1 7305
+box 0 0 648 1080
+use font_65  font_65_3
+timestamp 1654634570
+transform 1 0 10575 0 1 2907
+box 0 0 648 1080
+use font_65  font_65_4
+timestamp 1654634570
+transform 1 0 2060 0 1 5162
+box 0 0 648 1080
+use font_65  font_65_6
+timestamp 1654634570
+transform 1 0 11640 0 1 5162
+box 0 0 648 1080
+use font_65  font_65_7
+timestamp 1654634570
+transform 1 0 8190 0 1 7300
+box 0 0 648 1080
+use font_65  font_65_8
+timestamp 1654634570
+transform 1 0 13750 0 1 7300
+box 0 0 648 1080
+use font_66  font_66_1 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 9930 0 1 7300
+box 0 0 648 1512
+use font_67  font_67_1 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 13940 0 1 5162
+box 0 -432 648 1080
+use font_69  font_69_1 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 5290 0 1 5172
+box 0 0 432 1512
+use font_69  font_69_2
+timestamp 1654634570
+transform 1 0 8500 0 1 5172
+box 0 0 432 1512
+use font_69  font_69_3
+timestamp 1654634570
+transform 1 0 13320 0 1 5162
+box 0 0 432 1512
+use font_70  font_70_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 9705 0 1 2905
+box 0 -432 648 1080
+use font_70  font_70_1
+timestamp 1654634570
+transform 1 0 1230 0 1 5162
+box 0 -432 648 1080
+use font_70  font_70_2
+timestamp 1654634570
+transform 1 0 7370 0 1 7300
+box 0 -432 648 1080
+use font_72  font_72_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 2096 0 1 7307
+box 0 0 648 1080
+use font_72  font_72_2
+timestamp 1654634570
+transform 1 0 5930 0 1 5182
+box 0 0 648 1080
+use font_72  font_72_3
+timestamp 1654634570
+transform 1 0 10780 0 1 7300
+box 0 0 648 1080
+use font_73  font_73_3 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 12460 0 1 5162
+box 0 0 648 1080
+use font_74  font_74_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 9160 0 1 5172
+box 0 0 648 1296
+use font_75  font_75_1 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 7670 0 1 5172
+box 0 0 648 1080
+use font_76  font_76_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 3874 0 1 7307
+box 0 0 648 1080
+use font_76  font_76_1
+timestamp 1654634570
+transform 1 0 2300 0 1 720
+box 0 0 648 1080
+<< end >>

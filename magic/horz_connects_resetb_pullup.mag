@@ -1,0 +1,12 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1764982896
+<< via1 >>
+rect 2148 133 2200 185
+rect 3021 35 3073 87
+use horz_connects_resetb  horz_connects_resetb_0
+timestamp 1764982896
+transform -1 0 15452 0 1 0
+box 12323 0 15527 232
+<< end >>

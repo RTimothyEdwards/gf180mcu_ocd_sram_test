@@ -1,0 +1,106 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1765134977
+<< isosubstrate >>
+rect -880 1570 2920 3370
+<< metal1 >>
+rect 2694 3195 3228 3315
+rect -196 2811 -130 2824
+rect -1189 2809 -130 2811
+rect -1189 2757 -1177 2809
+rect -920 2757 -130 2809
+rect 3001 2767 3228 3195
+rect -1189 2755 -130 2757
+rect -52 2686 0 2718
+rect -52 2619 0 2634
+rect 396 2686 448 2718
+rect 396 2619 448 2634
+rect 844 2686 896 2718
+rect 844 2619 896 2634
+rect 1292 2686 1344 2718
+rect 1292 2619 1344 2634
+rect 2866 2686 3143 2688
+rect 2866 2634 2879 2686
+rect 3131 2634 3143 2686
+rect 2866 2632 3143 2634
+rect -1221 2411 -650 2531
+rect -1221 1865 -993 2411
+rect 2866 2188 2922 2632
+rect 2290 2132 2922 2188
+rect 2290 2041 2346 2132
+rect 2997 1747 3231 2566
+rect 2694 1627 3231 1747
+<< via1 >>
+rect -1177 2757 -920 2809
+rect -52 2634 0 2686
+rect 396 2634 448 2686
+rect 844 2634 896 2686
+rect 1292 2634 1344 2686
+rect 2879 2634 3131 2686
+rect -39 2198 1000 2250
+<< metal2 >>
+rect -1221 2809 -906 2811
+rect -1221 2757 -1177 2809
+rect -920 2757 -906 2809
+rect -1221 2755 -906 2757
+rect -64 2686 3143 2688
+rect -64 2634 -52 2686
+rect 0 2634 396 2686
+rect 448 2634 844 2686
+rect 896 2634 1292 2686
+rect 1344 2634 2879 2686
+rect 3131 2634 3143 2686
+rect -64 2632 3143 2634
+rect -1221 2250 1012 2252
+rect -1221 2198 -39 2250
+rect 1000 2198 1012 2250
+rect -1221 2196 1012 2198
+use gf180mcu_fd_sc_mcu7t5v0__antenna  gf180mcu_fd_sc_mcu7t5v0__antenna_0 $PDKPATH/libs.ref/gf180mcu_fd_sc_mcu7t5v0/mag
+timestamp 1765124241
+transform 1 0 -546 0 1 2471
+box -86 -86 310 870
+use gf180mcu_fd_sc_mcu7t5v0__fill_2  gf180mcu_fd_sc_mcu7t5v0__fill_2_0 $PDKPATH/libs.ref/gf180mcu_fd_sc_mcu7t5v0/mag
+timestamp 1765124241
+transform 1 0 -546 0 -1 2471
+box -86 -86 310 870
+use gf180mcu_fd_sc_mcu7t5v0__fillcap_8  gf180mcu_fd_sc_mcu7t5v0__fillcap_8_0 $PDKPATH/libs.ref/gf180mcu_fd_sc_mcu7t5v0/mag
+timestamp 1765124241
+transform 1 0 1694 0 1 2471
+box -86 -86 982 870
+use gf180mcu_fd_sc_mcu7t5v0__filltie  gf180mcu_fd_sc_mcu7t5v0__filltie_0 $PDKPATH/libs.ref/gf180mcu_fd_sc_mcu7t5v0/mag
+timestamp 1765124241
+transform 1 0 2590 0 -1 2471
+box -86 -86 310 870
+use gf180mcu_fd_sc_mcu7t5v0__filltie  gf180mcu_fd_sc_mcu7t5v0__filltie_1
+timestamp 1765124241
+transform 1 0 -770 0 -1 2471
+box -86 -86 310 870
+use gf180mcu_fd_sc_mcu7t5v0__filltie  gf180mcu_fd_sc_mcu7t5v0__filltie_2
+timestamp 1765124241
+transform 1 0 -770 0 1 2471
+box -86 -86 310 870
+use gf180mcu_fd_sc_mcu7t5v0__filltie  gf180mcu_fd_sc_mcu7t5v0__filltie_3
+timestamp 1765124241
+transform 1 0 2590 0 1 2471
+box -86 -86 310 870
+use gf180mcu_fd_sc_mcu7t5v0__inv_8  gf180mcu_fd_sc_mcu7t5v0__inv_8_0 $PDKPATH/libs.ref/gf180mcu_fd_sc_mcu7t5v0/mag
+timestamp 1765124241
+transform 1 0 -322 0 1 2471
+box -86 -86 2102 870
+use gf180mcu_fd_sc_mcu7t5v0__inv_12  gf180mcu_fd_sc_mcu7t5v0__inv_12_0 $PDKPATH/libs.ref/gf180mcu_fd_sc_mcu7t5v0/mag
+timestamp 1765124241
+transform 1 0 -322 0 -1 2471
+box -86 -86 2998 870
+<< labels >>
+flabel metal1 -1221 1865 -993 2046 0 FreeSans 480 0 0 0 DVSS
+port 0 nsew
+flabel metal1 -1189 2755 -1177 2811 0 FreeSans 480 0 0 0 AH
+port 3 nsew
+flabel metal2 -1221 2196 -1177 2252 0 FreeSans 480 0 0 0 YL
+port 4 nsew
+flabel metal1 2997 2407 3231 2566 0 FreeSans 480 0 0 0 VDD
+port 1 nsew
+flabel metal1 3001 2767 3228 2926 0 FreeSans 480 0 0 0 DVDD
+port 2 nsew
+<< end >>
