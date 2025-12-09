@@ -1,7 +1,10 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1765072188
+timestamp 1765233513
+<< metal1 >>
+rect 468012 150003 468673 150123
+rect 468012 149219 468673 149339
 << via1 >>
 rect 468981 149611 469040 149771
 rect 469364 149608 469423 149768
@@ -291,4 +294,59 @@ use ocd_via2_3x  ocd_via2_3x_236
 timestamp 1765059587
 transform 1 0 389012 0 1 3830
 box 89752 146428 90065 146528
+<< labels >>
+flabel metal1 468012 150003 468673 150123 0 FreeSans 480 0 0 0 vdd
+port 0 nsew
+flabel metal1 468012 149219 468673 149339 0 FreeSans 480 0 0 0 vss
+port 1 nsew
+flabel metal3 467911 150270 468070 150346 0 FreeSans 480 0 0 0 S
+port 2 nsew
+flabel metal2 469482 148869 469547 148932 0 FreeSans 480 0 0 0 A[7]
+port 3 nsew
+flabel metal2 471386 148869 471451 148932 0 FreeSans 480 0 0 0 A[6]
+port 4 nsew
+flabel metal2 473290 148869 473355 148932 0 FreeSans 480 0 0 0 A[5]
+port 5 nsew
+flabel metal2 475194 148869 475259 148932 0 FreeSans 480 0 0 0 A[4]
+port 6 nsew
+flabel metal2 477098 148869 477163 148932 0 FreeSans 480 0 0 0 A[3]
+port 7 nsew
+flabel metal2 479002 148869 479067 148932 0 FreeSans 480 0 0 0 A[2]
+port 8 nsew
+flabel metal2 480906 148869 480971 148932 0 FreeSans 480 0 0 0 A[1]
+port 9 nsew
+flabel metal2 482810 148869 482875 148932 0 FreeSans 480 0 0 0 A[0]
+port 10 nsew
+flabel metal2 468978 148869 469043 148932 0 FreeSans 480 0 0 0 B[7]
+port 11 nsew
+flabel metal2 470882 148869 470947 148932 0 FreeSans 480 0 0 0 B[6]
+port 12 nsew
+flabel metal2 472786 148869 472851 148932 0 FreeSans 480 0 0 0 B[5]
+port 13 nsew
+flabel metal2 474690 148869 474755 148932 0 FreeSans 480 0 0 0 B[4]
+port 14 nsew
+flabel metal2 476594 148869 476659 148932 0 FreeSans 480 0 0 0 B[3]
+port 15 nsew
+flabel metal2 478498 148869 478563 148932 0 FreeSans 480 0 0 0 B[2]
+port 16 nsew
+flabel metal2 480402 148869 480467 148932 0 FreeSans 480 0 0 0 B[1]
+port 17 nsew
+flabel metal2 482306 148869 482371 148932 0 FreeSans 480 0 0 0 B[0]
+port 18 nsew
+flabel metal2 469394 151166 469470 151238 0 FreeSans 480 0 0 0 Y[7]
+port 19 nsew
+flabel metal2 471394 151166 471470 151238 0 FreeSans 480 0 0 0 Y[6]
+port 20 nsew
+flabel metal2 473394 151166 473470 151238 0 FreeSans 480 0 0 0 Y[5]
+port 21 nsew
+flabel metal2 475394 151166 475470 151238 0 FreeSans 480 0 0 0 Y[4]
+port 22 nsew
+flabel metal2 477394 151166 477470 151238 0 FreeSans 480 0 0 0 Y[3]
+port 23 nsew
+flabel metal2 479394 151166 479470 151238 0 FreeSans 480 0 0 0 Y[2]
+port 24 nsew
+flabel metal2 481394 151166 481470 151238 0 FreeSans 480 0 0 0 Y[1]
+port 25 nsew
+flabel metal2 483394 151166 483470 151238 0 FreeSans 480 0 0 0 Y[0]
+port 26 nsew
 << end >>

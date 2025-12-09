@@ -22,7 +22,7 @@ changes are made:
 
     Bottom row:
      1 (input only) CLK
-     2 (input only) rst_n
+     2 (input only) rst_n	(unused)
      3 GWEN
      4 POR output
      5 VSS
