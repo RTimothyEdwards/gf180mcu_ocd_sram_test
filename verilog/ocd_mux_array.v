@@ -36,8 +36,8 @@ gf180mcu_as_sc_mcu7t3v3__mux2_4 multiplexer [7:0] (
 	.VPW(vss),
 `endif
 	.S(S),
-	.A(A)
-	.B(B)
+	.A(A),
+	.B(B),
 	.Y(Y)
 );
 

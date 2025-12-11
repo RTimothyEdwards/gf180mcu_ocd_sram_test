@@ -1,6 +1,0 @@
-md5sum
-77d9e3717ab568f032850ae29b405e40  gf180mcu_ocd_sram_filled.gds
-sha1sum
-5bdecd3695bae2b2a500ffedc301f225eb0539c8  gf180mcu_ocd_sram_filled.gds
-sha256sum
-adc5334c08e14d84f1f406e48b5411e79b1fecbd401be7feb51b5a1b207a30cf  gf180mcu_ocd_sram_filled.gds

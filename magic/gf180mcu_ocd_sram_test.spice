@@ -9423,7 +9423,7 @@ X2 pmos_5p04310591302047_3v512x8m81_0/S GWE vss vss nfet_03v3 ad=0.3278p pd=2.37
 .ends
 
 .subckt saout_m2_3v512x8m81 ypass[2] ypass[3] ypass[4] ypass[5] ypass[6] GWEN GWE
-+ bb[1] bb[3] bb[4] bb[5] bb[7] bb[6] b[5] b[6] b[7] b[2] q pcb b[1] b[3] mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
++ bb[1] bb[3] bb[4] bb[5] bb[7] bb[6] b[5] b[6] b[7] b[2] datain q pcb b[1] b[3] mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
 + WEN din_3v512x8m81_0/men mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/b bb[2] mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b
 + mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb outbuf_oe_3v512x8m81_0/GWE mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/ypass
@@ -9432,8 +9432,8 @@ X2 pmos_5p04310591302047_3v512x8m81_0/S GWE vss vss nfet_03v3 ad=0.3278p pd=2.37
 + mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/bb mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/ypass
 + b[4] mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/ypass vdd mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/bb
 + vss mux821_3v512x8m81_0/ypass_gate_3v512x8m81_2/ypass
-Xdin_3v512x8m81_0 vdd vdd vdd sa_3v512x8m81_0/wep din_3v512x8m81_0/men vdd vss vdd
-+ pcb din_3v512x8m81
+Xdin_3v512x8m81_0 vdd vdd datain sa_3v512x8m81_0/wep din_3v512x8m81_0/men vdd vss
++ vdd pcb din_3v512x8m81
 Xwen_wm1_3v512x8m81_0 GWEN din_3v512x8m81_0/men sa_3v512x8m81_0/wep WEN vdd vss wen_wm1_3v512x8m81
 Xmux821_3v512x8m81_0 mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
 + vdd vdd vdd b[6] mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/ypass mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/bb
@@ -9515,14 +9515,14 @@ Xoutbuf_oe_3v512x8m81_0 sa_3v512x8m81_0/qp sa_3v512x8m81_0/qp sa_3v512x8m81_0/se
 + saout_R_m2_3v512x8m81_1/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b saout_R_m2_3v512x8m81_0/bb[2]
 + bb[17] b[5] WL[41] saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
 + saout_m2_3v512x8m81_4/b[6] saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/bb
-+ WL[44] saout_m2_3v512x8m81_3/bb[5] saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb
++ saout_m2_3v512x8m81_4/datain WL[44] saout_m2_3v512x8m81_3/bb[5] saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb
 + WL[27] saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb WL[5]
 + saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb saout_R_m2_3v512x8m81_1/bb[4]
 + saout_R_m2_3v512x8m81_1/GWE WL[57] b[25] bb[8] WL[8] saout_R_m2_3v512x8m81_0/b[3]
 + saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb saout_R_m2_3v512x8m81_1/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb
 + WL[21] saout_R_m2_3v512x8m81_1/bb[5] saout_R_m2_3v512x8m81_1/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb
 + saout_R_m2_3v512x8m81_1/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/b bb[6] WL[24]
-+ GWE saout_R_m2_3v512x8m81_1/q WL[2] saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b
++ GWE saout_R_m2_3v512x8m81_1/q saout_m2_3v512x8m81_3/datain WL[2] saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b
 + saout_m2_3v512x8m81_3/q b[10] WL[62] saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb saout_m2_3v512x8m81_3/b[6]
 + saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb WL[45] bb[24]
@@ -9569,8 +9569,9 @@ Xsaout_m2_3v512x8m81_4 saout_m2_3v512x8m81_4/ypass[2] saout_m2_3v512x8m81_4/ypas
 + saout_m2_3v512x8m81_4/GWEN saout_m2_3v512x8m81_4/GWE saout_m2_3v512x8m81_4/bb[1]
 + bb[11] saout_m2_3v512x8m81_4/bb[4] saout_m2_3v512x8m81_4/bb[5] saout_m2_3v512x8m81_4/bb[7]
 + saout_m2_3v512x8m81_4/bb[6] saout_m2_3v512x8m81_4/b[5] saout_m2_3v512x8m81_4/b[6]
-+ saout_m2_3v512x8m81_4/b[7] saout_m2_3v512x8m81_4/b[2] saout_m2_3v512x8m81_4/q saout_m2_3v512x8m81_4/pcb
-+ b[9] saout_m2_3v512x8m81_4/b[3] b[10] WEN[1] men saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
++ saout_m2_3v512x8m81_4/b[7] saout_m2_3v512x8m81_4/b[2] saout_m2_3v512x8m81_4/datain
++ saout_m2_3v512x8m81_4/q saout_m2_3v512x8m81_4/pcb b[9] saout_m2_3v512x8m81_4/b[3]
++ b[10] WEN[1] men saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
 + saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/b bb[10] saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b
 + saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb saout_m2_3v512x8m81_4/outbuf_oe_3v512x8m81_0/GWE
@@ -9582,8 +9583,9 @@ Xsaout_m2_3v512x8m81_3 saout_m2_3v512x8m81_3/ypass[2] saout_m2_3v512x8m81_3/ypas
 + saout_m2_3v512x8m81_4/GWEN GWE saout_m2_3v512x8m81_3/bb[1] saout_m2_3v512x8m81_3/bb[3]
 + saout_m2_3v512x8m81_3/bb[4] saout_m2_3v512x8m81_3/bb[5] saout_m2_3v512x8m81_3/bb[7]
 + saout_m2_3v512x8m81_3/bb[6] saout_m2_3v512x8m81_3/b[5] saout_m2_3v512x8m81_3/b[6]
-+ saout_m2_3v512x8m81_3/b[7] saout_m2_3v512x8m81_3/b[2] saout_m2_3v512x8m81_3/q saout_m2_3v512x8m81_3/pcb
-+ saout_m2_3v512x8m81_3/b[1] saout_m2_3v512x8m81_3/b[3] b[25] WEN[3] men saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
++ saout_m2_3v512x8m81_3/b[7] saout_m2_3v512x8m81_3/b[2] saout_m2_3v512x8m81_3/datain
++ saout_m2_3v512x8m81_3/q saout_m2_3v512x8m81_3/pcb saout_m2_3v512x8m81_3/b[1] saout_m2_3v512x8m81_3/b[3]
++ b[25] WEN[3] men saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
 + saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + b[31] saout_m2_3v512x8m81_3/bb[2] b[29] bb[24] GWE ypass[6] ypass[5] ypass[7] ypass[2]
 + ypass[0] saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb bb[30]
@@ -9628,14 +9630,16 @@ Xsaout_R_m2_3v512x8m81_1 saout_R_m2_3v512x8m81_1/ypass[2] saout_R_m2_3v512x8m81_
 + WL[54] WL[55] WL[56] WL[58] WL[60] WL[61] WL[62] WL[63] WL[25] WL[24] WL[23] WL[22]
 + WL[21] WL[20] WL[18] WL[17] WL[16] WL[15] WL[14] WL[13] WL[12] WL[11] WL[10] WL[8]
 + WL[6] WL[31] WL[30] WL[28] WL[27] WL[26] din[1] din[3] din[2] q[1] q[2] q[3] pcb[2]
-+ pcb[3] pcb[0] pcb[1] WEN[3] WEN[2] WEN[1] WEN[0] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/q
-+ col_512a_3v512x8m81_0/WL[40] col_512a_3v512x8m81_0/WL[41] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/datain
-+ col_512a_3v512x8m81_0/WL[43] col_512a_3v512x8m81_0/WL[60] WL[59] col_512a_3v512x8m81_0/WL[45]
-+ col_512a_3v512x8m81_0/WL[62] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/GWE col_512a_3v512x8m81_0/WL[47]
-+ col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/outbuf_oe_3v512x8m81_0/GWE col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/GWEN
-+ col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/GWE col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/q
-+ WL[0] col_512a_3v512x8m81_0/WL[10] col_512a_3v512x8m81_0/men WL[1] WL[2] col_512a_3v512x8m81_0/WL[12]
-+ WL[3] col_512a_3v512x8m81_0/WL[13] WL[29] WL[4] col_512a_3v512x8m81_0/WL[14] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/q
++ pcb[3] pcb[0] pcb[1] WEN[3] WEN[2] WEN[1] WEN[0] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/datain
++ col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/q col_512a_3v512x8m81_0/WL[40] col_512a_3v512x8m81_0/WL[41]
++ col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/datain col_512a_3v512x8m81_0/WL[43]
++ col_512a_3v512x8m81_0/WL[60] WL[59] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_3/datain
++ col_512a_3v512x8m81_0/WL[45] col_512a_3v512x8m81_0/WL[62] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/GWE
++ col_512a_3v512x8m81_0/WL[47] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/outbuf_oe_3v512x8m81_0/GWE
++ col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/GWEN col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/GWE
++ col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/q WL[0] col_512a_3v512x8m81_0/WL[10]
++ col_512a_3v512x8m81_0/men WL[1] WL[2] col_512a_3v512x8m81_0/WL[12] WL[3] col_512a_3v512x8m81_0/WL[13]
++ WL[29] WL[4] col_512a_3v512x8m81_0/WL[14] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/q
 + WL[5] col_512a_3v512x8m81_0/WL[15] col_512a_3v512x8m81_0/WL[32] col_512a_3v512x8m81_0/WL[6]
 + WL[48] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/GWE WL[7] col_512a_3v512x8m81_0/WL[17]
 + col_512a_3v512x8m81_0/WL[34] col_512a_3v512x8m81_0/ypass[0] WL[49] col_512a_3v512x8m81_0/WL[8]
@@ -9814,7 +9818,8 @@ Xcol_512a_3v512x8m81_0 WL[3] col_512a_3v512x8m81_0/ypass[0] col_512a_3v512x8m81_
 + col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/bb[2] col_512a_3v512x8m81_0/bb[17]
 + col_512a_3v512x8m81_0/b[5] col_512a_3v512x8m81_0/WL[41] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
 + col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/b[6] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/bb
-+ WL[42] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_3/bb[5] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb
++ col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/datain WL[42] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_3/bb[5]
++ col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb
 + WL[26] col_512a_3v512x8m81_0/saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
 + WL[5] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb
 + col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/bb[4] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/GWE
@@ -9825,7 +9830,7 @@ Xcol_512a_3v512x8m81_0 WL[3] col_512a_3v512x8m81_0/ypass[0] col_512a_3v512x8m81_
 + col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/bb
 + col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/b
 + col_512a_3v512x8m81_0/bb[6] WL[23] col_512a_3v512x8m81_0/GWE col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_1/q
-+ WL[2] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b
++ col_512a_3v512x8m81_0/saout_m2_3v512x8m81_3/datain WL[2] col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b
 + col_512a_3v512x8m81_0/saout_m2_3v512x8m81_3/q col_512a_3v512x8m81_0/b[10] col_512a_3v512x8m81_0/WL[62]
 + col_512a_3v512x8m81_0/saout_R_m2_3v512x8m81_0/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + col_512a_3v512x8m81_0/saout_m2_3v512x8m81_4/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
@@ -16058,10 +16063,11 @@ X018SRAM_cell1_2x_3v512x8m81_790 m3_n1397_25747# 018SRAM_strap1_bndry_3v512x8m81
 + saout_R_m2_3v512x8m81_1/sa_3v512x8m81_0/pcb WL[46] rarray4_512_3v512x8m81_0/m3_n1397_37867#
 + saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_5/ypass rarray4_512_3v512x8m81_0/m3_n1397_28885#
 + WL[4] WL[25] rarray4_512_3v512x8m81_0/m3_n1397_25249# saout_R_m2_3v512x8m81_1/q
-+ saout_m2_3v512x8m81_3/q WL[3] rarray4_512_3v512x8m81_0/m3_n1397_24535# WL[24] saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_2/ypass
-+ saout_R_m2_3v512x8m81_3/q rarray4_512_3v512x8m81_0/m3_n1397_8779# saout_m2_3v512x8m81_3/ypass[7]
-+ WL[47] rarray4_512_3v512x8m81_0/m3_n1397_8281# WL[17] rarray4_512_3v512x8m81_0/m3_n1397_20899#
-+ WL[61] rarray4_512_3v512x8m81_0/m3_n1397_10705# VSS pcb[6]
++ saout_m2_3v512x8m81_3/datain saout_m2_3v512x8m81_3/q WL[3] rarray4_512_3v512x8m81_0/m3_n1397_24535#
++ WL[24] saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_2/ypass saout_R_m2_3v512x8m81_3/q
++ rarray4_512_3v512x8m81_0/m3_n1397_8779# saout_m2_3v512x8m81_3/ypass[7] WL[47] rarray4_512_3v512x8m81_0/m3_n1397_8281#
++ WL[17] rarray4_512_3v512x8m81_0/m3_n1397_20899# WL[61] rarray4_512_3v512x8m81_0/m3_n1397_10705#
++ saout_m2_3v512x8m81_2/datain VSS pcb[6]
 Xdcap_103_novia_3v512x8m81_0[0] pcb[6] VSS pcb[6] dcap_103_novia_3v512x8m81
 Xdcap_103_novia_3v512x8m81_0[1] pcb[6] VSS pcb[6] dcap_103_novia_3v512x8m81
 Xdcap_103_novia_3v512x8m81_0[2] pcb[6] VSS pcb[6] dcap_103_novia_3v512x8m81
@@ -16103,10 +16109,10 @@ Xsaout_m2_3v512x8m81_2 saout_m2_3v512x8m81_2/ypass[2] saout_m2_3v512x8m81_2/ypas
 + saout_m2_3v512x8m81_3/GWEN GWE saout_m2_3v512x8m81_2/bb[1] saout_m2_3v512x8m81_2/bb[3]
 + saout_m2_3v512x8m81_2/bb[4] saout_m2_3v512x8m81_2/bb[5] saout_m2_3v512x8m81_2/bb[7]
 + saout_m2_3v512x8m81_2/bb[6] saout_m2_3v512x8m81_2/b[5] saout_m2_3v512x8m81_2/b[6]
-+ saout_m2_3v512x8m81_2/b[7] saout_m2_3v512x8m81_2/b[2] saout_m2_3v512x8m81_2/q saout_m2_3v512x8m81_2/pcb
-+ saout_m2_3v512x8m81_2/b[1] saout_m2_3v512x8m81_2/b[3] saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
-+ WEN[5] saout_m2_3v512x8m81_3/din_3v512x8m81_0/men saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
-+ saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
++ saout_m2_3v512x8m81_2/b[7] saout_m2_3v512x8m81_2/b[2] saout_m2_3v512x8m81_2/datain
++ saout_m2_3v512x8m81_2/q saout_m2_3v512x8m81_2/pcb saout_m2_3v512x8m81_2/b[1] saout_m2_3v512x8m81_2/b[3]
++ saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b WEN[5] saout_m2_3v512x8m81_3/din_3v512x8m81_0/men
++ saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/b saout_m2_3v512x8m81_2/bb[2]
 + saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b saout_m2_3v512x8m81_2/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb
 + GWE saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/ypass saout_m2_3v512x8m81_3/ypass[7]
@@ -16233,10 +16239,10 @@ Xsaout_m2_3v512x8m81_3 saout_m2_3v512x8m81_3/ypass[2] saout_m2_3v512x8m81_3/ypas
 + saout_m2_3v512x8m81_3/GWEN GWE saout_m2_3v512x8m81_3/bb[1] saout_m2_3v512x8m81_3/bb[3]
 + saout_m2_3v512x8m81_3/bb[4] saout_m2_3v512x8m81_3/bb[5] saout_m2_3v512x8m81_3/bb[7]
 + saout_m2_3v512x8m81_3/bb[6] saout_m2_3v512x8m81_3/b[5] saout_m2_3v512x8m81_3/b[6]
-+ saout_m2_3v512x8m81_3/b[7] saout_m2_3v512x8m81_3/b[2] saout_m2_3v512x8m81_3/q saout_m2_3v512x8m81_3/pcb
-+ saout_m2_3v512x8m81_3/b[1] saout_m2_3v512x8m81_3/b[3] saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b
-+ WEN[7] saout_m2_3v512x8m81_3/din_3v512x8m81_0/men saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb
-+ saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
++ saout_m2_3v512x8m81_3/b[7] saout_m2_3v512x8m81_3/b[2] saout_m2_3v512x8m81_3/datain
++ saout_m2_3v512x8m81_3/q saout_m2_3v512x8m81_3/pcb saout_m2_3v512x8m81_3/b[1] saout_m2_3v512x8m81_3/b[3]
++ saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_4/b WEN[7] saout_m2_3v512x8m81_3/din_3v512x8m81_0/men
++ saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/bb saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_a_3v512x8m81_0/pmos_5p0431059130201_3v512x8m81_0/D
 + saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_7/b saout_m2_3v512x8m81_3/bb[2]
 + saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_3/b saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_1/bb
 + GWE saout_m2_3v512x8m81_3/mux821_3v512x8m81_0/ypass_gate_3v512x8m81_6/ypass saout_m2_3v512x8m81_3/ypass[7]
@@ -16743,8 +16749,8 @@ Xpmoscap_R270_3v512x8m81_4 RWL[8] vss vdd RWL[9] vdd pmoscap_R270_3v512x8m81
 .ends
 
 .subckt gf180mcu_ocd_ip_sram__sram512x8m8wm1 GWEN Q[7] Q[6] Q[5] Q[4] Q[3] Q[2] Q[1]
-+ VDD WEN[7] WEN[6] WEN[5] WEN[4] WEN[3] A[0] D[1] A[1] A[2] D[3] A[3] A[4] D[5] A[5]
-+ A[6] D[7] A[7] A[8] CEN VSS WEN[0] CLK WEN[1] WEN[2] Q[0]
++ VDD WEN[7] WEN[6] WEN[5] WEN[4] WEN[3] D[0] A[0] D[1] A[1] D[2] A[2] D[3] A[3] D[4]
++ A[4] D[5] A[5] D[6] A[6] D[7] A[7] A[8] CEN VSS WEN[0] CLK WEN[1] WEN[2] Q[0]
 Xcontrol_3v512x8_3v512x8m81_0 control_3v512x8_3v512x8m81_0/RYS[7] control_3v512x8_3v512x8m81_0/RYS[6]
 + control_3v512x8_3v512x8m81_0/RYS[5] control_3v512x8_3v512x8m81_0/RYS[4] control_3v512x8_3v512x8m81_0/RYS[3]
 + control_3v512x8_3v512x8m81_0/RYS[2] control_3v512x8_3v512x8m81_0/RYS[1] control_3v512x8_3v512x8m81_0/RYS[0]
@@ -16778,8 +16784,8 @@ Xlcol4_512_3v512x8m81_0 xdec64_3v512x8m81_0/LWL[33] lcol4_512_3v512x8m81_0/WL[33
 + lcol4_512_3v512x8m81_0/din[2] lcol4_512_3v512x8m81_0/q[1] lcol4_512_3v512x8m81_0/q[2]
 + lcol4_512_3v512x8m81_0/q[3] lcol4_512_3v512x8m81_0/pcb[2] lcol4_512_3v512x8m81_0/pcb[3]
 + lcol4_512_3v512x8m81_0/pcb[0] lcol4_512_3v512x8m81_0/pcb[1] WEN[0] WEN[1] WEN[2]
-+ WEN[3] Q[3] xdec64_3v512x8m81_0/LWL[40] xdec64_3v512x8m81_0/LWL[41] D[3] xdec64_3v512x8m81_0/LWL[43]
-+ xdec64_3v512x8m81_0/LWL[60] lcol4_512_3v512x8m81_0/WL[59] xdec64_3v512x8m81_0/LWL[45]
++ WEN[3] D[2] Q[3] xdec64_3v512x8m81_0/LWL[40] xdec64_3v512x8m81_0/LWL[41] D[3] xdec64_3v512x8m81_0/LWL[43]
++ xdec64_3v512x8m81_0/LWL[60] lcol4_512_3v512x8m81_0/WL[59] D[0] xdec64_3v512x8m81_0/LWL[45]
 + xdec64_3v512x8m81_0/xdec32_468_3v512x8m81_0/LWL[30] rcol4_512_3v512x8m81_0/GWE xdec64_3v512x8m81_0/LWL[47]
 + rcol4_512_3v512x8m81_0/GWE control_3v512x8_3v512x8m81_0/IGWEN rcol4_512_3v512x8m81_0/GWE
 + Q[2] xdec64_3v512x8m81_0/LWL[0] xdec64_3v512x8m81_0/LWL[10] xdec64_3v512x8m81_0/men
@@ -16828,11 +16834,11 @@ Xrcol4_512_3v512x8m81_0 xdec64_3v512x8m81_0/RWL[33] rcol4_512_3v512x8m81_0/WL[33
 + rcol4_512_3v512x8m81_0/saout_R_m2_3v512x8m81_1/sa_3v512x8m81_0/pcb xdec64_3v512x8m81_0/RWL[48]
 + xdec64_3v512x8m81_0/RWL[62] control_3v512x8_3v512x8m81_0/RYS[4] xdec64_3v512x8m81_0/RWL[47]
 + xdec64_3v512x8m81_0/RWL[4] xdec64_3v512x8m81_0/RWL[26] xdec64_3v512x8m81_0/RWL[41]
-+ Q[7] Q[4] xdec64_3v512x8m81_0/RWL[3] xdec64_3v512x8m81_0/RWL[40] xdec64_3v512x8m81_0/RWL[25]
++ Q[7] D[4] Q[4] xdec64_3v512x8m81_0/RWL[3] xdec64_3v512x8m81_0/RWL[40] xdec64_3v512x8m81_0/RWL[25]
 + control_3v512x8_3v512x8m81_0/RYS[3] Q[5] xdec64_3v512x8m81_0/RWL[14] control_3v512x8_3v512x8m81_0/RYS[5]
 + xdec64_3v512x8m81_0/RWL[49] xdec64_3v512x8m81_0/RWL[13] xdec64_3v512x8m81_0/RWL[18]
 + xdec64_3v512x8m81_0/RWL[34] xdec64_3v512x8m81_0/RWL[63] xdec64_3v512x8m81_0/RWL[17]
-+ VSS VDD rcol4_512_3v512x8m81
++ D[6] VSS VDD rcol4_512_3v512x8m81
 Xxdec64_3v512x8m81_0 xdec64_3v512x8m81_0/DRWL xdec64_3v512x8m81_0/RWL[34] xdec64_3v512x8m81_0/RWL[35]
 + xdec64_3v512x8m81_0/RWL[36] xdec64_3v512x8m81_0/RWL[37] xdec64_3v512x8m81_0/RWL[38]
 + xdec64_3v512x8m81_0/RWL[39] xdec64_3v512x8m81_0/RWL[40] xdec64_3v512x8m81_0/RWL[42]
@@ -22047,7 +22053,7 @@ X018SRAM_cell1_2x_3v256x8m81_3[15|7] 018SRAM_strap1_2x_3v256x8m81_3[15]/018SRAM_
 .ends
 
 .subckt saout_m2_3v256x8m81 ypass[2] ypass[3] ypass[4] ypass[5] ypass[6] GWEN GWE
-+ bb[1] bb[4] bb[7] bb[6] b[5] b[7] b[2] q pcb mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
++ bb[1] bb[4] bb[7] bb[6] b[5] b[7] b[2] datain q pcb mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
 + mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + b[6] bb[2] mux821_3v256x8m81_0/ypass_gate_3v256x8m81_4/ypass WEN mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
 + mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb bb[5] mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
@@ -22061,8 +22067,8 @@ Xsacntl_2_3v256x8m81_0 pcb sa_3v256x8m81_0/se din_3v256x8m81_0/men sacntl_2_3v25
 + sacntl_2_3v256x8m81_0/pmos_5p04310591302027_3v256x8m81_2/S vss vdd sacntl_2_3v256x8m81
 Xoutbuf_oe_3v256x8m81_0 sa_3v256x8m81_0/qp sa_3v256x8m81_0/qp sa_3v256x8m81_0/se q
 + outbuf_oe_3v256x8m81_0/GWE vss vdd outbuf_oe_3v256x8m81
-Xdin_3v256x8m81_0 vdd vdd vdd sa_3v256x8m81_0/wep din_3v256x8m81_0/men vdd vss vdd
-+ pcb din_3v256x8m81
+Xdin_3v256x8m81_0 vdd vdd datain sa_3v256x8m81_0/wep din_3v256x8m81_0/men vdd vss
++ vdd pcb din_3v256x8m81
 Xwen_wm1_3v256x8m81_0 GWEN din_3v256x8m81_0/men sa_3v256x8m81_0/wep WEN vdd vss wen_wm1_3v256x8m81
 Xmux821_3v256x8m81_0 mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + vdd b[6] mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/ypass mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/bb
@@ -22103,14 +22109,15 @@ Xsa_3v256x8m81_0 sa_3v256x8m81_0/qp sa_3v256x8m81_0/wep sa_3v256x8m81_0/se pcb v
 + saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
 + saout_R_m2_3v256x8m81_0/b[3] saout_m2_3v256x8m81_3/bb[3] saout_R_m2_3v256x8m81_1/q
 + saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
-+ saout_m2_3v256x8m81_3/q WL[22] saout_m2_3v256x8m81_4/b[3] saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb
-+ b[31] saout_R_m2_3v256x8m81_1/GWE saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/b
-+ saout_m2_3v256x8m81_3/bb[2] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
-+ WL[9] saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/bb bb[4]
-+ WL[12] b[12] saout_m2_3v256x8m81_4/bb[5] saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
++ saout_m2_3v256x8m81_3/q WL[22] saout_m2_3v256x8m81_4/b[3] saout_m2_3v256x8m81_4/datain
++ saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb b[31] saout_R_m2_3v256x8m81_1/GWE
++ saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/b saout_m2_3v256x8m81_3/bb[2]
++ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb WL[9] saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/bb
++ bb[4] WL[12] b[12] saout_m2_3v256x8m81_4/bb[5] saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + WL[3] saout_m2_3v256x8m81_3/b[4] WL[29] b[5] WL[6] saout_R_m2_3v256x8m81_0/bb[4]
-+ saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b saout_R_m2_3v256x8m81_1/b[3]
-+ saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb bb[17] saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
++ saout_m2_3v256x8m81_3/datain saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
++ saout_R_m2_3v256x8m81_1/b[3] saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
++ bb[17] saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + saout_R_m2_3v256x8m81_1/b[6] saout_R_m2_3v256x8m81_1/bb[4] saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
 + saout_R_m2_3v256x8m81_0/bb[2] saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_2/b
 + saout_m2_3v256x8m81_3/b[3] WL[23] saout_R_m2_3v256x8m81_1/bb[7] bb[10] WL[19] VSS
@@ -22180,8 +22187,8 @@ Xsaout_m2_3v256x8m81_3 saout_m2_3v256x8m81_3/ypass[2] saout_m2_3v256x8m81_3/ypas
 + saout_m2_3v256x8m81_3/ypass[4] saout_m2_3v256x8m81_3/ypass[5] saout_m2_3v256x8m81_3/ypass[6]
 + saout_m2_3v256x8m81_4/GWEN GWE saout_m2_3v256x8m81_3/bb[1] saout_m2_3v256x8m81_3/bb[4]
 + saout_m2_3v256x8m81_3/bb[7] saout_m2_3v256x8m81_3/bb[6] saout_m2_3v256x8m81_3/b[5]
-+ saout_m2_3v256x8m81_3/b[7] saout_m2_3v256x8m81_3/b[2] saout_m2_3v256x8m81_3/q saout_m2_3v256x8m81_3/pcb
-+ b[29] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
++ saout_m2_3v256x8m81_3/b[7] saout_m2_3v256x8m81_3/b[2] saout_m2_3v256x8m81_3/datain
++ saout_m2_3v256x8m81_3/q saout_m2_3v256x8m81_3/pcb b[29] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + saout_m2_3v256x8m81_3/b[6] saout_m2_3v256x8m81_3/bb[2] ypass[2] WEN[3] b[31] bb[24]
 + saout_m2_3v256x8m81_3/bb[5] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
 + saout_m2_3v256x8m81_3/b[4] men b[25] GWE ypass[0] bb[30] saout_m2_3v256x8m81_3/bb[3]
@@ -22193,7 +22200,7 @@ Xsaout_m2_3v256x8m81_4 saout_m2_3v256x8m81_4/ypass[2] saout_m2_3v256x8m81_4/ypas
 + saout_m2_3v256x8m81_4/GWEN saout_m2_3v256x8m81_4/GWE saout_m2_3v256x8m81_4/bb[1]
 + saout_m2_3v256x8m81_4/bb[4] saout_m2_3v256x8m81_4/bb[7] saout_m2_3v256x8m81_4/bb[6]
 + saout_m2_3v256x8m81_4/b[5] saout_m2_3v256x8m81_4/b[7] saout_m2_3v256x8m81_4/b[2]
-+ saout_m2_3v256x8m81_4/q saout_m2_3v256x8m81_4/pcb saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
++ saout_m2_3v256x8m81_4/datain saout_m2_3v256x8m81_4/q saout_m2_3v256x8m81_4/pcb saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
 + saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + saout_m2_3v256x8m81_4/b[6] bb[10] ypass[2] WEN[1] saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
 + saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb saout_m2_3v256x8m81_4/bb[5]
@@ -22214,15 +22221,15 @@ X0 a_n119_86# a_n30_42# a_n119_86# w_n205_0# pfet_03v3 ad=0.4717p pd=3.01u as=0 
 + col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/GWEN col_256a_3v256x8m81_0/WL[6] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/outbuf_oe_3v256x8m81_0/GWE
 + col_256a_3v256x8m81_0/WL[8] col_256a_3v256x8m81_0/WL[21] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/datain
 + WL[21] WL[22] WL[23] WL[24] WL[25] WL[26] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/datain
-+ WL[27] WL[28] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/q col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/q
-+ col_256a_3v256x8m81_0/ypass[0] col_256a_3v256x8m81_0/ypass[1] col_256a_3v256x8m81_0/ypass[2]
-+ col_256a_3v256x8m81_0/ypass[3] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/GWE
-+ col_256a_3v256x8m81_0/ypass[4] col_256a_3v256x8m81_0/men col_256a_3v256x8m81_0/WL[10]
-+ col_256a_3v256x8m81_0/ypass[5] col_256a_3v256x8m81_0/ypass[6] WL[11] col_256a_3v256x8m81_0/ypass[7]
-+ col_256a_3v256x8m81_0/WL[12] col_256a_3v256x8m81_0/GWE WL[29] col_256a_3v256x8m81_0/WL[13]
-+ col_256a_3v256x8m81_0/WL[14] WL[30] col_256a_3v256x8m81_0/WL[15] WL[15] col_256a_3v256x8m81_0/WL[17]
-+ WL[17] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/GWE WL[0] col_256a_3v256x8m81_0/WL[19]
-+ VSUBS VDD
++ WL[27] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/datain WL[28] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/q
++ col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/q col_256a_3v256x8m81_0/ypass[0] col_256a_3v256x8m81_0/ypass[1]
++ col_256a_3v256x8m81_0/ypass[2] col_256a_3v256x8m81_0/ypass[3] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/GWE
++ col_256a_3v256x8m81_0/saout_m2_3v256x8m81_3/datain col_256a_3v256x8m81_0/ypass[4]
++ col_256a_3v256x8m81_0/men col_256a_3v256x8m81_0/WL[10] col_256a_3v256x8m81_0/ypass[5]
++ col_256a_3v256x8m81_0/ypass[6] WL[11] col_256a_3v256x8m81_0/ypass[7] col_256a_3v256x8m81_0/WL[12]
++ col_256a_3v256x8m81_0/GWE WL[29] col_256a_3v256x8m81_0/WL[13] col_256a_3v256x8m81_0/WL[14]
++ WL[30] col_256a_3v256x8m81_0/WL[15] WL[15] col_256a_3v256x8m81_0/WL[17] WL[17] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/GWE
++ WL[0] col_256a_3v256x8m81_0/WL[19] VSUBS VDD
 Xldummy_3v256x4_3v256x8m81_0 WL[5] VDD VSUBS col_256a_3v256x8m81_0/b[16] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
 + col_256a_3v256x8m81_0/b[16] VDD col_256a_3v256x8m81_0/bb[10] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
 + col_256a_3v256x8m81_0/WL[21] VDD WL[25] col_256a_3v256x8m81_0/b[10] col_256a_3v256x8m81_0/b[29]
@@ -22352,7 +22359,7 @@ Xcol_256a_3v256x8m81_0 col_256a_3v256x8m81_0/ypass[0] col_256a_3v256x8m81_0/ypas
 + col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/q col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
 + col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + col_256a_3v256x8m81_0/saout_m2_3v256x8m81_3/q WL[21] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/b[3]
-+ col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb
++ col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/datain col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb
 + col_256a_3v256x8m81_0/b[31] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/GWE col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/b
 + col_256a_3v256x8m81_0/saout_m2_3v256x8m81_3/bb[2] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
 + WL[9] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/bb
@@ -22360,7 +22367,7 @@ Xcol_256a_3v256x8m81_0 col_256a_3v256x8m81_0/ypass[0] col_256a_3v256x8m81_0/ypas
 + col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/bb[5] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + WL[3] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_3/b[4] WL[28] col_256a_3v256x8m81_0/b[5]
 + col_256a_3v256x8m81_0/WL[6] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/bb[4]
-+ col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
++ col_256a_3v256x8m81_0/saout_m2_3v256x8m81_3/datain col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b
 + col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/b[3] col_256a_3v256x8m81_0/saout_m2_3v256x8m81_4/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
 + col_256a_3v256x8m81_0/bb[17] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_0/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/b[6] col_256a_3v256x8m81_0/saout_R_m2_3v256x8m81_1/bb[4]
@@ -25703,19 +25710,19 @@ X018SRAM_cell1_dummy_R_3v256x8m81_13 018SRAM_cell1_dummy_R_3v256x8m81_13/m3_82_3
 + din[7] q[5] q[6] q[7] din[5] din[6] q[4] pcb[7] pcb[4] WEN[4] WEN[7] pcb[5] WEN[5]
 + WEN[6] rarray4_256_3v256x8m81_0/m3_n1397_10705# rdummy_3v256x4_3v256x8m81_0/ypass_gate_3v256x8m81_0_0/pcb
 + rarray4_256_3v256x8m81_0/m3_n1397_8779# rarray4_256_3v256x8m81_0/m3_n1397_8281#
-+ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/ypass saout_m2_3v256x8m81_3/din_3v256x8m81_0/men
-+ saout_R_m2_3v256x8m81_1/datain saout_m2_3v256x8m81_2/q rarray4_256_3v256x8m81_0/m3_n1397_13129#
-+ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/ypass rarray4_256_3v256x8m81_0/m3_n1397_11917#
-+ rarray4_256_3v256x8m81_0/m3_n1397_9493# saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/ypass
-+ saout_R_m2_3v256x8m81_1/sa_3v256x8m81_0/pcb saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_4/ypass
-+ rarray4_256_3v256x8m81_0/m3_n1397_5143# WL[21] WL[7] rarray4_256_3v256x8m81_0/m3_n1397_3931#
-+ WL[1] WL[0] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/ypass
++ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/ypass saout_m2_3v256x8m81_2/datain
++ saout_m2_3v256x8m81_3/din_3v256x8m81_0/men saout_R_m2_3v256x8m81_1/datain saout_m2_3v256x8m81_2/q
++ rarray4_256_3v256x8m81_0/m3_n1397_13129# saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/ypass
++ rarray4_256_3v256x8m81_0/m3_n1397_11917# rarray4_256_3v256x8m81_0/m3_n1397_9493#
++ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/ypass saout_R_m2_3v256x8m81_1/sa_3v256x8m81_0/pcb
++ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_4/ypass rarray4_256_3v256x8m81_0/m3_n1397_5143#
++ WL[21] WL[7] rarray4_256_3v256x8m81_0/m3_n1397_3931# WL[1] WL[0] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/ypass
 + rarray4_256_3v256x8m81_0/m3_n1397_19687# rarray4_256_3v256x8m81_0/m3_n1397_6355#
 + WL[9] WL[23] WL[22] saout_m2_3v256x8m81_3/ypass[7] saout_R_m2_3v256x8m81_1/q saout_m2_3v256x8m81_3/q
 + WL[2] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/ypass rdummy_3v256x4_3v256x8m81_0/a_16524_2#
 + saout_R_m2_3v256x8m81_3/q saout_R_m2_3v256x8m81_3/datain rarray4_256_3v256x8m81_0/m3_n1397_7567#
 + WL[25] saout_m2_3v256x8m81_3/GWEN saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_2/ypass
-+ WL[24] WL[4] WL[3] WL[17] pcb[6] VSS
++ WL[24] saout_m2_3v256x8m81_3/datain WL[4] WL[3] WL[17] pcb[6] VSS
 Xrarray4_256_3v256x8m81_0 saout_R_m2_3v256x8m81_1/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
 + saout_R_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + WL[17] saout_m2_3v256x8m81_3/bb[3] rarray4_256_3v256x8m81_0/m3_n1397_13129# saout_R_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_6/bb
@@ -25922,8 +25929,9 @@ Xsaout_m2_3v256x8m81_2 saout_m2_3v256x8m81_2/ypass[2] saout_m2_3v256x8m81_2/ypas
 + saout_m2_3v256x8m81_2/ypass[4] saout_m2_3v256x8m81_2/ypass[5] saout_m2_3v256x8m81_2/ypass[6]
 + saout_m2_3v256x8m81_3/GWEN GWE saout_m2_3v256x8m81_2/bb[1] saout_m2_3v256x8m81_2/bb[4]
 + saout_m2_3v256x8m81_2/bb[7] saout_m2_3v256x8m81_2/bb[6] saout_m2_3v256x8m81_2/b[5]
-+ saout_m2_3v256x8m81_2/b[7] saout_m2_3v256x8m81_2/b[2] saout_m2_3v256x8m81_2/q saout_m2_3v256x8m81_2/pcb
-+ saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
++ saout_m2_3v256x8m81_2/b[7] saout_m2_3v256x8m81_2/b[2] saout_m2_3v256x8m81_2/datain
++ saout_m2_3v256x8m81_2/q saout_m2_3v256x8m81_2/pcb saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
++ saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + saout_m2_3v256x8m81_2/b[6] saout_m2_3v256x8m81_2/bb[2] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_4/ypass
 + WEN[5] saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb
 + saout_m2_3v256x8m81_2/bb[5] saout_m2_3v256x8m81_2/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
@@ -25939,8 +25947,9 @@ Xsaout_m2_3v256x8m81_3 saout_m2_3v256x8m81_3/ypass[2] saout_m2_3v256x8m81_3/ypas
 + saout_m2_3v256x8m81_3/ypass[4] saout_m2_3v256x8m81_3/ypass[5] saout_m2_3v256x8m81_3/ypass[6]
 + saout_m2_3v256x8m81_3/GWEN GWE saout_m2_3v256x8m81_3/bb[1] saout_m2_3v256x8m81_3/bb[4]
 + saout_m2_3v256x8m81_3/bb[7] saout_m2_3v256x8m81_3/bb[6] saout_m2_3v256x8m81_3/b[5]
-+ saout_m2_3v256x8m81_3/b[7] saout_m2_3v256x8m81_3/b[2] saout_m2_3v256x8m81_3/q saout_m2_3v256x8m81_3/pcb
-+ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
++ saout_m2_3v256x8m81_3/b[7] saout_m2_3v256x8m81_3/b[2] saout_m2_3v256x8m81_3/datain
++ saout_m2_3v256x8m81_3/q saout_m2_3v256x8m81_3/pcb saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_3/b
++ saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_a_3v256x8m81_0/pmos_5p0431059130201_3v256x8m81_0/D
 + saout_m2_3v256x8m81_3/b[6] saout_m2_3v256x8m81_3/bb[2] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_4/ypass
 + WEN[7] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_7/b saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_1/bb
 + saout_m2_3v256x8m81_3/bb[5] saout_m2_3v256x8m81_3/mux821_3v256x8m81_0/ypass_gate_3v256x8m81_5/bb
@@ -27544,8 +27553,8 @@ Xpmoscap_R270_3v256x8m81_19 LWL[10] vss vdd LWL[11] vdd pmoscap_R270_3v256x8m81
 .ends
 
 .subckt gf180mcu_ocd_ip_sram__sram256x8m8wm1 A[7] A[6] A[5] A[4] A[3] A[2] A[1] A[0]
-+ CEN CLK D[7] D[5] D[3] D[1] GWEN Q[7] Q[6] Q[5] Q[4] Q[3] Q[2] Q[1] Q[0] VDD WEN[7]
-+ WEN[6] WEN[5] WEN[4] WEN[3] WEN[2] WEN[1] WEN[0] VSS
++ CEN CLK D[7] D[6] D[5] D[4] D[3] D[2] D[1] D[0] GWEN Q[7] Q[6] Q[5] Q[4] Q[3] Q[2]
++ Q[1] Q[0] VDD WEN[7] WEN[6] WEN[5] WEN[4] WEN[3] WEN[2] WEN[1] WEN[0] VSS
 Xlcol4_256_3v256x8m81_0 lcol4_256_3v256x8m81_0/WL[20] xdec64_3v256x8m81_0/LWL[20]
 + lcol4_256_3v256x8m81_0/WL[18] VSS VSS lcol4_256_3v256x8m81_0/WL[13] VSS VSS xdec64_3v256x8m81_0/LWL[9]
 + lcol4_256_3v256x8m81_0/WL[8] xdec64_3v256x8m81_0/LWL[7] lcol4_256_3v256x8m81_0/WL[6]
@@ -27559,16 +27568,17 @@ Xlcol4_256_3v256x8m81_0 lcol4_256_3v256x8m81_0/WL[20] xdec64_3v256x8m81_0/LWL[20
 + xdec64_3v256x8m81_0/LWL[8] xdec64_3v256x8m81_0/LWL[21] D[1] xdec64_3v256x8m81_0/LWL[22]
 + xdec64_3v256x8m81_0/LWL[23] xdec64_3v256x8m81_0/LWL[24] xdec64_3v256x8m81_0/LWL[25]
 + xdec64_3v256x8m81_0/LWL[26] xdec64_3v256x8m81_0/LWL[27] D[3] xdec64_3v256x8m81_0/LWL[28]
-+ xdec64_3v256x8m81_0/LWL[29] Q[3] Q[2] control_3v256x8_3v256x8m81_0/LYS[7] lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[1]
++ D[2] xdec64_3v256x8m81_0/LWL[29] Q[3] Q[2] control_3v256x8_3v256x8m81_0/LYS[7] lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[1]
 + lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[2] VDD rcol4_256_3v256x8m81_0/GWE
-+ lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[4] xdec64_3v256x8m81_0/men xdec64_3v256x8m81_0/LWL[10]
-+ lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[5] lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[6]
-+ xdec64_3v256x8m81_0/LWL[11] lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[7]
-+ xdec64_3v256x8m81_0/LWL[12] rcol4_256_3v256x8m81_0/GWE xdec64_3v256x8m81_0/LWL[30]
-+ xdec64_3v256x8m81_0/LWL[13] xdec64_3v256x8m81_0/LWL[14] xdec64_3v256x8m81_0/LWL[31]
-+ xdec64_3v256x8m81_0/LWL[15] xdec64_3v256x8m81_0/LWL[16] xdec64_3v256x8m81_0/LWL[17]
-+ xdec64_3v256x8m81_0/LWL[18] rcol4_256_3v256x8m81_0/GWE xdec64_3v256x8m81_0/LWL[0]
-+ xdec64_3v256x8m81_0/LWL[19] VSS VDD lcol4_256_3v256x8m81
++ D[0] lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[4] xdec64_3v256x8m81_0/men
++ xdec64_3v256x8m81_0/LWL[10] lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[5]
++ lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[6] xdec64_3v256x8m81_0/LWL[11]
++ lcol4_256_3v256x8m81_0/col_256a_3v256x8m81_0/ypass[7] xdec64_3v256x8m81_0/LWL[12]
++ rcol4_256_3v256x8m81_0/GWE xdec64_3v256x8m81_0/LWL[30] xdec64_3v256x8m81_0/LWL[13]
++ xdec64_3v256x8m81_0/LWL[14] xdec64_3v256x8m81_0/LWL[31] xdec64_3v256x8m81_0/LWL[15]
++ xdec64_3v256x8m81_0/LWL[16] xdec64_3v256x8m81_0/LWL[17] xdec64_3v256x8m81_0/LWL[18]
++ rcol4_256_3v256x8m81_0/GWE xdec64_3v256x8m81_0/LWL[0] xdec64_3v256x8m81_0/LWL[19]
++ VSS VDD lcol4_256_3v256x8m81
 Xrcol4_256_3v256x8m81_0 xdec64_3v256x8m81_0/RWL[30] rcol4_256_3v256x8m81_0/WL[20]
 + xdec64_3v256x8m81_0/RWL[28] xdec64_3v256x8m81_0/RWL[31] VSS xdec64_3v256x8m81_0/RWL[16]
 + rcol4_256_3v256x8m81_0/WL[31] VSS VSS xdec64_3v256x8m81_0/RWL[27] xdec64_3v256x8m81_0/RWL[20]
@@ -27580,7 +27590,7 @@ Xrcol4_256_3v256x8m81_0 xdec64_3v256x8m81_0/RWL[30] rcol4_256_3v256x8m81_0/WL[20
 + rcol4_256_3v256x8m81_0/pcb[7] rcol4_256_3v256x8m81_0/pcb[4] WEN[7] WEN[4] rcol4_256_3v256x8m81_0/pcb[5]
 + WEN[6] WEN[5] xdec64_3v256x8m81_0/RWL[17] rcol4_256_3v256x8m81_0/saout_R_m2_3v256x8m81_1/sa_3v256x8m81_0/pcb
 + xdec64_3v256x8m81_0/RWL[14] xdec64_3v256x8m81_0/RWL[13] control_3v256x8_3v256x8m81_0/RYS[1]
-+ xdec64_3v256x8m81_0/men D[7] Q[6] xdec64_3v256x8m81_0/RWL[21] control_3v256x8_3v256x8m81_0/RYS[6]
++ D[6] xdec64_3v256x8m81_0/men D[7] Q[6] xdec64_3v256x8m81_0/RWL[21] control_3v256x8_3v256x8m81_0/RYS[6]
 + xdec64_3v256x8m81_0/RWL[19] xdec64_3v256x8m81_0/RWL[15] control_3v256x8_3v256x8m81_0/RYS[7]
 + rcol4_256_3v256x8m81_0/saout_R_m2_3v256x8m81_1/sa_3v256x8m81_0/pcb control_3v256x8_3v256x8m81_0/RYS[2]
 + xdec64_3v256x8m81_0/RWL[8] xdec64_3v256x8m81_0/RWL[22] xdec64_3v256x8m81_0/RWL[7]
@@ -27589,7 +27599,7 @@ Xrcol4_256_3v256x8m81_0 xdec64_3v256x8m81_0/RWL[30] rcol4_256_3v256x8m81_0/WL[20
 + xdec64_3v256x8m81_0/RWL[9] xdec64_3v256x8m81_0/RWL[24] xdec64_3v256x8m81_0/RWL[23]
 + control_3v256x8_3v256x8m81_0/RYS[5] Q[7] Q[4] xdec64_3v256x8m81_0/RWL[2] control_3v256x8_3v256x8m81_0/RYS[4]
 + VSS Q[5] D[5] xdec64_3v256x8m81_0/RWL[12] xdec64_3v256x8m81_0/RWL[26] control_3v256x8_3v256x8m81_0/IGWEN
-+ control_3v256x8_3v256x8m81_0/RYS[3] xdec64_3v256x8m81_0/RWL[25] xdec64_3v256x8m81_0/RWL[4]
++ control_3v256x8_3v256x8m81_0/RYS[3] xdec64_3v256x8m81_0/RWL[25] D[4] xdec64_3v256x8m81_0/RWL[4]
 + xdec64_3v256x8m81_0/RWL[3] xdec64_3v256x8m81_0/RWL[18] VDD VSS rcol4_256_3v256x8m81
 Xcontrol_3v256x8_3v256x8m81_0 control_3v256x8_3v256x8m81_0/RYS[7] control_3v256x8_3v256x8m81_0/RYS[6]
 + control_3v256x8_3v256x8m81_0/RYS[5] control_3v256x8_3v256x8m81_0/RYS[4] control_3v256x8_3v256x8m81_0/RYS[3]
@@ -29287,238 +29297,150 @@ XGF_NI_VDD_BASE_0 DVSS DVDD VSS DVSS DVSS DVDD DVSS DVSS DVDD DVSS DVDD DVSS DVS
 + DVSS DVSS VDD DVDD DVDD DVDD DVSS DVDD DVSS DVDD DVSS GF_NI_VDD_BASE
 .ends
 
-.subckt chip_half_frame DVDD analog_PAD[0] analog_PAD[1] analog_PAD[2] analog_PAD[3]
-+ input_PAD[0] input_PAD[1] input_PAD[2] input_PAD[3] clk_PAD rst_n_PAD bidir_PAD[0]
-+ bidir_PAD[1] bidir_PAD[2] bidir_PAD[3] bidir_PAD[4] bidir_PAD[5] bidir_PAD[6] bidir_PAD[7]
-+ bidir_PAD[8] bidir_PAD[9] bidir_PAD[10] bidir_PAD[11] bidir_PAD[12] bidir_PAD[13]
-+ bidir_PAD[14] bidir_PAD[15] bidir_PAD[16] bidir_PAD[17] bidir_PAD[18] bidir_PAD[19]
-+ bidir_PAD[20] bidir_PAD[21] bidir_PAD[22] bidir_PAD[23] bidir_PAD[24] bidir_PAD[25]
-+ bidir_PAD[26] bidir_PAD[27] bidir_PAD[28] bidir_PAD[29] bidir_PAD[30] bidir_PAD[31]
-+ bidir_PAD[32] bidir_PAD[33] bidir_PAD[34] bidir_PAD[35] bidir_PAD[36] bidir_PAD[37]
-+ bidir_PAD[38] bidir_PAD[39] bidir_PAD[40] bidir_PAD[41] bidir_PAD[42] bidir_PAD[43]
-+ bidir_PAD[44] bidir_PAD[45] gf180mcu_ocd_io__fill10x_47/one gf180mcu_ocd_io__bi_a_15/SL
-+ gf180mcu_ocd_io__bi_a_38/PD gf180mcu_ocd_io__bi_a_16/IE gf180mcu_ocd_io__bi_a_43/PD
-+ gf180mcu_ocd_io__bi_a_0/PD gf180mcu_ocd_io__bi_a_8/IE gf180mcu_ocd_io__bi_a_16/PD
-+ gf180mcu_ocd_io__fill10x_59/zero gf180mcu_ocd_io__bi_a_18/PDRV0 gf180mcu_ocd_io__bi_a_35/PD
-+ gf180mcu_ocd_io__bi_a_19/IE gf180mcu_ocd_io__bi_a_11/Y gf180mcu_ocd_io__bi_a_1/Y
-+ gf180mcu_ocd_io__bi_a_40/PD gf180mcu_ocd_io__bi_a_8/PD gf180mcu_ocd_io__bi_a_17/A
-+ gf180mcu_ocd_io__bi_a_13/OE gf180mcu_ocd_io__bi_a_27/PD gf180mcu_ocd_io__bi_a_19/PD
-+ gf180mcu_ocd_io__fill10x_271/one gf180mcu_ocd_io__bi_a_32/PD gf180mcu_ocd_io__bi_a_15/PDRV0
-+ gf180mcu_ocd_io__bi_a_4/OE gf180mcu_ocd_io__bi_a_15/OE gf180mcu_ocd_io__bi_a_10/OE
-+ gf180mcu_ocd_io__bi_a_24/PD gf180mcu_ocd_io__fill10x_287/zero gf180mcu_ocd_io__bi_a_16/PDRV0
-+ gf180mcu_ocd_io__fill10x_350/one gf180mcu_ocd_io__bi_a_42/Y gf180mcu_ocd_io__bi_a_17/Y
-+ gf180mcu_ocd_io__fill10x_323/one gf180mcu_ocd_io__bi_a_13/PD gf180mcu_ocd_io__bi_a_5/PDRV0
-+ gf180mcu_ocd_io__bi_a_5/PDRV1 gf180mcu_ocd_io__in_c_2/Y gf180mcu_ocd_io__fill10x_65/zero
-+ gf180mcu_ocd_io__fill10x_395/one gf180mcu_ocd_io__bi_a_7/PDRV1 gf180mcu_ocd_io__bi_a_33/A
-+ gf180mcu_ocd_io__fill10x_190/one gf180mcu_ocd_io__fill10x_264/zero gf180mcu_ocd_io__fill10x_94/one
-+ gf180mcu_ocd_io__bi_a_7/SL gf180mcu_ocd_io__bi_a_10/PD gf180mcu_ocd_io__bi_a_45/IE
-+ gf180mcu_ocd_io__bi_a_14/PDRV1 gf180mcu_ocd_io__bi_a_9/PDRV0 gf180mcu_ocd_io__bi_a_9/SL
-+ gf180mcu_ocd_io__bi_a_13/Y gf180mcu_ocd_io__bi_a_37/IE gf180mcu_ocd_io__fill10x_47/zero
-+ gf180mcu_ocd_io__bi_a_42/IE gf180mcu_ocd_io__bi_a_6/A gf180mcu_ocd_io__bi_a_40/PDRV1
-+ gf180mcu_ocd_io__bi_a_43/Y gf180mcu_ocd_io__bi_a_29/IE gf180mcu_ocd_io__bi_a_36/A
-+ gf180mcu_ocd_io__fill10_310x/zero gf180mcu_ocd_io__bi_a_16/A gf180mcu_ocd_io__bi_a_34/IE
-+ gf180mcu_ocd_io__bi_a_10/A gf180mcu_ocd_io__bi_a_7/OE gf180mcu_ocd_io__bi_a_26/IE
-+ gf180mcu_ocd_io__bi_a_21/SL gf180mcu_ocd_io__fill10x_258/one gf180mcu_ocd_io__bi_a_9/OE
-+ gf180mcu_ocd_io__bi_a_31/IE gf180mcu_ocd_io__fill10x_341/zero gf180mcu_ocd_io__bi_a_40/PDRV0
-+ gf180mcu_ocd_io__fill10x_102/zero gf180mcu_ocd_io__bi_a_41/PDRV1 gf180mcu_ocd_io__bi_a_23/IE
-+ gf180mcu_ocd_io__bi_a_4/PDRV0 gf180mcu_ocd_io__bi_a_6/Y gf180mcu_ocd_io__in_s_0/Y
-+ gf180mcu_ocd_io__bi_a_16/Y gf180mcu_ocd_io__fill10x_307/one gf180mcu_ocd_io__bi_a_35/A
-+ gf180mcu_ocd_io__fill10x_401/one gf180mcu_ocd_io__bi_a_45/SL gf180mcu_ocd_io__bi_a_39/PU
-+ gf180mcu_ocd_io__fill10x_126/zero gf180mcu_ocd_io__bi_a_44/PU gf180mcu_ocd_io__bi_a_6/PDRV0
-+ gf180mcu_ocd_io__bi_a_41/PDRV0 gf180mcu_ocd_io__fill10x_177/one gf180mcu_ocd_io__in_c_4/Y
-+ gf180mcu_ocd_io__bi_a_1/IE gf180mcu_ocd_io__bi_a_21/OE gf180mcu_ocd_io__bi_a_37/SL
-+ gf180mcu_ocd_io__bi_a_42/PDRV1 gf180mcu_ocd_io__bi_a_12/IE gf180mcu_ocd_io__fill10x_280/zero
-+ gf180mcu_ocd_io__bi_a_42/SL gf180mcu_ocd_io__bi_a_15/IE gf180mcu_ocd_io__fill10x_58/one
-+ gf180mcu_ocd_io__bi_a_36/PU gf180mcu_ocd_io__bi_a_1/PD gf180mcu_ocd_io__bi_a_1/SL
-+ gf180mcu_ocd_io__bi_a_41/PU gf180mcu_ocd_io__bi_a_42/A gf180mcu_ocd_io__fill10x_36/zero
-+ gf180mcu_ocd_io__fill10x_25/one gf180mcu_ocd_io__bi_a_29/SL gf180mcu_ocd_io__bi_a_6/IE
-+ gf180mcu_ocd_io__bi_a_8/PDRV0 gf180mcu_ocd_io__bi_a_34/SL gf180mcu_ocd_io__bi_a_15/PD
-+ gf180mcu_ocd_io__bi_a_28/PU gf180mcu_ocd_io__bi_a_21/IE gf180mcu_ocd_io__bi_a_38/CS
-+ gf180mcu_ocd_io__bi_a_33/PU gf180mcu_ocd_io__bi_a_6/PD gf180mcu_ocd_io__bi_a_43/CS
-+ gf180mcu_ocd_io__bi_a_42/PDRV0 gf180mcu_ocd_io__bi_a_12/A gf180mcu_ocd_io__bi_a_26/SL
-+ gf180mcu_ocd_io__fill10x_103/one gf180mcu_ocd_io__bi_a_21/PD gf180mcu_ocd_io__bi_a_43/PDRV1
-+ gf180mcu_ocd_io__bi_a_3/A gf180mcu_ocd_io__bi_a_31/SL gf180mcu_ocd_io__bi_a_7/PDRV0
-+ gf180mcu_ocd_io__bi_a_25/PU gf180mcu_ocd_io__bi_a_38/A gf180mcu_ocd_io__fill10x_54/one
-+ gf180mcu_ocd_io__bi_a_35/CS gf180mcu_ocd_io__bi_a_30/PU gf180mcu_ocd_io__bi_a_40/CS
-+ gf180mcu_ocd_io__bi_a_23/SL gf180mcu_ocd_io__in_c_3/PU gf180mcu_ocd_io__bi_a_27/CS
-+ gf180mcu_ocd_io__bi_a_1/OE gf180mcu_ocd_io__bi_a_22/PU gf180mcu_ocd_io__fill10x_355/zero
-+ gf180mcu_ocd_io__bi_a_3/PDRV0 gf180mcu_ocd_io__bi_a_17/SL gf180mcu_ocd_io__bi_a_32/CS
-+ gf180mcu_ocd_io__fill10x_163/one gf180mcu_ocd_io__bi_a_43/PDRV0 gf180mcu_ocd_io__in_c_0/Y
-+ gf180mcu_ocd_io__bi_a_45/OE gf180mcu_ocd_io__bi_a_44/PDRV1 gf180mcu_ocd_io__bi_a_24/CS
-+ gf180mcu_ocd_io__fill10x_287/one gf180mcu_ocd_io__bi_a_0/PDRV1 gf180mcu_ocd_io__bi_a_2/PDRV0
-+ gf180mcu_ocd_io__bi_a_3/Y gf180mcu_ocd_io__bi_a_37/OE gf180mcu_ocd_io__bi_a_12/SL
-+ gf180mcu_ocd_io__bi_a_19/A gf180mcu_ocd_io__bi_a_42/OE gf180mcu_ocd_io__bi_a_31/A
-+ gf180mcu_ocd_io__bi_a_16/PDRV1 gf180mcu_ocd_io__bi_a_11/PU gf180mcu_ocd_io__fill10x_113/zero
-+ gf180mcu_ocd_io__bi_a_29/OE gf180mcu_ocd_io__bi_a_8/PDRV1 gf180mcu_ocd_io__bi_a_44/PDRV0
-+ gf180mcu_ocd_io__bi_a_44/A gf180mcu_ocd_io__bi_a_34/OE gf180mcu_ocd_io__bi_a_1/PDRV0
-+ gf180mcu_ocd_io__fill10x_345/one gf180mcu_ocd_io__bi_a_17/OE gf180mcu_ocd_io__bi_a_13/CS
-+ gf180mcu_ocd_io__bi_a_19/PDRV1 gf180mcu_ocd_io__bi_a_45/PDRV1 gf180mcu_ocd_io__bi_a_30/PDRV1
-+ gf180mcu_ocd_io__fill10x_22/zero gf180mcu_ocd_io__bi_a_26/OE gf180mcu_ocd_io__bi_a_31/OE
-+ gf180mcu_ocd_io__bi_a_45/PD gf180mcu_ocd_io__bi_a_10/CS gf180mcu_ocd_io__bi_a_0/PDRV0
-+ gf180mcu_ocd_io__fill10x_389/one gf180mcu_ocd_io__bi_a_19/Y gf180mcu_ocd_io__bi_a_23/OE
-+ gf180mcu_ocd_io__bi_a_30/PDRV0 gf180mcu_ocd_io__bi_a_45/PDRV0 gf180mcu_ocd_io__bi_a_37/PD
-+ gf180mcu_ocd_io__fill10x_318/one gf180mcu_ocd_io__bi_a_42/PD gf180mcu_ocd_io__bi_a_31/PDRV1
-+ gf180mcu_ocd_io__bi_a_0/A gf180mcu_ocd_io__bi_a_28/A gf180mcu_ocd_io__in_c_3/PD
-+ gf180mcu_ocd_io__bi_a_29/PD gf180mcu_ocd_io__bi_a_34/PD gf180mcu_ocd_io__fill10x_395/zero
-+ gf180mcu_ocd_io__bi_a_6/SL gf180mcu_ocd_io__bi_a_12/OE gf180mcu_ocd_io__bi_a_16/SL
-+ gf180mcu_ocd_io__bi_a_26/PD gf180mcu_ocd_io__fill10x_78/one gf180mcu_ocd_io__bi_a_31/PDRV0
-+ gf180mcu_ocd_io__fill10x_331/zero gf180mcu_ocd_io__bi_a_31/PD gf180mcu_ocd_io__bi_a_32/PDRV1
-+ gf180mcu_ocd_io__bi_a_23/PD gf180mcu_ocd_io__bi_a_0/Y gf180mcu_ocd_io__bi_a_18/A
-+ gf180mcu_ocd_io__fill10x_264/one gf180mcu_ocd_io__fill10x_163/zero gf180mcu_ocd_io__fill10x_247/zero
-+ gf180mcu_ocd_io__bi_a_2/IE gf180mcu_ocd_io__fill10x_205/zero gf180mcu_ocd_io__fill10x_0/zero
-+ gf180mcu_ocd_io__bi_a_32/PDRV0 gf180mcu_ocd_io__bi_a_6/OE gf180mcu_ocd_io__bi_a_18/IE
-+ gf180mcu_ocd_io__bi_a_2/PD gf180mcu_ocd_io__bi_a_33/PDRV1 gf180mcu_ocd_io__bi_a_16/OE
-+ gf180mcu_ocd_io__fill10x_54/zero gf180mcu_ocd_io__bi_a_4/IE gf180mcu_ocd_io__bi_a_18/PD
-+ gf180mcu_ocd_io__bi_a_12/PD gf180mcu_ocd_io__fill10x_294/one gf180mcu_ocd_io__bi_a_20/IE
-+ gf180mcu_ocd_io__bi_a_33/Y gf180mcu_ocd_io__bi_a_4/PD gf180mcu_ocd_io__bi_a_23/A
-+ gf180mcu_ocd_io__bi_a_39/IE gf180mcu_ocd_io__bi_a_20/PD gf180mcu_ocd_io__bi_a_45/Y
-+ gf180mcu_ocd_io__bi_a_18/Y gf180mcu_ocd_io__bi_a_33/PDRV0 gf180mcu_ocd_io__bi_a_44/IE
-+ gf180mcu_ocd_io__fill10x_65/one gf180mcu_ocd_io__bi_a_34/PDRV1 gf180mcu_ocd_io__fill10x_336/zero
-+ gf180mcu_ocd_io__in_c_1/Y gf180mcu_ocd_io__fill10x_13/one gf180mcu_ocd_io__bi_a_36/IE
-+ gf180mcu_ocd_io__in_c_1/PU gf180mcu_ocd_io__bi_a_41/IE gf180mcu_ocd_io__bi_a_20/PU
-+ gf180mcu_ocd_io__bi_a_30/A gf180mcu_ocd_io__in_c_0/PU gf180mcu_ocd_io__bi_a_28/IE
-+ gf180mcu_ocd_io__bi_a_3/SL gf180mcu_ocd_io__bi_a_33/IE gf180mcu_ocd_io__bi_a_10/Y
-+ gf180mcu_ocd_io__fill10x_121/one gf180mcu_ocd_io__bi_a_34/PDRV0 gf180mcu_ocd_io__bi_a_1/PDRV1
-+ gf180mcu_ocd_io__bi_a_21/PU gf180mcu_ocd_io__fill10x_71/one gf180mcu_ocd_io__in_s_0/PU
-+ gf180mcu_ocd_io__bi_a_35/PDRV1 gf180mcu_ocd_io__bi_a_25/IE gf180mcu_ocd_io__fill10x_138/zero
-+ gf180mcu_ocd_io__bi_a_15/PDRV1 gf180mcu_ocd_io__bi_a_30/IE gf180mcu_ocd_io__bi_a_8/A
-+ gf180mcu_ocd_io__fill10x_300/zero gf180mcu_ocd_io__bi_a_37/A gf180mcu_ocd_io__bi_a_6/PDRV1
-+ gf180mcu_ocd_io__bi_a_5/A gf180mcu_ocd_io__fill10x_171/one gf180mcu_ocd_io__bi_a_19/PU
-+ gf180mcu_ocd_io__bi_a_22/IE gf180mcu_ocd_io__bi_a_20/CS gf180mcu_ocd_io__bi_a_21/PDRV1
-+ gf180mcu_ocd_io__fill10x_400/zero gf180mcu_ocd_io__bi_a_35/PDRV0 gf180mcu_ocd_io__bi_a_3/OE
-+ gf180mcu_ocd_io__bi_a_35/Y gf180mcu_ocd_io__bi_a_39/SL gf180mcu_ocd_io__bi_a_19/SL
-+ gf180mcu_ocd_io__bi_a_36/PDRV1 gf180mcu_ocd_io__bi_a_25/A gf180mcu_ocd_io__bi_a_44/SL
-+ gf180mcu_ocd_io__bi_a_38/PU gf180mcu_ocd_io__bi_a_14/PU gf180mcu_ocd_io__bi_a_21/CS
-+ gf180mcu_ocd_io__bi_a_43/PU gf180mcu_ocd_io__bi_a_36/SL gf180mcu_ocd_io__bi_a_11/IE
-+ gf180mcu_ocd_io__bi_a_8/Y gf180mcu_ocd_io__bi_a_41/SL gf180mcu_ocd_io__bi_a_35/PU
-+ gf180mcu_ocd_io__fill10x_341/one gf180mcu_ocd_io__bi_a_20/A gf180mcu_ocd_io__bi_a_45/CS
-+ gf180mcu_ocd_io__bi_a_36/PDRV0 gf180mcu_ocd_io__bi_a_5/Y gf180mcu_ocd_io__bi_a_32/A
-+ gf180mcu_ocd_io__bi_a_40/PU gf180mcu_ocd_io__bi_a_17/PU gf180mcu_ocd_io__bi_a_28/SL
-+ gf180mcu_ocd_io__bi_a_19/CS gf180mcu_ocd_io__in_c_1/PD gf180mcu_ocd_io__bi_a_37/PDRV1
-+ gf180mcu_ocd_io__fill10x_350/zero gf180mcu_ocd_io__bi_a_22/PDRV1 gf180mcu_ocd_io__bi_a_33/SL
-+ gf180mcu_ocd_io__bi_a_27/PU gf180mcu_ocd_io__bi_a_37/CS gf180mcu_ocd_io__bi_a_12/Y
-+ gf180mcu_ocd_io__bi_a_32/PU gf180mcu_ocd_io__bi_a_42/CS gf180mcu_ocd_io__bi_a_19/OE
-+ gf180mcu_ocd_io__bi_a_25/SL gf180mcu_ocd_io__bi_a_18/PU gf180mcu_ocd_io__fill10x_361/one
-+ gf180mcu_ocd_io__bi_a_14/CS gf180mcu_ocd_io__bi_a_29/CS gf180mcu_ocd_io__bi_a_30/SL
-+ gf180mcu_ocd_io__bi_a_24/PU gf180mcu_ocd_io__bi_a_0/SL gf180mcu_ocd_io__bi_a_34/CS
-+ gf180mcu_ocd_io__bi_a_37/PDRV0 gf180mcu_ocd_io__bi_a_22/PDRV0 gf180mcu_ocd_io__fill10_310x/one
-+ gf180mcu_ocd_io__bi_a_22/SL gf180mcu_ocd_io__fill10x_103/zero gf180mcu_ocd_io__bi_a_38/PDRV1
-+ gf180mcu_ocd_io__bi_a_23/PDRV1 gf180mcu_ocd_io__bi_a_20/Y gf180mcu_ocd_io__bi_a_26/CS
-+ gf180mcu_ocd_io__bi_a_9/IE gf180mcu_ocd_io__fill10x_154/zero gf180mcu_ocd_io__bi_a_15/PU
-+ gf180mcu_ocd_io__bi_a_17/CS gf180mcu_ocd_io__bi_a_31/CS gf180mcu_ocd_io__fill10x_307/zero
-+ gf180mcu_ocd_io__bi_a_3/IE gf180mcu_ocd_io__bi_a_39/OE gf180mcu_ocd_io__bi_a_2/A
-+ gf180mcu_ocd_io__bi_a_9/PD gf180mcu_ocd_io__bi_a_44/OE gf180mcu_ocd_io__bi_a_40/A
-+ gf180mcu_ocd_io__bi_a_13/PU gf180mcu_ocd_io__bi_a_17/IE gf180mcu_ocd_io__bi_a_23/CS
-+ gf180mcu_ocd_io__fill10x_25/zero gf180mcu_ocd_io__fill10x_102/one gf180mcu_ocd_io__bi_a_3/PD
-+ gf180mcu_ocd_io__fill10x_323/zero gf180mcu_ocd_io__bi_a_16/PU gf180mcu_ocd_io__bi_a_38/PDRV0
-+ gf180mcu_ocd_io__bi_a_18/CS gf180mcu_ocd_io__bi_a_23/PDRV0 gf180mcu_ocd_io__bi_a_36/OE
-+ gf180mcu_ocd_io__bi_a_11/SL gf180mcu_ocd_io__bi_a_17/PD gf180mcu_ocd_io__bi_a_0/OE
-+ gf180mcu_ocd_io__bi_a_41/OE gf180mcu_ocd_io__bi_a_39/PDRV1 gf180mcu_ocd_io__bi_a_24/PDRV1
-+ gf180mcu_ocd_io__bi_a_18/SL gf180mcu_ocd_io__bi_a_10/PU gf180mcu_ocd_io__in_c_0/PD
-+ gf180mcu_ocd_io__bi_a_28/OE gf180mcu_ocd_io__fill10x_247/one gf180mcu_ocd_io__bi_a_33/OE
-+ gf180mcu_ocd_io__bi_a_5/PU gf180mcu_ocd_io__bi_a_15/CS gf180mcu_ocd_io__fill10x_190/zero
-+ gf180mcu_ocd_io__fill10x_94/zero gf180mcu_ocd_io__bi_a_12/CS gf180mcu_ocd_io__bi_a_2/Y
-+ gf180mcu_ocd_io__in_s_0/PD gf180mcu_ocd_io__bi_a_25/OE gf180mcu_ocd_io__bi_a_14/A
-+ gf180mcu_ocd_io__bi_a_24/PDRV0 gf180mcu_ocd_io__bi_a_39/PDRV0 gf180mcu_ocd_io__bi_a_27/A
-+ gf180mcu_ocd_io__bi_a_39/PD gf180mcu_ocd_io__bi_a_30/OE gf180mcu_ocd_io__fill10x_389/zero
-+ gf180mcu_ocd_io__in_c_2/PU gf180mcu_ocd_io__bi_a_9/PU gf180mcu_ocd_io__bi_a_44/PD
-+ gf180mcu_ocd_io__bi_a_25/PDRV1 gf180mcu_ocd_io__bi_a_10/PDRV1 gf180mcu_ocd_io__bi_a_16/CS
-+ gf180mcu_ocd_io__fill10x_280/one gf180mcu_ocd_io__bi_a_22/OE gf180mcu_ocd_io__bi_a_18/OE
-+ gf180mcu_ocd_io__bi_a_34/A gf180mcu_ocd_io__bi_a_36/PD gf180mcu_ocd_io__bi_a_41/PD
-+ gf180mcu_ocd_io__bi_a_11/A gf180mcu_ocd_io__bi_a_2/PDRV1 gf180mcu_ocd_io__bi_a_5/CS
-+ gf180mcu_ocd_io__bi_a_25/PDRV0 gf180mcu_ocd_io__bi_a_28/PD gf180mcu_ocd_io__bi_a_10/PDRV0
-+ gf180mcu_ocd_io__fill10x_171/zero gf180mcu_ocd_io__bi_a_33/PD gf180mcu_ocd_io__bi_a_18/PDRV1
-+ gf180mcu_ocd_io__fill10x_266/zero gf180mcu_ocd_io__fill10x_36/one gf180mcu_ocd_io__bi_a_26/PDRV1
-+ gf180mcu_ocd_io__bi_a_29/A gf180mcu_ocd_io__bi_a_11/PDRV1 gf180mcu_ocd_io__bi_a_14/Y
-+ gf180mcu_ocd_io__bi_a_4/PDRV1 gf180mcu_ocd_io__bi_a_11/OE gf180mcu_ocd_io__bi_a_9/CS
-+ gf180mcu_ocd_io__bi_a_25/PD gf180mcu_ocd_io__bi_a_20/PDRV1 gf180mcu_ocd_io__bi_a_30/PD
-+ gf180mcu_ocd_io__fill10x_71/zero gf180mcu_ocd_io__fill10x_126/one gf180mcu_ocd_io__bi_a_26/PDRV0
-+ gf180mcu_ocd_io__fill10x_59/one gf180mcu_ocd_io__bi_a_11/PDRV0 gf180mcu_ocd_io__bi_a_4/PU
-+ gf180mcu_ocd_io__bi_a_22/PD gf180mcu_ocd_io__bi_a_8/SL gf180mcu_ocd_io__bi_a_27/PDRV1
-+ gf180mcu_ocd_io__bi_a_12/PDRV1 gf180mcu_ocd_io__bi_a_5/SL gf180mcu_ocd_io__fill10x_106/one
-+ gf180mcu_ocd_io__bi_a_6/PU gf180mcu_ocd_io__fill10x_271/zero gf180mcu_ocd_io__bi_a_43/A
-+ gf180mcu_ocd_io__bi_a_4/A gf180mcu_ocd_io__in_c_2/PD gf180mcu_ocd_io__bi_a_44/Y
-+ gf180mcu_ocd_io__bi_a_11/PD gf180mcu_ocd_io__bi_a_41/A gf180mcu_ocd_io__bi_a_27/PDRV0
-+ gf180mcu_ocd_io__bi_a_12/PDRV0 gf180mcu_ocd_io__bi_a_15/A gf180mcu_ocd_io__bi_a_28/PDRV1
-+ gf180mcu_ocd_io__bi_a_13/PDRV1 gf180mcu_ocd_io__bi_a_8/PU gf180mcu_ocd_io__bi_a_13/A
-+ gf180mcu_ocd_io__bi_a_4/CS gf180mcu_ocd_io__bi_a_38/IE gf180mcu_ocd_io__bi_a_8/OE
-+ gf180mcu_ocd_io__bi_a_43/IE gf180mcu_ocd_io__bi_a_20/SL gf180mcu_ocd_io__bi_a_5/OE
-+ gf180mcu_ocd_io__fill10x_58/zero gf180mcu_ocd_io__fill10x_336/one gf180mcu_ocd_io__bi_a_7/PU
-+ gf180mcu_ocd_io__bi_a_35/IE gf180mcu_ocd_io__bi_a_6/CS gf180mcu_ocd_io__bi_a_5/IE
-+ gf180mcu_ocd_io__bi_a_28/PDRV0 gf180mcu_ocd_io__bi_a_13/PDRV0 gf180mcu_ocd_io__bi_a_40/IE
-+ gf180mcu_ocd_io__fill10x_258/zero gf180mcu_ocd_io__fill10x_177/zero gf180mcu_ocd_io__bi_a_4/Y
-+ gf180mcu_ocd_io__bi_a_29/PDRV1 gf180mcu_ocd_io__bi_a_7/IE gf180mcu_ocd_io__bi_a_27/IE
-+ gf180mcu_ocd_io__fill10x_401/zero gf180mcu_ocd_io__bi_a_15/Y gf180mcu_ocd_io__bi_a_5/PD
-+ gf180mcu_ocd_io__bi_a_32/IE gf180mcu_ocd_io__bi_a_14/IE gf180mcu_ocd_io__bi_a_3/PU
-+ gf180mcu_ocd_io__fill10x_355/one gf180mcu_ocd_io__bi_a_7/PD gf180mcu_ocd_io__bi_a_8/CS
-+ gf180mcu_ocd_io__bi_a_20/OE gf180mcu_ocd_io__bi_a_14/PD gf180mcu_ocd_io__bi_a_24/IE
-+ gf180mcu_ocd_io__fill10x_331/one gf180mcu_ocd_io__bi_a_29/PDRV0 gf180mcu_ocd_io__bi_a_2/PU
-+ gf180mcu_ocd_io__bi_a_2/SL gf180mcu_ocd_io__bi_a_7/CS gf180mcu_ocd_io__bi_a_45/A
-+ gf180mcu_ocd_io__bi_a_45/PU gf180mcu_ocd_io__fill10x_345/zero gf180mcu_ocd_io__fill10x_0/one
-+ gf180mcu_ocd_io__bi_a_38/SL gf180mcu_ocd_io__bi_a_13/IE gf180mcu_ocd_io__bi_a_1/PU
-+ gf180mcu_ocd_io__bi_a_43/SL gf180mcu_ocd_io__bi_a_3/CS gf180mcu_ocd_io__bi_a_7/A
-+ gf180mcu_ocd_io__bi_a_37/PU gf180mcu_ocd_io__bi_a_39/A gf180mcu_ocd_io__bi_a_42/PU
-+ gf180mcu_ocd_io__bi_a_9/A gf180mcu_ocd_io__bi_a_35/SL gf180mcu_ocd_io__fill10x_266/one
-+ gf180mcu_ocd_io__bi_a_29/PU gf180mcu_ocd_io__bi_a_9/PDRV1 gf180mcu_ocd_io__bi_a_39/CS
-+ gf180mcu_ocd_io__bi_a_40/SL gf180mcu_ocd_io__bi_a_32/Y gf180mcu_ocd_io__bi_a_0/PU
-+ gf180mcu_ocd_io__bi_a_34/PU gf180mcu_ocd_io__bi_a_2/OE gf180mcu_ocd_io__bi_a_2/CS
-+ gf180mcu_ocd_io__fill10x_197/zero gf180mcu_ocd_io__bi_a_44/CS gf180mcu_ocd_io__fill10x_318/zero
-+ gf180mcu_ocd_io__bi_a_14/SL gf180mcu_ocd_io__bi_a_22/A gf180mcu_ocd_io__bi_a_3/PDRV1
-+ gf180mcu_ocd_io__fill10x_121/zero gf180mcu_ocd_io__bi_a_27/SL VDD gf180mcu_ocd_io__bi_a_32/SL
-+ gf180mcu_ocd_io__bi_a_17/PDRV1 gf180mcu_ocd_io__bi_a_26/PU gf180mcu_ocd_io__bi_a_36/CS
-+ gf180mcu_ocd_io__fill10x_294/zero gf180mcu_ocd_io__bi_a_20/PDRV0 gf180mcu_ocd_io__bi_a_31/PU
-+ gf180mcu_ocd_io__bi_a_10/IE gf180mcu_ocd_io__bi_a_41/CS gf180mcu_ocd_io__fill10x_300/one
-+ gf180mcu_ocd_io__bi_a_1/CS gf180mcu_ocd_io__bi_a_24/SL gf180mcu_ocd_io__fill10x_13/zero
-+ gf180mcu_ocd_io__bi_a_7/Y gf180mcu_ocd_io__bi_a_28/CS gf180mcu_ocd_io__bi_a_21/A
-+ gf180mcu_ocd_io__fill10x_78/zero gf180mcu_ocd_io__bi_a_23/PU gf180mcu_ocd_io__bi_a_9/Y
-+ gf180mcu_ocd_io__bi_a_33/CS gf180mcu_ocd_io__bi_a_21/PDRV0 gf180mcu_ocd_io__bi_a_0/CS
-+ gf180mcu_ocd_io__bi_a_25/CS gf180mcu_ocd_io__bi_a_14/OE gf180mcu_ocd_io__bi_a_30/CS
-+ gf180mcu_ocd_io__fill10x_400/one gf180mcu_ocd_io__bi_a_38/OE gf180mcu_ocd_io__bi_a_13/SL
-+ gf180mcu_ocd_io__bi_a_19/PDRV0 gf180mcu_ocd_io__bi_a_43/OE gf180mcu_ocd_io__bi_a_12/PU
-+ gf180mcu_ocd_io__bi_a_22/CS gf180mcu_ocd_io__fill10x_361/zero gf180mcu_ocd_io__bi_a_35/OE
-+ gf180mcu_ocd_io__fill10x_138/one gf180mcu_ocd_io__bi_a_10/SL gf180mcu_ocd_io__bi_a_40/OE
-+ gf180mcu_ocd_io__fill10x_22/one gf180mcu_ocd_io__bi_a_14/PDRV0 gf180mcu_ocd_io__bi_a_34/Y
-+ gf180mcu_ocd_io__bi_a_1/A gf180mcu_ocd_io__bi_a_27/OE gf180mcu_ocd_io__bi_a_24/A
-+ gf180mcu_ocd_io__bi_a_26/A gf180mcu_ocd_io__bi_a_32/OE gf180mcu_ocd_io__bi_a_11/CS
-+ gf180mcu_ocd_io__fill10x_113/one gf180mcu_ocd_io__bi_a_0/IE gf180mcu_ocd_io__bi_a_4/SL
-+ gf180mcu_ocd_io__bi_a_17/PDRV0 gf180mcu_ocd_io__fill10x_106/zero gf180mcu_ocd_io__bi_a_24/OE
+.subckt chip_half_frame DVDD bidir_PAD[42] bidir_PAD[41] bidir_PAD[29] bidir_PAD[26]
++ bidir_PAD[25] bidir_PAD[23] bidir_PAD[11] bidir_PAD[10] clk_PAD bidir_CS[45] bidir_CS[44]
++ bidir_CS[43] bidir_CS[42] bidir_CS[41] bidir_CS[40] bidir_CS[39] bidir_CS[38] bidir_CS[37]
++ bidir_CS[36] bidir_CS[35] bidir_CS[34] bidir_CS[33] bidir_CS[32] bidir_CS[31] bidir_CS[30]
++ bidir_CS[29] bidir_CS[28] bidir_CS[27] bidir_CS[26] bidir_CS[25] bidir_CS[24] bidir_CS[23]
++ bidir_CS[22] bidir_CS[21] bidir_CS[20] bidir_CS[19] bidir_CS[18] bidir_CS[17] bidir_CS[16]
++ bidir_CS[15] bidir_CS[14] bidir_CS[13] bidir_CS[12] bidir_CS[11] bidir_CS[10] bidir_CS[9]
++ bidir_CS[8] bidir_CS[7] bidir_CS[6] bidir_CS[5] bidir_CS[4] bidir_CS[3] bidir_CS[2]
++ bidir_CS[1] bidir_CS[0] bidir_PU[45] bidir_PU[44] bidir_PU[43] bidir_PU[42] bidir_PU[41]
++ bidir_PU[40] bidir_PU[39] bidir_PU[38] bidir_PU[37] bidir_PU[36] bidir_PU[35] bidir_PU[34]
++ bidir_PU[33] bidir_PU[32] bidir_PU[31] bidir_PU[30] bidir_PU[29] bidir_PU[28] bidir_PU[27]
++ bidir_PU[26] bidir_PU[25] bidir_PU[24] bidir_PU[23] bidir_PU[22] bidir_PU[21] bidir_PU[20]
++ bidir_PU[19] bidir_PU[18] bidir_PU[17] bidir_PU[16] bidir_PU[15] bidir_PU[14] bidir_PU[13]
++ bidir_PU[12] bidir_PU[11] bidir_PU[10] bidir_PU[9] bidir_PU[8] bidir_PU[7] bidir_PU[6]
++ bidir_PU[5] bidir_PU[4] bidir_PU[3] bidir_PU[2] bidir_PU[1] bidir_PU[0] bidir_PDRV0[45]
++ bidir_PDRV0[44] bidir_PDRV0[43] bidir_PDRV0[42] bidir_PDRV0[41] bidir_PDRV0[40]
++ bidir_PDRV0[39] bidir_PDRV0[38] bidir_PDRV0[37] bidir_PDRV0[36] bidir_PDRV0[35]
++ bidir_PDRV0[34] bidir_PDRV0[33] bidir_PDRV0[32] bidir_PDRV0[31] bidir_PDRV0[30]
++ bidir_PDRV0[29] bidir_PDRV0[28] bidir_PDRV0[27] bidir_PDRV0[26] bidir_PDRV0[25]
++ bidir_PDRV0[24] bidir_PDRV0[23] bidir_PDRV0[22] bidir_PDRV0[21] bidir_PDRV0[20]
++ bidir_PDRV0[19] bidir_PDRV0[18] bidir_PDRV0[17] bidir_PDRV0[16] bidir_PDRV0[15]
++ bidir_PDRV0[14] bidir_PDRV0[13] bidir_PDRV0[12] bidir_PDRV0[11] bidir_PDRV0[10]
++ bidir_PDRV0[9] bidir_PDRV0[8] bidir_PDRV0[7] bidir_PDRV0[6] bidir_PDRV0[5] bidir_PDRV0[4]
++ bidir_PDRV0[3] bidir_PDRV0[2] bidir_PDRV0[1] bidir_PDRV0[0] bidir_PDRV1[45] bidir_PDRV1[44]
++ bidir_PDRV1[43] bidir_PDRV1[42] bidir_PDRV1[41] bidir_PDRV1[40] bidir_PDRV1[39]
++ bidir_PDRV1[38] bidir_PDRV1[37] bidir_PDRV1[36] bidir_PDRV1[35] bidir_PDRV1[34]
++ bidir_PDRV1[33] bidir_PDRV1[32] bidir_PDRV1[31] bidir_PDRV1[30] bidir_PDRV1[29]
++ bidir_PDRV1[28] bidir_PDRV1[27] bidir_PDRV1[26] bidir_PDRV1[25] bidir_PDRV1[24]
++ bidir_PDRV1[23] bidir_PDRV1[22] bidir_PDRV1[21] bidir_PDRV1[20] bidir_PDRV1[19]
++ bidir_PDRV1[18] bidir_PDRV1[17] bidir_PDRV1[16] bidir_PDRV1[15] bidir_PDRV1[14]
++ bidir_PDRV1[13] bidir_PDRV1[12] bidir_PDRV1[11] bidir_PDRV1[10] bidir_PDRV1[9] bidir_PDRV1[8]
++ bidir_PDRV1[7] bidir_PDRV1[6] bidir_PDRV1[5] bidir_PDRV1[4] bidir_PDRV1[3] bidir_PDRV1[2]
++ bidir_PDRV1[1] bidir_PDRV1[0] bidir_ANA[45] bidir_ANA[44] bidir_ANA[43] bidir_ANA[42]
++ bidir_ANA[41] bidir_ANA[40] bidir_ANA[39] bidir_ANA[38] bidir_ANA[37] bidir_ANA[36]
++ bidir_ANA[35] bidir_ANA[34] bidir_ANA[33] bidir_ANA[32] bidir_ANA[31] bidir_ANA[30]
++ bidir_ANA[29] bidir_ANA[28] bidir_ANA[27] bidir_ANA[26] bidir_ANA[25] bidir_ANA[24]
++ bidir_ANA[23] bidir_ANA[22] bidir_ANA[21] bidir_ANA[20] bidir_ANA[19] bidir_ANA[18]
++ bidir_ANA[17] bidir_ANA[16] bidir_ANA[15] bidir_ANA[14] bidir_ANA[13] bidir_ANA[12]
++ bidir_ANA[11] bidir_ANA[10] bidir_ANA[9] bidir_ANA[8] bidir_ANA[7] bidir_ANA[6]
++ bidir_ANA[5] bidir_ANA[4] bidir_ANA[3] bidir_ANA[2] bidir_ANA[1] bidir_ANA[0] bidir_PD[45]
++ bidir_PD[44] bidir_PD[43] bidir_PD[42] bidir_PD[41] bidir_PD[40] bidir_PD[39] bidir_PD[38]
++ bidir_PD[37] bidir_PD[36] bidir_PD[35] bidir_PD[34] bidir_PD[33] bidir_PD[32] bidir_PD[31]
++ bidir_PD[30] bidir_PD[29] bidir_PD[28] bidir_PD[27] bidir_PD[26] bidir_PD[25] bidir_PD[24]
++ bidir_PD[23] bidir_PD[22] bidir_PD[21] bidir_PD[20] bidir_PD[19] bidir_PD[18] bidir_PD[17]
++ bidir_PD[16] bidir_PD[15] bidir_PD[14] bidir_PD[13] bidir_PD[12] bidir_PD[11] bidir_PD[10]
++ bidir_PD[9] bidir_PD[8] bidir_PD[7] bidir_PD[6] bidir_PD[5] bidir_PD[4] bidir_PD[3]
++ bidir_PD[2] bidir_PD[1] bidir_PD[0] bidir_IE[45] bidir_IE[44] bidir_IE[43] bidir_IE[42]
++ bidir_IE[41] bidir_IE[40] bidir_IE[39] bidir_IE[38] bidir_IE[37] bidir_IE[36] bidir_IE[35]
++ bidir_IE[34] bidir_IE[33] bidir_IE[32] bidir_IE[31] bidir_IE[30] bidir_IE[29] bidir_IE[28]
++ bidir_IE[27] bidir_IE[26] bidir_IE[25] bidir_IE[24] bidir_IE[23] bidir_IE[22] bidir_IE[21]
++ bidir_IE[20] bidir_IE[18] bidir_IE[17] bidir_IE[16] bidir_IE[15] bidir_IE[14] bidir_IE[13]
++ bidir_IE[12] bidir_IE[11] bidir_IE[10] bidir_IE[9] bidir_IE[8] bidir_IE[7] bidir_IE[6]
++ bidir_IE[5] bidir_IE[4] bidir_IE[3] bidir_IE[2] bidir_IE[1] bidir_IE[0] bidir_SL[45]
++ bidir_SL[44] bidir_SL[43] bidir_SL[42] bidir_SL[41] bidir_SL[40] bidir_SL[39] bidir_SL[38]
++ bidir_SL[37] bidir_SL[36] bidir_SL[35] bidir_SL[34] bidir_SL[33] bidir_SL[32] bidir_SL[31]
++ bidir_SL[30] bidir_SL[29] bidir_SL[28] bidir_SL[27] bidir_SL[26] bidir_SL[25] bidir_SL[24]
++ bidir_SL[23] bidir_SL[22] bidir_SL[21] bidir_SL[20] bidir_SL[19] bidir_SL[18] bidir_SL[17]
++ bidir_SL[16] bidir_SL[15] bidir_SL[14] bidir_SL[13] bidir_SL[12] bidir_SL[11] bidir_SL[10]
++ bidir_SL[9] bidir_SL[8] bidir_SL[7] bidir_SL[6] bidir_SL[5] bidir_SL[4] bidir_SL[3]
++ bidir_SL[2] bidir_SL[1] bidir_SL[0] bidir_A[45] bidir_A[44] bidir_A[43] bidir_A[42]
++ bidir_A[41] bidir_A[40] bidir_A[39] bidir_A[38] bidir_A[37] bidir_A[36] bidir_A[35]
++ bidir_A[34] bidir_A[33] bidir_A[32] bidir_A[31] bidir_A[30] bidir_A[29] bidir_A[28]
++ bidir_A[27] bidir_A[26] bidir_A[25] bidir_A[23] bidir_A[22] bidir_A[21] bidir_A[20]
++ bidir_A[19] bidir_A[18] bidir_A[17] bidir_A[16] bidir_A[15] bidir_A[14] bidir_A[13]
++ bidir_A[12] bidir_A[11] bidir_A[10] bidir_A[9] bidir_A[8] bidir_A[7] bidir_A[6]
++ bidir_A[5] bidir_A[4] bidir_A[3] bidir_A[2] bidir_A[1] bidir_A[0] bidir_OE[45] bidir_OE[44]
++ bidir_OE[43] bidir_OE[42] bidir_OE[41] bidir_OE[40] bidir_OE[39] bidir_OE[38] bidir_OE[37]
++ bidir_OE[36] bidir_OE[35] bidir_OE[34] bidir_OE[33] bidir_OE[32] bidir_OE[31] bidir_OE[30]
++ bidir_OE[29] bidir_OE[28] bidir_OE[27] bidir_OE[26] bidir_OE[25] bidir_OE[24] bidir_OE[23]
++ bidir_OE[22] bidir_OE[21] bidir_OE[20] bidir_OE[19] bidir_OE[18] bidir_OE[17] bidir_OE[16]
++ bidir_OE[15] bidir_OE[14] bidir_OE[13] bidir_OE[12] bidir_OE[11] bidir_OE[10] bidir_OE[9]
++ bidir_OE[8] bidir_OE[7] bidir_OE[6] bidir_OE[5] bidir_OE[4] bidir_OE[3] bidir_OE[2]
++ bidir_OE[1] bidir_OE[0] bidir_Y[45] bidir_Y[44] bidir_Y[43] bidir_Y[42] bidir_Y[41]
++ bidir_Y[40] bidir_Y[39] bidir_Y[38] bidir_Y[37] bidir_Y[36] bidir_Y[35] bidir_Y[34]
++ bidir_Y[33] bidir_Y[32] bidir_Y[31] bidir_Y[30] bidir_Y[29] bidir_Y[28] bidir_Y[27]
++ bidir_Y[26] bidir_Y[25] bidir_Y[24] bidir_Y[23] bidir_Y[22] bidir_Y[21] bidir_Y[20]
++ bidir_Y[19] bidir_Y[18] bidir_Y[17] bidir_Y[16] bidir_Y[15] bidir_Y[14] bidir_Y[13]
++ bidir_Y[12] bidir_Y[11] bidir_Y[10] bidir_Y[9] bidir_Y[8] bidir_Y[7] bidir_Y[6]
++ bidir_Y[5] bidir_Y[4] bidir_Y[3] bidir_Y[2] bidir_Y[1] bidir_Y[0] loopback_one[51]
++ loopback_one[50] loopback_one[49] loopback_one[48] loopback_one[47] loopback_one[46]
++ loopback_one[42] loopback_one[39] loopback_one[38] loopback_one[37] loopback_one[36]
++ loopback_one[34] loopback_one[33] loopback_one[32] loopback_one[30] loopback_one[28]
++ loopback_one[27] loopback_one[25] loopback_one[21] loopback_one[19] loopback_one[18]
++ loopback_one[17] loopback_one[16] loopback_one[15] loopback_one[12] loopback_one[11]
++ loopback_one[10] loopback_one[9] loopback_one[8] loopback_one[5] loopback_one[4]
++ loopback_one[0] loopback_zero[49] loopback_zero[48] loopback_zero[47] loopback_zero[46]
++ loopback_zero[45] loopback_zero[44] loopback_zero[43] loopback_zero[41] loopback_zero[40]
++ loopback_zero[37] loopback_zero[34] loopback_zero[29] loopback_zero[28] loopback_zero[27]
++ loopback_zero[26] loopback_zero[25] loopback_zero[24] loopback_zero[23] loopback_zero[21]
++ loopback_zero[20] loopback_zero[19] loopback_zero[17] loopback_zero[13] loopback_zero[9]
++ loopback_zero[6] input_PU[3] input_PU[1] input_PU[0] input_PD[1] input_PD[0] input_Y[3]
++ input_Y[2] input_Y[1] input_Y[0] clk_PU clk_PD rst_n_PU rst_n_PD rst_n_Y loopback_zero[10]
++ clk_Y loopback_zero[31] bidir_PAD[15] loopback_zero[3] loopback_zero[14] loopback_one[29]
++ loopback_one[22] bidir_PAD[12] input_PAD[0] bidir_PAD[18] bidir_PAD[0] bidir_PAD[30]
++ bidir_PAD[36] loopback_one[43] loopback_zero[0] analog_PAD[1] loopback_zero[11]
++ input_PAD[3] bidir_PAD[33] loopback_zero[35] loopback_zero[7] loopback_one[1] bidir_PAD[5]
++ input_PAD[1] input_PD[3] bidir_PAD[4] loopback_zero[32] loopback_one[23] analog_PAD[0]
++ bidir_PAD[6] loopback_zero[4] bidir_PAD[22] loopback_zero[50] bidir_PAD[14] loopback_zero[38]
++ loopback_zero[15] loopback_one[44] input_PU[2] bidir_PAD[19] loopback_one[40] bidir_PAD[1]
++ bidir_PAD[40] bidir_A[24] bidir_PAD[8] loopback_zero[1] loopback_zero[12] bidir_PAD[43]
++ loopback_one[6] loopback_one[13] loopback_one[2] loopback_zero[36] input_PD[2] bidir_PAD[31]
++ bidir_PAD[20] loopback_zero[8] loopback_one[35] loopback_zero[42] loopback_zero[51]
++ loopback_one[31] bidir_PAD[2] bidir_PAD[37] bidir_PAD[32] bidir_PAD[13] loopback_one[24]
++ loopback_zero[33] loopback_one[20] rst_n_PAD loopback_one[45] bidir_PAD[34] loopback_zero[22]
++ bidir_PAD[3] loopback_zero[5] bidir_PAD[7] bidir_PAD[44] bidir_PAD[17] bidir_PAD[24]
++ loopback_zero[39] bidir_PAD[27] bidir_PAD[9] bidir_IE[19] loopback_one[41] loopback_zero[16]
++ loopback_zero[18] bidir_PAD[28] bidir_PAD[39] loopback_one[26] analog_PAD[3] VDD
++ loopback_zero[30] loopback_one[7] analog_PAD[2] input_PAD[2] loopback_one[14] bidir_PAD[21]
++ bidir_PAD[45] bidir_PAD[35] bidir_PAD[16] loopback_one[3] bidir_PAD[38] loopback_zero[2]
 + VSS
 Xgf180mcu_ocd_io__fill10_219 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_208 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_2 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__in_c_3 DVDD gf180mcu_ocd_io__in_c_3/PD gf180mcu_ocd_io__in_c_3/PU
-+ VDD gf180mcu_ocd_io__in_c_3/Y input_PAD[1] VSS VSS gf180mcu_ocd_io__in_c
+Xgf180mcu_ocd_io__in_c_3 DVDD input_PD[1] input_PU[1] VDD input_Y[1] input_PAD[1]
++ VSS VSS gf180mcu_ocd_io__in_c
 Xgf180mcu_ocd_io__fill10_391 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_380 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_19 gf180mcu_ocd_io__bi_a_19/A gf180mcu_ocd_io__bi_a_19/ANA
-+ gf180mcu_ocd_io__bi_a_19/CS DVDD gf180mcu_ocd_io__bi_a_19/IE gf180mcu_ocd_io__bi_a_19/OE
-+ gf180mcu_ocd_io__bi_a_19/PD gf180mcu_ocd_io__bi_a_19/PDRV0 gf180mcu_ocd_io__bi_a_19/PDRV1
-+ gf180mcu_ocd_io__bi_a_19/PU gf180mcu_ocd_io__bi_a_19/SL VDD gf180mcu_ocd_io__bi_a_19/Y
+Xgf180mcu_ocd_io__bi_a_19 bidir_A[2] bidir_ANA[2] bidir_CS[2] DVDD bidir_IE[2] bidir_OE[2]
++ bidir_PD[2] bidir_PDRV0[2] bidir_PDRV1[2] bidir_PU[2] bidir_SL[2] VDD bidir_Y[2]
 + bidir_PAD[2] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_209 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_3 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__in_c_4 DVDD gf180mcu_ocd_io__in_c_4/PD gf180mcu_ocd_io__in_c_4/PU
-+ VDD gf180mcu_ocd_io__in_c_4/Y input_PAD[0] VSS VSS gf180mcu_ocd_io__in_c
+Xgf180mcu_ocd_io__in_c_4 DVDD input_PD[0] input_PU[0] VDD input_Y[0] input_PAD[0]
++ VSS VSS gf180mcu_ocd_io__in_c
 Xgf180mcu_ocd_io__fill10_381 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_392 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_370 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_4 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_393 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_360 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_382 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_371 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_247 VDD gf180mcu_ocd_io__fill10x_247/one gf180mcu_ocd_io__fill10x_247/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_258 VDD gf180mcu_ocd_io__fill10x_258/one gf180mcu_ocd_io__fill10x_258/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10_382 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10x_247 VDD loopback_one[44] loopback_zero[44] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_258 VDD loopback_one[42] loopback_zero[42] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill5_5 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_383 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_394 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_372 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_180 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_191 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_204 VDD gf180mcu_ocd_io__fill10x_204/one gf180mcu_ocd_io__fill10x_204/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_204 VDD loopback_one[46] loopback_zero[46] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill5_6 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_384 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_362 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29529,8 +29451,8 @@ Xgf180mcu_ocd_io__dvss_1 DVDD VSS VDD VSS gf180mcu_ocd_io__dvss
 Xgf180mcu_ocd_io__fill10_170 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_181 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_192 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_205 VDD gf180mcu_ocd_io__fill10x_205/one gf180mcu_ocd_io__fill10x_205/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_205 VDD loopback_one[48] loopback_zero[48] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill5_7 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_385 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_396 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29573,8 +29495,7 @@ Xgf180mcu_ocd_io__fill10_151 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_184 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_195 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__asig_5p0_1 DVDD VSS VDD analog_PAD[2] VSS gf180mcu_ocd_io__asig_5p0
-Xgf180mcu_ocd_io__in_s_0 DVDD gf180mcu_ocd_io__in_s_0/PD gf180mcu_ocd_io__in_s_0/PU
-+ VDD gf180mcu_ocd_io__in_s_0/Y clk_PAD VSS VSS gf180mcu_ocd_io__in_s
+Xgf180mcu_ocd_io__in_s_0 DVDD clk_PD clk_PU VDD clk_Y clk_PAD VSS VSS gf180mcu_ocd_io__in_s
 Xgf180mcu_ocd_io__vss_0 DVDD VDD VSS VSS gf180mcu_ocd_io__vss
 Xgf180mcu_ocd_io__fill10_388 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_399 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29599,8 +29520,8 @@ Xgf180mcu_ocd_io__fill10_356 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_334 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_301 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_378 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_310x VDD gf180mcu_ocd_io__fill10_310x/one gf180mcu_ocd_io__fill10_310x/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10_310x VDD loopback_one[23] loopback_zero[23] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_312 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_120 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_153 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29611,8 +29532,8 @@ Xgf180mcu_ocd_io__fill10_142 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_186 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__asig_5p0_3 DVDD VSS VDD analog_PAD[1] VSS gf180mcu_ocd_io__asig_5p0
 Xgf180mcu_ocd_io__cor_1 VDD DVDD VSS gf180mcu_ocd_io__cor
-Xgf180mcu_ocd_io__fill10x_190 VDD gf180mcu_ocd_io__fill10x_190/one gf180mcu_ocd_io__fill10x_190/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_190 VDD loopback_one[49] loopback_zero[49] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_368 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_346 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_357 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29632,10 +29553,10 @@ Xgf180mcu_ocd_io__fill10_187 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__vdd_0 DVDD VSS VDD VSS gf180mcu_ocd_io__vdd
 Xgf180mcu_ocd_io__cor_2 VDD DVDD VSS gf180mcu_ocd_io__cor
 Xgf180mcu_ocd_io__dvdd_5 VSS VDD VSS DVDD gf180mcu_ocd_io__dvdd
-Xgf180mcu_ocd_io__fill10x_361 VDD gf180mcu_ocd_io__fill10x_361/one gf180mcu_ocd_io__fill10x_361/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_350 VDD gf180mcu_ocd_io__fill10x_350/one gf180mcu_ocd_io__fill10x_350/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_361 VDD loopback_one[30] loopback_zero[30] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_350 VDD loopback_one[32] loopback_zero[32] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__vss_3 DVDD VDD VSS VSS gf180mcu_ocd_io__vss
 Xgf180mcu_ocd_io__fill10_369 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_358 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29654,8 +29575,8 @@ Xgf180mcu_ocd_io__fill10_188 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_100 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__cor_3 VDD DVDD VSS gf180mcu_ocd_io__cor
 Xgf180mcu_ocd_io__dvdd_6 VSS VDD VSS DVDD gf180mcu_ocd_io__dvdd
-Xgf180mcu_ocd_io__fill10x_395 VDD gf180mcu_ocd_io__fill10x_395/one gf180mcu_ocd_io__fill10x_395/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_395 VDD loopback_one[28] loopback_zero[28] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__vss_4 DVDD VDD VSS VSS gf180mcu_ocd_io__vss
 Xgf180mcu_ocd_io__fill10_359 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_348 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29673,10 +29594,9 @@ Xgf180mcu_ocd_io__fill10_134 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_145 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_189 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__vdd_2 DVDD VSS VDD VSS gf180mcu_ocd_io__vdd
-Xgf180mcu_ocd_io__fill10x_341 VDD gf180mcu_ocd_io__fill10x_341/one gf180mcu_ocd_io__fill10x_341/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_171 VDD gf180mcu_ocd_io__fill10x_171/one gf180mcu_ocd_io__fill10x_171/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_341 VDD loopback_one[34] loopback_zero[34] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_171 VDD loopback_one[1] loopback_zero[1] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_349 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_338 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_305 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29688,8 +29608,8 @@ Xgf180mcu_ocd_io__fill10_135 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_124 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_146 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_179 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_331 VDD gf180mcu_ocd_io__fill10x_331/one gf180mcu_ocd_io__fill10x_331/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_331 VDD loopback_one[24] loopback_zero[24] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__vss_6 DVDD VDD VSS VSS gf180mcu_ocd_io__vss
 Xgf180mcu_ocd_io__fill10_306 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_339 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29709,56 +29629,54 @@ Xgf180mcu_ocd_io__fill10_115 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_159 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_137 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_148 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_355 VDD gf180mcu_ocd_io__fill10x_355/one gf180mcu_ocd_io__fill10x_355/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_300 VDD gf180mcu_ocd_io__fill10x_300/one gf180mcu_ocd_io__fill10x_300/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_355 VDD loopback_one[31] loopback_zero[31] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_300 VDD loopback_one[41] loopback_zero[41] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_91 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_80 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_163 VDD gf180mcu_ocd_io__fill10x_163/one gf180mcu_ocd_io__fill10x_163/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10_319 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10x_163 VDD loopback_one[0] loopback_zero[0] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_308 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10_319 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_116 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_105 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_127 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_149 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_345 VDD gf180mcu_ocd_io__fill10x_345/one gf180mcu_ocd_io__fill10x_345/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_323 VDD gf180mcu_ocd_io__fill10x_323/one gf180mcu_ocd_io__fill10x_323/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_345 VDD loopback_one[33] loopback_zero[33] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_323 VDD loopback_one[25] loopback_zero[25] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_92 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_70 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_81 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_389 VDD gf180mcu_ocd_io__fill10x_389/one gf180mcu_ocd_io__fill10x_389/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_197 VDD gf180mcu_ocd_io__fill10x_197/one gf180mcu_ocd_io__fill10x_197/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_389 VDD loopback_one[29] loopback_zero[29] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_197 VDD loopback_one[47] loopback_zero[47] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_309 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_117 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_139 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_128 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10_139 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__vdd_7 DVDD VSS VDD VSS gf180mcu_ocd_io__vdd
 Xgf180mcu_ocd_io__fill10_60 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_82 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_154 VDD gf180mcu_ocd_io__fill10x_154/one gf180mcu_ocd_io__fill10x_154/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_121 VDD gf180mcu_ocd_io__fill10x_121/one gf180mcu_ocd_io__fill10x_121/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_154 VDD loopback_one[50] loopback_zero[50] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_121 VDD loopback_one[5] loopback_zero[5] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_0 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_118 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_107 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_129 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_290 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_336 VDD gf180mcu_ocd_io__fill10x_336/one gf180mcu_ocd_io__fill10x_336/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_336 VDD loopback_one[35] loopback_zero[35] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_50 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_72 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_61 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_83 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_20 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__fill10x_177 VDD gf180mcu_ocd_io__fill10x_177/one gf180mcu_ocd_io__fill10x_177/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_177 VDD loopback_one[51] loopback_zero[51] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_1 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_119 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_108 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29784,34 +29702,30 @@ Xgf180mcu_ocd_io__fill10_30 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_85 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_96 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_11 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__fill10x_113 VDD gf180mcu_ocd_io__fill10x_113/one gf180mcu_ocd_io__fill10x_113/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_102 VDD gf180mcu_ocd_io__fill10x_102/one gf180mcu_ocd_io__fill10x_102/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_113 VDD loopback_one[3] loopback_zero[3] DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_102 VDD loopback_one[19] loopback_zero[19] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_3 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_293 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_282 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_260 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_53 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_42 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10x_71 VDD loopback_one[12] loopback_zero[12] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_64 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_71 VDD gf180mcu_ocd_io__fill10x_71/one gf180mcu_ocd_io__fill10x_71/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_75 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_20 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_31 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_86 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_97 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_103 VDD gf180mcu_ocd_io__fill10x_103/one gf180mcu_ocd_io__fill10x_103/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_103 VDD loopback_one[4] loopback_zero[4] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill5_12 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_4 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_272 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_283 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_261 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_250 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_94 VDD gf180mcu_ocd_io__fill10x_94/one gf180mcu_ocd_io__fill10x_94/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_94 VDD loopback_one[21] loopback_zero[21] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_43 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_21 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_32 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29819,12 +29733,11 @@ Xgf180mcu_ocd_io__fill10_10 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_76 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_87 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_98 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_307 VDD gf180mcu_ocd_io__fill10x_307/one gf180mcu_ocd_io__fill10x_307/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_318 VDD gf180mcu_ocd_io__fill10x_318/one gf180mcu_ocd_io__fill10x_318/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_126 VDD gf180mcu_ocd_io__fill10x_126/one gf180mcu_ocd_io__fill10x_126/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_307 VDD loopback_one[38] loopback_zero[38] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_318 VDD loopback_one[22] loopback_zero[22] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_126 VDD loopback_one[6] loopback_zero[6] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill5_13 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_5 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_410 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29842,15 +29755,12 @@ Xgf180mcu_ocd_io__fill10_33 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_11 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_77 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_99 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_138 VDD gf180mcu_ocd_io__fill10x_138/one gf180mcu_ocd_io__fill10x_138/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_138 VDD loopback_one[7] loopback_zero[7] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill5_14 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_6 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_40 gf180mcu_ocd_io__bi_a_40/A gf180mcu_ocd_io__bi_a_40/ANA
-+ gf180mcu_ocd_io__bi_a_40/CS DVDD gf180mcu_ocd_io__bi_a_40/IE gf180mcu_ocd_io__bi_a_40/OE
-+ gf180mcu_ocd_io__bi_a_40/PD gf180mcu_ocd_io__bi_a_40/PDRV0 gf180mcu_ocd_io__bi_a_40/PDRV1
-+ gf180mcu_ocd_io__bi_a_40/PU gf180mcu_ocd_io__bi_a_40/SL VDD gf180mcu_ocd_io__bi_a_40/Y
-+ bidir_PAD[35] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_40 bidir_A[35] bidir_ANA[35] bidir_CS[35] DVDD bidir_IE[35]
++ bidir_OE[35] bidir_PD[35] bidir_PDRV0[35] bidir_PDRV1[35] bidir_PU[35] bidir_SL[35]
++ VDD bidir_Y[35] bidir_PAD[35] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_411 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_274 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_263 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29867,31 +29777,25 @@ Xgf180mcu_ocd_io__fill10_23 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_34 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_12 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_15 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__fill10x_106 VDD gf180mcu_ocd_io__fill10x_106/one gf180mcu_ocd_io__fill10x_106/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_106 VDD loopback_one[2] loopback_zero[2] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_7 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_0 gf180mcu_ocd_io__bi_a_0/A gf180mcu_ocd_io__bi_a_0/ANA gf180mcu_ocd_io__bi_a_0/CS
-+ DVDD gf180mcu_ocd_io__bi_a_0/IE gf180mcu_ocd_io__bi_a_0/OE gf180mcu_ocd_io__bi_a_0/PD
-+ gf180mcu_ocd_io__bi_a_0/PDRV0 gf180mcu_ocd_io__bi_a_0/PDRV1 gf180mcu_ocd_io__bi_a_0/PU
-+ gf180mcu_ocd_io__bi_a_0/SL VDD gf180mcu_ocd_io__bi_a_0/Y bidir_PAD[17] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_41 gf180mcu_ocd_io__bi_a_41/A gf180mcu_ocd_io__bi_a_41/ANA
-+ gf180mcu_ocd_io__bi_a_41/CS DVDD gf180mcu_ocd_io__bi_a_41/IE gf180mcu_ocd_io__bi_a_41/OE
-+ gf180mcu_ocd_io__bi_a_41/PD gf180mcu_ocd_io__bi_a_41/PDRV0 gf180mcu_ocd_io__bi_a_41/PDRV1
-+ gf180mcu_ocd_io__bi_a_41/PU gf180mcu_ocd_io__bi_a_41/SL VDD gf180mcu_ocd_io__bi_a_41/Y
-+ bidir_PAD[30] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_30 gf180mcu_ocd_io__bi_a_30/A gf180mcu_ocd_io__bi_a_30/ANA
-+ gf180mcu_ocd_io__bi_a_30/CS DVDD gf180mcu_ocd_io__bi_a_30/IE gf180mcu_ocd_io__bi_a_30/OE
-+ gf180mcu_ocd_io__bi_a_30/PD gf180mcu_ocd_io__bi_a_30/PDRV0 gf180mcu_ocd_io__bi_a_30/PDRV1
-+ gf180mcu_ocd_io__bi_a_30/PU gf180mcu_ocd_io__bi_a_30/SL VDD gf180mcu_ocd_io__bi_a_30/Y
-+ bidir_PAD[40] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_0 bidir_A[17] bidir_ANA[17] bidir_CS[17] DVDD bidir_IE[17]
++ bidir_OE[17] bidir_PD[17] bidir_PDRV0[17] bidir_PDRV1[17] bidir_PU[17] bidir_SL[17]
++ VDD bidir_Y[17] bidir_PAD[17] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_41 bidir_A[30] bidir_ANA[30] bidir_CS[30] DVDD bidir_IE[30]
++ bidir_OE[30] bidir_PD[30] bidir_PDRV0[30] bidir_PDRV1[30] bidir_PU[30] bidir_SL[30]
++ VDD bidir_Y[30] bidir_PAD[30] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_30 bidir_A[40] bidir_ANA[40] bidir_CS[40] DVDD bidir_IE[40]
++ bidir_OE[40] bidir_PD[40] bidir_PDRV0[40] bidir_PDRV1[40] bidir_PU[40] bidir_SL[40]
++ VDD bidir_Y[40] bidir_PAD[40] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_412 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_286 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_275 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_297 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_253 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_242 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_231 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_220 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10_231 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_57 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_46 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_68 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29900,25 +29804,18 @@ Xgf180mcu_ocd_io__fill10_35 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_79 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_16 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_8 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_42 gf180mcu_ocd_io__bi_a_42/A gf180mcu_ocd_io__bi_a_42/ANA
-+ gf180mcu_ocd_io__bi_a_42/CS DVDD gf180mcu_ocd_io__bi_a_42/IE gf180mcu_ocd_io__bi_a_42/OE
-+ gf180mcu_ocd_io__bi_a_42/PD gf180mcu_ocd_io__bi_a_42/PDRV0 gf180mcu_ocd_io__bi_a_42/PDRV1
-+ gf180mcu_ocd_io__bi_a_42/PU gf180mcu_ocd_io__bi_a_42/SL VDD gf180mcu_ocd_io__bi_a_42/Y
-+ bidir_PAD[28] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_31 gf180mcu_ocd_io__bi_a_31/A gf180mcu_ocd_io__bi_a_31/ANA
-+ gf180mcu_ocd_io__bi_a_31/CS DVDD gf180mcu_ocd_io__bi_a_31/IE gf180mcu_ocd_io__bi_a_31/OE
-+ gf180mcu_ocd_io__bi_a_31/PD gf180mcu_ocd_io__bi_a_31/PDRV0 gf180mcu_ocd_io__bi_a_31/PDRV1
-+ gf180mcu_ocd_io__bi_a_31/PU gf180mcu_ocd_io__bi_a_31/SL VDD gf180mcu_ocd_io__bi_a_31/Y
-+ bidir_PAD[38] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_20 gf180mcu_ocd_io__bi_a_20/A gf180mcu_ocd_io__bi_a_20/ANA
-+ gf180mcu_ocd_io__bi_a_20/CS DVDD gf180mcu_ocd_io__bi_a_20/IE gf180mcu_ocd_io__bi_a_20/OE
-+ gf180mcu_ocd_io__bi_a_20/PD gf180mcu_ocd_io__bi_a_20/PDRV0 gf180mcu_ocd_io__bi_a_20/PDRV1
-+ gf180mcu_ocd_io__bi_a_20/PU gf180mcu_ocd_io__bi_a_20/SL VDD gf180mcu_ocd_io__bi_a_20/Y
+Xgf180mcu_ocd_io__bi_a_42 bidir_A[28] bidir_ANA[28] bidir_CS[28] DVDD bidir_IE[28]
++ bidir_OE[28] bidir_PD[28] bidir_PDRV0[28] bidir_PDRV1[28] bidir_PU[28] bidir_SL[28]
++ VDD bidir_Y[28] bidir_PAD[28] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_31 bidir_A[38] bidir_ANA[38] bidir_CS[38] DVDD bidir_IE[38]
++ bidir_OE[38] bidir_PD[38] bidir_PDRV0[38] bidir_PDRV1[38] bidir_PU[38] bidir_SL[38]
++ VDD bidir_Y[38] bidir_PAD[38] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_20 bidir_A[0] bidir_ANA[0] bidir_CS[0] DVDD bidir_IE[0] bidir_OE[0]
++ bidir_PD[0] bidir_PDRV0[0] bidir_PDRV1[0] bidir_PU[0] bidir_SL[0] VDD bidir_Y[0]
 + bidir_PAD[0] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_1 gf180mcu_ocd_io__bi_a_1/A gf180mcu_ocd_io__bi_a_1/ANA gf180mcu_ocd_io__bi_a_1/CS
-+ DVDD gf180mcu_ocd_io__bi_a_1/IE gf180mcu_ocd_io__bi_a_1/OE gf180mcu_ocd_io__bi_a_1/PD
-+ gf180mcu_ocd_io__bi_a_1/PDRV0 gf180mcu_ocd_io__bi_a_1/PDRV1 gf180mcu_ocd_io__bi_a_1/PU
-+ gf180mcu_ocd_io__bi_a_1/SL VDD gf180mcu_ocd_io__bi_a_1/Y bidir_PAD[16] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_1 bidir_A[16] bidir_ANA[16] bidir_CS[16] DVDD bidir_IE[16]
++ bidir_OE[16] bidir_PD[16] bidir_PDRV0[16] bidir_PDRV1[16] bidir_PU[16] bidir_SL[16]
++ VDD bidir_Y[16] bidir_PAD[16] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_402 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_413 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_276 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -29929,83 +29826,61 @@ Xgf180mcu_ocd_io__fill10_232 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_243 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_221 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_210 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_65 VDD gf180mcu_ocd_io__fill10x_65/one gf180mcu_ocd_io__fill10x_65/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_65 VDD loopback_one[9] loopback_zero[9] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_69 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_54 VDD gf180mcu_ocd_io__fill10x_54/one gf180mcu_ocd_io__fill10x_54/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_54 VDD loopback_one[11] loopback_zero[11] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_14 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_17 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
 Xgf180mcu_ocd_io__fill10_9 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_0 VDD gf180mcu_ocd_io__fill10x_0/one gf180mcu_ocd_io__fill10x_0/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__bi_a_43 gf180mcu_ocd_io__bi_a_43/A gf180mcu_ocd_io__bi_a_43/ANA
-+ gf180mcu_ocd_io__bi_a_43/CS DVDD gf180mcu_ocd_io__bi_a_43/IE gf180mcu_ocd_io__bi_a_43/OE
-+ gf180mcu_ocd_io__bi_a_43/PD gf180mcu_ocd_io__bi_a_43/PDRV0 gf180mcu_ocd_io__bi_a_43/PDRV1
-+ gf180mcu_ocd_io__bi_a_43/PU gf180mcu_ocd_io__bi_a_43/SL VDD gf180mcu_ocd_io__bi_a_43/Y
-+ bidir_PAD[27] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_32 gf180mcu_ocd_io__bi_a_32/A gf180mcu_ocd_io__bi_a_32/ANA
-+ gf180mcu_ocd_io__bi_a_32/CS DVDD gf180mcu_ocd_io__bi_a_32/IE gf180mcu_ocd_io__bi_a_32/OE
-+ gf180mcu_ocd_io__bi_a_32/PD gf180mcu_ocd_io__bi_a_32/PDRV0 gf180mcu_ocd_io__bi_a_32/PDRV1
-+ gf180mcu_ocd_io__bi_a_32/PU gf180mcu_ocd_io__bi_a_32/SL VDD gf180mcu_ocd_io__bi_a_32/Y
-+ bidir_PAD[23] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_21 gf180mcu_ocd_io__bi_a_21/A gf180mcu_ocd_io__bi_a_21/ANA
-+ gf180mcu_ocd_io__bi_a_21/CS DVDD gf180mcu_ocd_io__bi_a_21/IE gf180mcu_ocd_io__bi_a_21/OE
-+ gf180mcu_ocd_io__bi_a_21/PD gf180mcu_ocd_io__bi_a_21/PDRV0 gf180mcu_ocd_io__bi_a_21/PDRV1
-+ gf180mcu_ocd_io__bi_a_21/PU gf180mcu_ocd_io__bi_a_21/SL VDD gf180mcu_ocd_io__bi_a_21/Y
+Xgf180mcu_ocd_io__fill10x_0 VDD loopback_one[20] loopback_zero[20] DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_43 bidir_A[27] bidir_ANA[27] bidir_CS[27] DVDD bidir_IE[27]
++ bidir_OE[27] bidir_PD[27] bidir_PDRV0[27] bidir_PDRV1[27] bidir_PU[27] bidir_SL[27]
++ VDD bidir_Y[27] bidir_PAD[27] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_32 bidir_A[23] bidir_ANA[23] bidir_CS[23] DVDD bidir_IE[23]
++ bidir_OE[23] bidir_PD[23] bidir_PDRV0[23] bidir_PDRV1[23] bidir_PU[23] bidir_SL[23]
++ VDD bidir_Y[23] bidir_PAD[23] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_21 bidir_A[1] bidir_ANA[1] bidir_CS[1] DVDD bidir_IE[1] bidir_OE[1]
++ bidir_PD[1] bidir_PDRV0[1] bidir_PDRV1[1] bidir_PU[1] bidir_SL[1] VDD bidir_Y[1]
 + bidir_PAD[1] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_2 gf180mcu_ocd_io__bi_a_2/A gf180mcu_ocd_io__bi_a_2/ANA gf180mcu_ocd_io__bi_a_2/CS
-+ DVDD gf180mcu_ocd_io__bi_a_2/IE gf180mcu_ocd_io__bi_a_2/OE gf180mcu_ocd_io__bi_a_2/PD
-+ gf180mcu_ocd_io__bi_a_2/PDRV0 gf180mcu_ocd_io__bi_a_2/PDRV1 gf180mcu_ocd_io__bi_a_2/PU
-+ gf180mcu_ocd_io__bi_a_2/SL VDD gf180mcu_ocd_io__bi_a_2/Y bidir_PAD[15] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_10 gf180mcu_ocd_io__bi_a_10/A gf180mcu_ocd_io__bi_a_10/ANA
-+ gf180mcu_ocd_io__bi_a_10/CS DVDD gf180mcu_ocd_io__bi_a_10/IE gf180mcu_ocd_io__bi_a_10/OE
-+ gf180mcu_ocd_io__bi_a_10/PD gf180mcu_ocd_io__bi_a_10/PDRV0 gf180mcu_ocd_io__bi_a_10/PDRV1
-+ gf180mcu_ocd_io__bi_a_10/PU gf180mcu_ocd_io__bi_a_10/SL VDD gf180mcu_ocd_io__bi_a_10/Y
-+ bidir_PAD[19] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__fill10x_280 VDD gf180mcu_ocd_io__fill10x_280/one gf180mcu_ocd_io__fill10x_280/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_2 bidir_A[15] bidir_ANA[15] bidir_CS[15] DVDD bidir_IE[15]
++ bidir_OE[15] bidir_PD[15] bidir_PDRV0[15] bidir_PDRV1[15] bidir_PU[15] bidir_SL[15]
++ VDD bidir_Y[15] bidir_PAD[15] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_10 bidir_A[19] bidir_ANA[19] bidir_CS[19] DVDD bidir_IE[19]
++ bidir_OE[19] bidir_PD[19] bidir_PDRV0[19] bidir_PDRV1[19] bidir_PU[19] bidir_SL[19]
++ VDD bidir_Y[19] bidir_PAD[19] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__fill10x_280 VDD loopback_one[40] loopback_zero[40] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_403 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_288 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_277 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_299 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_255 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_244 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_233 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10_244 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_222 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_211 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_200 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10_211 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_48 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_26 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_22 VDD gf180mcu_ocd_io__fill10x_22/one gf180mcu_ocd_io__fill10x_22/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_22 VDD loopback_one[14] loopback_zero[14] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_15 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_37 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_18 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__bi_a_44 gf180mcu_ocd_io__bi_a_44/A gf180mcu_ocd_io__bi_a_44/ANA
-+ gf180mcu_ocd_io__bi_a_44/CS DVDD gf180mcu_ocd_io__bi_a_44/IE gf180mcu_ocd_io__bi_a_44/OE
-+ gf180mcu_ocd_io__bi_a_44/PD gf180mcu_ocd_io__bi_a_44/PDRV0 gf180mcu_ocd_io__bi_a_44/PDRV1
-+ gf180mcu_ocd_io__bi_a_44/PU gf180mcu_ocd_io__bi_a_44/SL VDD gf180mcu_ocd_io__bi_a_44/Y
-+ bidir_PAD[26] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_22 gf180mcu_ocd_io__bi_a_22/A gf180mcu_ocd_io__bi_a_22/ANA
-+ gf180mcu_ocd_io__bi_a_22/CS DVDD gf180mcu_ocd_io__bi_a_22/IE gf180mcu_ocd_io__bi_a_22/OE
-+ gf180mcu_ocd_io__bi_a_22/PD gf180mcu_ocd_io__bi_a_22/PDRV0 gf180mcu_ocd_io__bi_a_22/PDRV1
-+ gf180mcu_ocd_io__bi_a_22/PU gf180mcu_ocd_io__bi_a_22/SL VDD gf180mcu_ocd_io__bi_a_22/Y
-+ bidir_PAD[45] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_33 gf180mcu_ocd_io__bi_a_33/A gf180mcu_ocd_io__bi_a_33/ANA
-+ gf180mcu_ocd_io__bi_a_33/CS DVDD gf180mcu_ocd_io__bi_a_33/IE gf180mcu_ocd_io__bi_a_33/OE
-+ gf180mcu_ocd_io__bi_a_33/PD gf180mcu_ocd_io__bi_a_33/PDRV0 gf180mcu_ocd_io__bi_a_33/PDRV1
-+ gf180mcu_ocd_io__bi_a_33/PU gf180mcu_ocd_io__bi_a_33/SL VDD gf180mcu_ocd_io__bi_a_33/Y
-+ bidir_PAD[22] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_3 gf180mcu_ocd_io__bi_a_3/A gf180mcu_ocd_io__bi_a_3/ANA gf180mcu_ocd_io__bi_a_3/CS
-+ DVDD gf180mcu_ocd_io__bi_a_3/IE gf180mcu_ocd_io__bi_a_3/OE gf180mcu_ocd_io__bi_a_3/PD
-+ gf180mcu_ocd_io__bi_a_3/PDRV0 gf180mcu_ocd_io__bi_a_3/PDRV1 gf180mcu_ocd_io__bi_a_3/PU
-+ gf180mcu_ocd_io__bi_a_3/SL VDD gf180mcu_ocd_io__bi_a_3/Y bidir_PAD[14] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_11 gf180mcu_ocd_io__bi_a_11/A gf180mcu_ocd_io__bi_a_11/ANA
-+ gf180mcu_ocd_io__bi_a_11/CS DVDD gf180mcu_ocd_io__bi_a_11/IE gf180mcu_ocd_io__bi_a_11/OE
-+ gf180mcu_ocd_io__bi_a_11/PD gf180mcu_ocd_io__bi_a_11/PDRV0 gf180mcu_ocd_io__bi_a_11/PDRV1
-+ gf180mcu_ocd_io__bi_a_11/PU gf180mcu_ocd_io__bi_a_11/SL VDD gf180mcu_ocd_io__bi_a_11/Y
-+ bidir_PAD[18] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_44 bidir_A[26] bidir_ANA[26] bidir_CS[26] DVDD bidir_IE[26]
++ bidir_OE[26] bidir_PD[26] bidir_PDRV0[26] bidir_PDRV1[26] bidir_PU[26] bidir_SL[26]
++ VDD bidir_Y[26] bidir_PAD[26] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_22 bidir_A[45] bidir_ANA[45] bidir_CS[45] DVDD bidir_IE[45]
++ bidir_OE[45] bidir_PD[45] bidir_PDRV0[45] bidir_PDRV1[45] bidir_PU[45] bidir_SL[45]
++ VDD bidir_Y[45] bidir_PAD[45] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_33 bidir_A[22] bidir_ANA[22] bidir_CS[22] DVDD bidir_IE[22]
++ bidir_OE[22] bidir_PD[22] bidir_PDRV0[22] bidir_PDRV1[22] bidir_PU[22] bidir_SL[22]
++ VDD bidir_Y[22] bidir_PAD[22] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_3 bidir_A[14] bidir_ANA[14] bidir_CS[14] DVDD bidir_IE[14]
++ bidir_OE[14] bidir_PD[14] bidir_PDRV0[14] bidir_PDRV1[14] bidir_PU[14] bidir_SL[14]
++ VDD bidir_Y[14] bidir_PAD[14] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_11 bidir_A[18] bidir_ANA[18] bidir_CS[18] DVDD bidir_IE[18]
++ bidir_OE[18] bidir_PD[18] bidir_PDRV0[18] bidir_PDRV1[18] bidir_PU[18] bidir_SL[18]
++ VDD bidir_Y[18] bidir_PAD[18] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_404 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_289 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_278 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -30014,41 +29889,31 @@ Xgf180mcu_ocd_io__fill10_245 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_267 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_234 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_223 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10_212 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_201 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_78 VDD gf180mcu_ocd_io__fill10x_78/one gf180mcu_ocd_io__fill10x_78/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10_212 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
+Xgf180mcu_ocd_io__fill10x_78 VDD loopback_one[18] loopback_zero[18] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_49 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_27 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_16 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_38 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_19 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__bi_a_45 gf180mcu_ocd_io__bi_a_45/A gf180mcu_ocd_io__bi_a_45/ANA
-+ gf180mcu_ocd_io__bi_a_45/CS DVDD gf180mcu_ocd_io__bi_a_45/IE gf180mcu_ocd_io__bi_a_45/OE
-+ gf180mcu_ocd_io__bi_a_45/PD gf180mcu_ocd_io__bi_a_45/PDRV0 gf180mcu_ocd_io__bi_a_45/PDRV1
-+ gf180mcu_ocd_io__bi_a_45/PU gf180mcu_ocd_io__bi_a_45/SL VDD gf180mcu_ocd_io__bi_a_45/Y
-+ bidir_PAD[29] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_23 gf180mcu_ocd_io__bi_a_23/A gf180mcu_ocd_io__bi_a_23/ANA
-+ gf180mcu_ocd_io__bi_a_23/CS DVDD gf180mcu_ocd_io__bi_a_23/IE gf180mcu_ocd_io__bi_a_23/OE
-+ gf180mcu_ocd_io__bi_a_23/PD gf180mcu_ocd_io__bi_a_23/PDRV0 gf180mcu_ocd_io__bi_a_23/PDRV1
-+ gf180mcu_ocd_io__bi_a_23/PU gf180mcu_ocd_io__bi_a_23/SL VDD gf180mcu_ocd_io__bi_a_23/Y
-+ bidir_PAD[43] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_34 gf180mcu_ocd_io__bi_a_34/A gf180mcu_ocd_io__bi_a_34/ANA
-+ gf180mcu_ocd_io__bi_a_34/CS DVDD gf180mcu_ocd_io__bi_a_34/IE gf180mcu_ocd_io__bi_a_34/OE
-+ gf180mcu_ocd_io__bi_a_34/PD gf180mcu_ocd_io__bi_a_34/PDRV0 gf180mcu_ocd_io__bi_a_34/PDRV1
-+ gf180mcu_ocd_io__bi_a_34/PU gf180mcu_ocd_io__bi_a_34/SL VDD gf180mcu_ocd_io__bi_a_34/Y
-+ bidir_PAD[24] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_12 gf180mcu_ocd_io__bi_a_12/A gf180mcu_ocd_io__bi_a_12/ANA
-+ gf180mcu_ocd_io__bi_a_12/CS DVDD gf180mcu_ocd_io__bi_a_12/IE gf180mcu_ocd_io__bi_a_12/OE
-+ gf180mcu_ocd_io__bi_a_12/PD gf180mcu_ocd_io__bi_a_12/PDRV0 gf180mcu_ocd_io__bi_a_12/PDRV1
-+ gf180mcu_ocd_io__bi_a_12/PU gf180mcu_ocd_io__bi_a_12/SL VDD gf180mcu_ocd_io__bi_a_12/Y
-+ bidir_PAD[20] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_4 gf180mcu_ocd_io__bi_a_4/A gf180mcu_ocd_io__bi_a_4/ANA gf180mcu_ocd_io__bi_a_4/CS
-+ DVDD gf180mcu_ocd_io__bi_a_4/IE gf180mcu_ocd_io__bi_a_4/OE gf180mcu_ocd_io__bi_a_4/PD
-+ gf180mcu_ocd_io__bi_a_4/PDRV0 gf180mcu_ocd_io__bi_a_4/PDRV1 gf180mcu_ocd_io__bi_a_4/PU
-+ gf180mcu_ocd_io__bi_a_4/SL VDD gf180mcu_ocd_io__bi_a_4/Y bidir_PAD[10] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__fill10x_271 VDD gf180mcu_ocd_io__fill10x_271/one gf180mcu_ocd_io__fill10x_271/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_45 bidir_A[29] bidir_ANA[29] bidir_CS[29] DVDD bidir_IE[29]
++ bidir_OE[29] bidir_PD[29] bidir_PDRV0[29] bidir_PDRV1[29] bidir_PU[29] bidir_SL[29]
++ VDD bidir_Y[29] bidir_PAD[29] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_23 bidir_A[43] bidir_ANA[43] bidir_CS[43] DVDD bidir_IE[43]
++ bidir_OE[43] bidir_PD[43] bidir_PDRV0[43] bidir_PDRV1[43] bidir_PU[43] bidir_SL[43]
++ VDD bidir_Y[43] bidir_PAD[43] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_34 bidir_A[24] bidir_ANA[24] bidir_CS[24] DVDD bidir_IE[24]
++ bidir_OE[24] bidir_PD[24] bidir_PDRV0[24] bidir_PDRV1[24] bidir_PU[24] bidir_SL[24]
++ VDD bidir_Y[24] bidir_PAD[24] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_12 bidir_A[20] bidir_ANA[20] bidir_CS[20] DVDD bidir_IE[20]
++ bidir_OE[20] bidir_PD[20] bidir_PDRV0[20] bidir_PDRV1[20] bidir_PU[20] bidir_SL[20]
++ VDD bidir_Y[20] bidir_PAD[20] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_4 bidir_A[10] bidir_ANA[10] bidir_CS[10] DVDD bidir_IE[10]
++ bidir_OE[10] bidir_PD[10] bidir_PDRV0[10] bidir_PDRV1[10] bidir_PU[10] bidir_SL[10]
++ VDD bidir_Y[10] bidir_PAD[10] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__fill10x_271 VDD loopback_one[36] loopback_zero[36] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_405 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_279 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_257 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -30058,66 +29923,47 @@ Xgf180mcu_ocd_io__fill10_235 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_224 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_213 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_202 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_13 VDD gf180mcu_ocd_io__fill10x_13/one gf180mcu_ocd_io__fill10x_13/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_13 VDD loopback_one[16] loopback_zero[16] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_39 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_28 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_17 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_24 gf180mcu_ocd_io__bi_a_24/A gf180mcu_ocd_io__bi_a_24/ANA
-+ gf180mcu_ocd_io__bi_a_24/CS DVDD gf180mcu_ocd_io__bi_a_24/IE gf180mcu_ocd_io__bi_a_24/OE
-+ gf180mcu_ocd_io__bi_a_24/PD gf180mcu_ocd_io__bi_a_24/PDRV0 gf180mcu_ocd_io__bi_a_24/PDRV1
-+ gf180mcu_ocd_io__bi_a_24/PU gf180mcu_ocd_io__bi_a_24/SL VDD gf180mcu_ocd_io__bi_a_24/Y
-+ bidir_PAD[42] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_35 gf180mcu_ocd_io__bi_a_35/A gf180mcu_ocd_io__bi_a_35/ANA
-+ gf180mcu_ocd_io__bi_a_35/CS DVDD gf180mcu_ocd_io__bi_a_35/IE gf180mcu_ocd_io__bi_a_35/OE
-+ gf180mcu_ocd_io__bi_a_35/PD gf180mcu_ocd_io__bi_a_35/PDRV0 gf180mcu_ocd_io__bi_a_35/PDRV1
-+ gf180mcu_ocd_io__bi_a_35/PU gf180mcu_ocd_io__bi_a_35/SL VDD gf180mcu_ocd_io__bi_a_35/Y
-+ bidir_PAD[25] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_13 gf180mcu_ocd_io__bi_a_13/A gf180mcu_ocd_io__bi_a_13/ANA
-+ gf180mcu_ocd_io__bi_a_13/CS DVDD gf180mcu_ocd_io__bi_a_13/IE gf180mcu_ocd_io__bi_a_13/OE
-+ gf180mcu_ocd_io__bi_a_13/PD gf180mcu_ocd_io__bi_a_13/PDRV0 gf180mcu_ocd_io__bi_a_13/PDRV1
-+ gf180mcu_ocd_io__bi_a_13/PU gf180mcu_ocd_io__bi_a_13/SL VDD gf180mcu_ocd_io__bi_a_13/Y
-+ bidir_PAD[21] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_5 gf180mcu_ocd_io__bi_a_5/A gf180mcu_ocd_io__bi_a_5/ANA gf180mcu_ocd_io__bi_a_5/CS
-+ DVDD gf180mcu_ocd_io__bi_a_5/IE gf180mcu_ocd_io__bi_a_5/OE gf180mcu_ocd_io__bi_a_5/PD
-+ gf180mcu_ocd_io__bi_a_5/PDRV0 gf180mcu_ocd_io__bi_a_5/PDRV1 gf180mcu_ocd_io__bi_a_5/PU
-+ gf180mcu_ocd_io__bi_a_5/SL VDD gf180mcu_ocd_io__bi_a_5/Y bidir_PAD[8] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__fill10x_294 VDD gf180mcu_ocd_io__fill10x_294/one gf180mcu_ocd_io__fill10x_294/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_24 bidir_A[42] bidir_ANA[42] bidir_CS[42] DVDD bidir_IE[42]
++ bidir_OE[42] bidir_PD[42] bidir_PDRV0[42] bidir_PDRV1[42] bidir_PU[42] bidir_SL[42]
++ VDD bidir_Y[42] bidir_PAD[42] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_35 bidir_A[25] bidir_ANA[25] bidir_CS[25] DVDD bidir_IE[25]
++ bidir_OE[25] bidir_PD[25] bidir_PDRV0[25] bidir_PDRV1[25] bidir_PU[25] bidir_SL[25]
++ VDD bidir_Y[25] bidir_PAD[25] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_13 bidir_A[21] bidir_ANA[21] bidir_CS[21] DVDD bidir_IE[21]
++ bidir_OE[21] bidir_PD[21] bidir_PDRV0[21] bidir_PDRV1[21] bidir_PU[21] bidir_SL[21]
++ VDD bidir_Y[21] bidir_PAD[21] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_5 bidir_A[8] bidir_ANA[8] bidir_CS[8] DVDD bidir_IE[8] bidir_OE[8]
++ bidir_PD[8] bidir_PDRV0[8] bidir_PDRV1[8] bidir_PU[8] bidir_SL[8] VDD bidir_Y[8]
++ bidir_PAD[8] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__fill10x_294 VDD loopback_one[39] loopback_zero[39] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_406 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_25 VDD gf180mcu_ocd_io__fill10x_25/one gf180mcu_ocd_io__fill10x_25/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_36 VDD gf180mcu_ocd_io__fill10x_36/one gf180mcu_ocd_io__fill10x_36/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_25 VDD loopback_one[15] loopback_zero[15] DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_36 VDD loopback_one[17] loopback_zero[17] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_269 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_236 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_225 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_214 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_203 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_58 VDD gf180mcu_ocd_io__fill10x_58/one gf180mcu_ocd_io__fill10x_58/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__fill10x_47 VDD gf180mcu_ocd_io__fill10x_47/one gf180mcu_ocd_io__fill10x_47/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_58 VDD loopback_one[8] loopback_zero[8] DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_47 VDD loopback_one[10] loopback_zero[10] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_18 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_29 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_6 gf180mcu_ocd_io__bi_a_6/A gf180mcu_ocd_io__bi_a_6/ANA gf180mcu_ocd_io__bi_a_6/CS
-+ DVDD gf180mcu_ocd_io__bi_a_6/IE gf180mcu_ocd_io__bi_a_6/OE gf180mcu_ocd_io__bi_a_6/PD
-+ gf180mcu_ocd_io__bi_a_6/PDRV0 gf180mcu_ocd_io__bi_a_6/PDRV1 gf180mcu_ocd_io__bi_a_6/PU
-+ gf180mcu_ocd_io__bi_a_6/SL VDD gf180mcu_ocd_io__bi_a_6/Y bidir_PAD[11] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_36 gf180mcu_ocd_io__bi_a_36/A gf180mcu_ocd_io__bi_a_36/ANA
-+ gf180mcu_ocd_io__bi_a_36/CS DVDD gf180mcu_ocd_io__bi_a_36/IE gf180mcu_ocd_io__bi_a_36/OE
-+ gf180mcu_ocd_io__bi_a_36/PD gf180mcu_ocd_io__bi_a_36/PDRV0 gf180mcu_ocd_io__bi_a_36/PDRV1
-+ gf180mcu_ocd_io__bi_a_36/PU gf180mcu_ocd_io__bi_a_36/SL VDD gf180mcu_ocd_io__bi_a_36/Y
-+ bidir_PAD[31] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_25 gf180mcu_ocd_io__bi_a_25/A gf180mcu_ocd_io__bi_a_25/ANA
-+ gf180mcu_ocd_io__bi_a_25/CS DVDD gf180mcu_ocd_io__bi_a_25/IE gf180mcu_ocd_io__bi_a_25/OE
-+ gf180mcu_ocd_io__bi_a_25/PD gf180mcu_ocd_io__bi_a_25/PDRV0 gf180mcu_ocd_io__bi_a_25/PDRV1
-+ gf180mcu_ocd_io__bi_a_25/PU gf180mcu_ocd_io__bi_a_25/SL VDD gf180mcu_ocd_io__bi_a_25/Y
-+ bidir_PAD[44] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_14 gf180mcu_ocd_io__bi_a_14/A gf180mcu_ocd_io__bi_a_14/ANA
-+ gf180mcu_ocd_io__bi_a_14/CS DVDD gf180mcu_ocd_io__bi_a_14/IE gf180mcu_ocd_io__bi_a_14/OE
-+ gf180mcu_ocd_io__bi_a_14/PD gf180mcu_ocd_io__bi_a_14/PDRV0 gf180mcu_ocd_io__bi_a_14/PDRV1
-+ gf180mcu_ocd_io__bi_a_14/PU gf180mcu_ocd_io__bi_a_14/SL VDD gf180mcu_ocd_io__bi_a_14/Y
+Xgf180mcu_ocd_io__bi_a_6 bidir_A[11] bidir_ANA[11] bidir_CS[11] DVDD bidir_IE[11]
++ bidir_OE[11] bidir_PD[11] bidir_PDRV0[11] bidir_PDRV1[11] bidir_PU[11] bidir_SL[11]
++ VDD bidir_Y[11] bidir_PAD[11] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_36 bidir_A[31] bidir_ANA[31] bidir_CS[31] DVDD bidir_IE[31]
++ bidir_OE[31] bidir_PD[31] bidir_PDRV0[31] bidir_PDRV1[31] bidir_PU[31] bidir_SL[31]
++ VDD bidir_Y[31] bidir_PAD[31] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_25 bidir_A[44] bidir_ANA[44] bidir_CS[44] DVDD bidir_IE[44]
++ bidir_OE[44] bidir_PD[44] bidir_PDRV0[44] bidir_PDRV1[44] bidir_PU[44] bidir_SL[44]
++ VDD bidir_Y[44] bidir_PAD[44] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_14 bidir_A[3] bidir_ANA[3] bidir_CS[3] DVDD bidir_IE[3] bidir_OE[3]
++ bidir_PD[3] bidir_PDRV0[3] bidir_PDRV1[3] bidir_PU[3] bidir_SL[3] VDD bidir_Y[3]
 + bidir_PAD[3] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_407 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_259 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
@@ -30125,408 +29971,324 @@ Xgf180mcu_ocd_io__fill10_248 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_237 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_226 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_215 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_59 VDD gf180mcu_ocd_io__fill10x_59/one gf180mcu_ocd_io__fill10x_59/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_59 VDD loopback_one[13] loopback_zero[13] DVDD VSS VSS gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_19 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__fill10x_400 VDD gf180mcu_ocd_io__fill10x_400/one gf180mcu_ocd_io__fill10x_400/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__bi_a_37 gf180mcu_ocd_io__bi_a_37/A gf180mcu_ocd_io__bi_a_37/ANA
-+ gf180mcu_ocd_io__bi_a_37/CS DVDD gf180mcu_ocd_io__bi_a_37/IE gf180mcu_ocd_io__bi_a_37/OE
-+ gf180mcu_ocd_io__bi_a_37/PD gf180mcu_ocd_io__bi_a_37/PDRV0 gf180mcu_ocd_io__bi_a_37/PDRV1
-+ gf180mcu_ocd_io__bi_a_37/PU gf180mcu_ocd_io__bi_a_37/SL VDD gf180mcu_ocd_io__bi_a_37/Y
-+ bidir_PAD[32] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_26 gf180mcu_ocd_io__bi_a_26/A gf180mcu_ocd_io__bi_a_26/ANA
-+ gf180mcu_ocd_io__bi_a_26/CS DVDD gf180mcu_ocd_io__bi_a_26/IE gf180mcu_ocd_io__bi_a_26/OE
-+ gf180mcu_ocd_io__bi_a_26/PD gf180mcu_ocd_io__bi_a_26/PDRV0 gf180mcu_ocd_io__bi_a_26/PDRV1
-+ gf180mcu_ocd_io__bi_a_26/PU gf180mcu_ocd_io__bi_a_26/SL VDD gf180mcu_ocd_io__bi_a_26/Y
-+ bidir_PAD[36] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_15 gf180mcu_ocd_io__bi_a_15/A gf180mcu_ocd_io__bi_a_15/ANA
-+ gf180mcu_ocd_io__bi_a_15/CS DVDD gf180mcu_ocd_io__bi_a_15/IE gf180mcu_ocd_io__bi_a_15/OE
-+ gf180mcu_ocd_io__bi_a_15/PD gf180mcu_ocd_io__bi_a_15/PDRV0 gf180mcu_ocd_io__bi_a_15/PDRV1
-+ gf180mcu_ocd_io__bi_a_15/PU gf180mcu_ocd_io__bi_a_15/SL VDD gf180mcu_ocd_io__bi_a_15/Y
+Xgf180mcu_ocd_io__fill10x_400 VDD loopback_one[26] loopback_zero[26] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_37 bidir_A[32] bidir_ANA[32] bidir_CS[32] DVDD bidir_IE[32]
++ bidir_OE[32] bidir_PD[32] bidir_PDRV0[32] bidir_PDRV1[32] bidir_PU[32] bidir_SL[32]
++ VDD bidir_Y[32] bidir_PAD[32] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_26 bidir_A[36] bidir_ANA[36] bidir_CS[36] DVDD bidir_IE[36]
++ bidir_OE[36] bidir_PD[36] bidir_PDRV0[36] bidir_PDRV1[36] bidir_PU[36] bidir_SL[36]
++ VDD bidir_Y[36] bidir_PAD[36] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_15 bidir_A[6] bidir_ANA[6] bidir_CS[6] DVDD bidir_IE[6] bidir_OE[6]
++ bidir_PD[6] bidir_PDRV0[6] bidir_PDRV1[6] bidir_PU[6] bidir_SL[6] VDD bidir_Y[6]
 + bidir_PAD[6] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_7 gf180mcu_ocd_io__bi_a_7/A gf180mcu_ocd_io__bi_a_7/ANA gf180mcu_ocd_io__bi_a_7/CS
-+ DVDD gf180mcu_ocd_io__bi_a_7/IE gf180mcu_ocd_io__bi_a_7/OE gf180mcu_ocd_io__bi_a_7/PD
-+ gf180mcu_ocd_io__bi_a_7/PDRV0 gf180mcu_ocd_io__bi_a_7/PDRV1 gf180mcu_ocd_io__bi_a_7/PU
-+ gf180mcu_ocd_io__bi_a_7/SL VDD gf180mcu_ocd_io__bi_a_7/Y bidir_PAD[13] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_7 bidir_A[13] bidir_ANA[13] bidir_CS[13] DVDD bidir_IE[13]
++ bidir_OE[13] bidir_PD[13] bidir_PDRV0[13] bidir_PDRV1[13] bidir_PU[13] bidir_SL[13]
++ VDD bidir_Y[13] bidir_PAD[13] VSS VSS gf180mcu_ocd_io__bi_a
 Xgf180mcu_ocd_io__fill10_408 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_249 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_238 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_227 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_216 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__in_c_0 DVDD gf180mcu_ocd_io__in_c_0/PD gf180mcu_ocd_io__in_c_0/PU
-+ VDD gf180mcu_ocd_io__in_c_0/Y rst_n_PAD VSS VSS gf180mcu_ocd_io__in_c
-Xgf180mcu_ocd_io__fill10x_401 VDD gf180mcu_ocd_io__fill10x_401/one gf180mcu_ocd_io__fill10x_401/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
-Xgf180mcu_ocd_io__bi_a_38 gf180mcu_ocd_io__bi_a_38/A gf180mcu_ocd_io__bi_a_38/ANA
-+ gf180mcu_ocd_io__bi_a_38/CS DVDD gf180mcu_ocd_io__bi_a_38/IE gf180mcu_ocd_io__bi_a_38/OE
-+ gf180mcu_ocd_io__bi_a_38/PD gf180mcu_ocd_io__bi_a_38/PDRV0 gf180mcu_ocd_io__bi_a_38/PDRV1
-+ gf180mcu_ocd_io__bi_a_38/PU gf180mcu_ocd_io__bi_a_38/SL VDD gf180mcu_ocd_io__bi_a_38/Y
-+ bidir_PAD[34] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_27 gf180mcu_ocd_io__bi_a_27/A gf180mcu_ocd_io__bi_a_27/ANA
-+ gf180mcu_ocd_io__bi_a_27/CS DVDD gf180mcu_ocd_io__bi_a_27/IE gf180mcu_ocd_io__bi_a_27/OE
-+ gf180mcu_ocd_io__bi_a_27/PD gf180mcu_ocd_io__bi_a_27/PDRV0 gf180mcu_ocd_io__bi_a_27/PDRV1
-+ gf180mcu_ocd_io__bi_a_27/PU gf180mcu_ocd_io__bi_a_27/SL VDD gf180mcu_ocd_io__bi_a_27/Y
-+ bidir_PAD[39] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_16 gf180mcu_ocd_io__bi_a_16/A gf180mcu_ocd_io__bi_a_16/ANA
-+ gf180mcu_ocd_io__bi_a_16/CS DVDD gf180mcu_ocd_io__bi_a_16/IE gf180mcu_ocd_io__bi_a_16/OE
-+ gf180mcu_ocd_io__bi_a_16/PD gf180mcu_ocd_io__bi_a_16/PDRV0 gf180mcu_ocd_io__bi_a_16/PDRV1
-+ gf180mcu_ocd_io__bi_a_16/PU gf180mcu_ocd_io__bi_a_16/SL VDD gf180mcu_ocd_io__bi_a_16/Y
+Xgf180mcu_ocd_io__in_c_0 DVDD rst_n_PD rst_n_PU VDD rst_n_Y rst_n_PAD VSS VSS gf180mcu_ocd_io__in_c
+Xgf180mcu_ocd_io__fill10x_401 VDD loopback_one[27] loopback_zero[27] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_38 bidir_A[34] bidir_ANA[34] bidir_CS[34] DVDD bidir_IE[34]
++ bidir_OE[34] bidir_PD[34] bidir_PDRV0[34] bidir_PDRV1[34] bidir_PU[34] bidir_SL[34]
++ VDD bidir_Y[34] bidir_PAD[34] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_27 bidir_A[39] bidir_ANA[39] bidir_CS[39] DVDD bidir_IE[39]
++ bidir_OE[39] bidir_PD[39] bidir_PDRV0[39] bidir_PDRV1[39] bidir_PU[39] bidir_SL[39]
++ VDD bidir_Y[39] bidir_PAD[39] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_16 bidir_A[7] bidir_ANA[7] bidir_CS[7] DVDD bidir_IE[7] bidir_OE[7]
++ bidir_PD[7] bidir_PDRV0[7] bidir_PDRV1[7] bidir_PU[7] bidir_SL[7] VDD bidir_Y[7]
 + bidir_PAD[7] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_8 gf180mcu_ocd_io__bi_a_8/A gf180mcu_ocd_io__bi_a_8/ANA gf180mcu_ocd_io__bi_a_8/CS
-+ DVDD gf180mcu_ocd_io__bi_a_8/IE gf180mcu_ocd_io__bi_a_8/OE gf180mcu_ocd_io__bi_a_8/PD
-+ gf180mcu_ocd_io__bi_a_8/PDRV0 gf180mcu_ocd_io__bi_a_8/PDRV1 gf180mcu_ocd_io__bi_a_8/PU
-+ gf180mcu_ocd_io__bi_a_8/SL VDD gf180mcu_ocd_io__bi_a_8/Y bidir_PAD[12] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__fill10x_264 VDD gf180mcu_ocd_io__fill10x_264/one gf180mcu_ocd_io__fill10x_264/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_8 bidir_A[12] bidir_ANA[12] bidir_CS[12] DVDD bidir_IE[12]
++ bidir_OE[12] bidir_PD[12] bidir_PDRV0[12] bidir_PDRV1[12] bidir_PU[12] bidir_SL[12]
++ VDD bidir_Y[12] bidir_PAD[12] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__fill10x_264 VDD loopback_one[43] loopback_zero[43] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_409 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_239 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_228 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_217 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_206 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_0 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__in_c_1 DVDD gf180mcu_ocd_io__in_c_1/PD gf180mcu_ocd_io__in_c_1/PU
-+ VDD gf180mcu_ocd_io__in_c_1/Y input_PAD[3] VSS VSS gf180mcu_ocd_io__in_c
-Xgf180mcu_ocd_io__bi_a_39 gf180mcu_ocd_io__bi_a_39/A gf180mcu_ocd_io__bi_a_39/ANA
-+ gf180mcu_ocd_io__bi_a_39/CS DVDD gf180mcu_ocd_io__bi_a_39/IE gf180mcu_ocd_io__bi_a_39/OE
-+ gf180mcu_ocd_io__bi_a_39/PD gf180mcu_ocd_io__bi_a_39/PDRV0 gf180mcu_ocd_io__bi_a_39/PDRV1
-+ gf180mcu_ocd_io__bi_a_39/PU gf180mcu_ocd_io__bi_a_39/SL VDD gf180mcu_ocd_io__bi_a_39/Y
-+ bidir_PAD[33] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_28 gf180mcu_ocd_io__bi_a_28/A gf180mcu_ocd_io__bi_a_28/ANA
-+ gf180mcu_ocd_io__bi_a_28/CS DVDD gf180mcu_ocd_io__bi_a_28/IE gf180mcu_ocd_io__bi_a_28/OE
-+ gf180mcu_ocd_io__bi_a_28/PD gf180mcu_ocd_io__bi_a_28/PDRV0 gf180mcu_ocd_io__bi_a_28/PDRV1
-+ gf180mcu_ocd_io__bi_a_28/PU gf180mcu_ocd_io__bi_a_28/SL VDD gf180mcu_ocd_io__bi_a_28/Y
-+ bidir_PAD[37] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_17 gf180mcu_ocd_io__bi_a_17/A gf180mcu_ocd_io__bi_a_17/ANA
-+ gf180mcu_ocd_io__bi_a_17/CS DVDD gf180mcu_ocd_io__bi_a_17/IE gf180mcu_ocd_io__bi_a_17/OE
-+ gf180mcu_ocd_io__bi_a_17/PD gf180mcu_ocd_io__bi_a_17/PDRV0 gf180mcu_ocd_io__bi_a_17/PDRV1
-+ gf180mcu_ocd_io__bi_a_17/PU gf180mcu_ocd_io__bi_a_17/SL VDD gf180mcu_ocd_io__bi_a_17/Y
+Xgf180mcu_ocd_io__in_c_1 DVDD input_PD[3] input_PU[3] VDD input_Y[3] input_PAD[3]
++ VSS VSS gf180mcu_ocd_io__in_c
+Xgf180mcu_ocd_io__bi_a_39 bidir_A[33] bidir_ANA[33] bidir_CS[33] DVDD bidir_IE[33]
++ bidir_OE[33] bidir_PD[33] bidir_PDRV0[33] bidir_PDRV1[33] bidir_PU[33] bidir_SL[33]
++ VDD bidir_Y[33] bidir_PAD[33] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_28 bidir_A[37] bidir_ANA[37] bidir_CS[37] DVDD bidir_IE[37]
++ bidir_OE[37] bidir_PD[37] bidir_PDRV0[37] bidir_PDRV1[37] bidir_PU[37] bidir_SL[37]
++ VDD bidir_Y[37] bidir_PAD[37] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_17 bidir_A[4] bidir_ANA[4] bidir_CS[4] DVDD bidir_IE[4] bidir_OE[4]
++ bidir_PD[4] bidir_PDRV0[4] bidir_PDRV1[4] bidir_PU[4] bidir_SL[4] VDD bidir_Y[4]
 + bidir_PAD[4] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_9 gf180mcu_ocd_io__bi_a_9/A gf180mcu_ocd_io__bi_a_9/ANA gf180mcu_ocd_io__bi_a_9/CS
-+ DVDD gf180mcu_ocd_io__bi_a_9/IE gf180mcu_ocd_io__bi_a_9/OE gf180mcu_ocd_io__bi_a_9/PD
-+ gf180mcu_ocd_io__bi_a_9/PDRV0 gf180mcu_ocd_io__bi_a_9/PDRV1 gf180mcu_ocd_io__bi_a_9/PU
-+ gf180mcu_ocd_io__bi_a_9/SL VDD gf180mcu_ocd_io__bi_a_9/Y bidir_PAD[9] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__fill10x_287 VDD gf180mcu_ocd_io__fill10x_287/one gf180mcu_ocd_io__fill10x_287/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__bi_a_9 bidir_A[9] bidir_ANA[9] bidir_CS[9] DVDD bidir_IE[9] bidir_OE[9]
++ bidir_PD[9] bidir_PDRV0[9] bidir_PDRV1[9] bidir_PU[9] bidir_SL[9] VDD bidir_Y[9]
++ bidir_PAD[9] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__fill10x_287 VDD loopback_one[37] loopback_zero[37] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 Xgf180mcu_ocd_io__fill10_229 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_218 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill10_207 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
 Xgf180mcu_ocd_io__fill5_1 VDD VSS DVDD VSS gf180mcu_ocd_io__fill5
-Xgf180mcu_ocd_io__in_c_2 DVDD gf180mcu_ocd_io__in_c_2/PD gf180mcu_ocd_io__in_c_2/PU
-+ VDD gf180mcu_ocd_io__in_c_2/Y input_PAD[2] VSS VSS gf180mcu_ocd_io__in_c
+Xgf180mcu_ocd_io__in_c_2 DVDD input_PD[2] input_PU[2] VDD input_Y[2] input_PAD[2]
++ VSS VSS gf180mcu_ocd_io__in_c
 Xgf180mcu_ocd_io__fill10_390 VDD VSS DVDD VSS gf180mcu_ocd_io__fill10
-Xgf180mcu_ocd_io__bi_a_29 gf180mcu_ocd_io__bi_a_29/A gf180mcu_ocd_io__bi_a_29/ANA
-+ gf180mcu_ocd_io__bi_a_29/CS DVDD gf180mcu_ocd_io__bi_a_29/IE gf180mcu_ocd_io__bi_a_29/OE
-+ gf180mcu_ocd_io__bi_a_29/PD gf180mcu_ocd_io__bi_a_29/PDRV0 gf180mcu_ocd_io__bi_a_29/PDRV1
-+ gf180mcu_ocd_io__bi_a_29/PU gf180mcu_ocd_io__bi_a_29/SL VDD gf180mcu_ocd_io__bi_a_29/Y
-+ bidir_PAD[41] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__bi_a_18 gf180mcu_ocd_io__bi_a_18/A gf180mcu_ocd_io__bi_a_18/ANA
-+ gf180mcu_ocd_io__bi_a_18/CS DVDD gf180mcu_ocd_io__bi_a_18/IE gf180mcu_ocd_io__bi_a_18/OE
-+ gf180mcu_ocd_io__bi_a_18/PD gf180mcu_ocd_io__bi_a_18/PDRV0 gf180mcu_ocd_io__bi_a_18/PDRV1
-+ gf180mcu_ocd_io__bi_a_18/PU gf180mcu_ocd_io__bi_a_18/SL VDD gf180mcu_ocd_io__bi_a_18/Y
+Xgf180mcu_ocd_io__bi_a_29 bidir_A[41] bidir_ANA[41] bidir_CS[41] DVDD bidir_IE[41]
++ bidir_OE[41] bidir_PD[41] bidir_PDRV0[41] bidir_PDRV1[41] bidir_PU[41] bidir_SL[41]
++ VDD bidir_Y[41] bidir_PAD[41] VSS VSS gf180mcu_ocd_io__bi_a
+Xgf180mcu_ocd_io__bi_a_18 bidir_A[5] bidir_ANA[5] bidir_CS[5] DVDD bidir_IE[5] bidir_OE[5]
++ bidir_PD[5] bidir_PDRV0[5] bidir_PDRV1[5] bidir_PU[5] bidir_SL[5] VDD bidir_Y[5]
 + bidir_PAD[5] VSS VSS gf180mcu_ocd_io__bi_a
-Xgf180mcu_ocd_io__fill10x_266 VDD gf180mcu_ocd_io__fill10x_266/one gf180mcu_ocd_io__fill10x_266/zero
-+ DVDD VSS VSS gf180mcu_ocd_io__fill10x
+Xgf180mcu_ocd_io__fill10x_266 VDD loopback_one[45] loopback_zero[45] DVDD VSS VSS
++ gf180mcu_ocd_io__fill10x
 .ends
 
-.subckt gf180mcu_ocd_sram_test
+.subckt gf180mcu_ocd_sram_test clk_PAD rst_n_PAD bidir_PAD[0] bidir_PAD[1] VSS VDD
++ bidir_PAD[2] bidir_PAD[3] bidir_PAD[4] bidir_PAD[5] bidir_PAD[6] bidir_PAD[7] bidir_PAD[8]
++ bidir_PAD[9] bidir_PAD[10] bidir_PAD[11] bidir_PAD[12] bidir_PAD[13] DVDD bidir_PAD[14]
++ bidir_PAD[15] bidir_PAD[16] bidir_PAD[17] bidir_PAD[18] bidir_PAD[19] bidir_PAD[20]
++ bidir_PAD[21] bidir_PAD[22] bidir_PAD[23] bidir_PAD[24] bidir_PAD[25] bidir_PAD[26]
++ bidir_PAD[27] bidir_PAD[28] bidir_PAD[29] bidir_PAD[30] bidir_PAD[31] bidir_PAD[32]
++ bidir_PAD[33] bidir_PAD[34] bidir_PAD[35] bidir_PAD[36] bidir_PAD[37] bidir_PAD[38]
++ bidir_PAD[39] bidir_PAD[40] bidir_PAD[41] bidir_PAD[42] bidir_PAD[43] bidir_PAD[44]
++ bidir_PAD[45] analog_PAD[0] analog_PAD[1] analog_PAD[2] analog_PAD[3] input_PAD[0]
++ input_PAD[1] input_PAD[2] input_PAD[3]
 Xgf180mcu_ocd_ip_sram__sram512x8m8wm1_0 GWEN Q7_512_2 Q6_512_2 Q5_512_2 Q4_512_2 Q3_512_2
-+ Q2_512_2 Q1_512_2 D6 WEN7 WEN6 WEN5 WEN4 WEN3 A0 D1 A1 A2 D3 A3 A4 D5 A5 A6 D7 A7
-+ A8 ENA_512_2 VSS WEN0 CLK WEN1 WEN2 Q0_512_2 gf180mcu_ocd_ip_sram__sram512x8m8wm1
++ Q2_512_2 Q1_512_2 VDD WEN7 WEN6 WEN5 WEN4 WEN3 D0 A0 D1 A1 D2 A2 D3 A3 D4 A4 D5
++ A5 D6 A6 D7 A7 A8 ENA_512_2 VSS WEN0 CLK WEN1 WEN2 Q0_512_2 gf180mcu_ocd_ip_sram__sram512x8m8wm1
 Xgf180mcu_ocd_ip_sram__sram512x8m8wm1_1 GWEN Q7_512_1 Q6_512_1 Q5_512_1 Q4_512_1 Q3_512_1
-+ Q2_512_1 Q1_512_1 D6 WEN7 WEN6 WEN5 WEN4 WEN3 A0 D1 A1 A2 D3 A3 A4 D5 A5 A6 D7 A7
-+ A8 ENA_512_1 VSS WEN0 CLK WEN1 WEN2 Q0_512_1 gf180mcu_ocd_ip_sram__sram512x8m8wm1
-Xlvlshift_down_0 D6 simple_por_0/VDD simple_por_0/por VSS lvlshift_down_0/YL lvlshift_down
-Xsimple_por_0 simple_por_0/VDD simple_por_0/porb simple_por_0/por VSS simple_por
-Xgf180mcu_ocd_ip_sram__sram256x8m8wm1_0 A7 A6 A5 A4 A3 A2 A1 A0 ENA_256_1 CLK D7 D5
-+ D3 D1 GWEN Q7_256_1 Q6_256_1 Q5_256_1 Q4_256_1 Q3_256_1 Q2_256_1 Q1_256_1 Q0_256_1
-+ D6 WEN7 WEN6 WEN5 WEN4 WEN3 WEN2 WEN1 WEN0 VSS gf180mcu_ocd_ip_sram__sram256x8m8wm1
-Xgf180mcu_ocd_ip_sram__sram256x8m8wm1_1 A7 A6 A5 A4 A3 A2 A1 A0 ENA_256_2 CLK D7 D5
-+ D3 D1 GWEN Q7_256_2 Q6_256_2 Q5_256_2 Q4_256_2 Q3_256_2 Q2_256_2 Q1_256_2 Q0_256_2
-+ D6 WEN7 WEN6 WEN5 WEN4 WEN3 WEN2 WEN1 WEN0 VSS gf180mcu_ocd_ip_sram__sram256x8m8wm1
++ Q2_512_1 Q1_512_1 VDD WEN7 WEN6 WEN5 WEN4 WEN3 D0 A0 D1 A1 D2 A2 D3 A3 D4 A4 D5
++ A5 D6 A6 D7 A7 A8 ENA_512_1 VSS WEN0 CLK WEN1 WEN2 Q0_512_1 gf180mcu_ocd_ip_sram__sram512x8m8wm1
+Xlvlshift_down_0 VDD DVDD simple_por_0/por VSS lvlshift_down_0/YL lvlshift_down
+Xsimple_por_0 DVDD simple_por_0/porb simple_por_0/por VSS simple_por
+Xgf180mcu_ocd_ip_sram__sram256x8m8wm1_0 A7 A6 A5 A4 A3 A2 A1 A0 ENA_256_1 CLK D7 D6
++ D5 D4 D3 D2 D1 D0 GWEN Q7_256_1 Q6_256_1 Q5_256_1 Q4_256_1 Q3_256_1 Q2_256_1 Q1_256_1
++ Q0_256_1 VDD WEN7 WEN6 WEN5 WEN4 WEN3 WEN2 WEN1 WEN0 VSS gf180mcu_ocd_ip_sram__sram256x8m8wm1
+Xgf180mcu_ocd_ip_sram__sram256x8m8wm1_1 A7 A6 A5 A4 A3 A2 A1 A0 ENA_256_2 CLK D7 D6
++ D5 D4 D3 D2 D1 D0 GWEN Q7_256_2 Q6_256_2 Q5_256_2 Q4_256_2 Q3_256_2 Q2_256_2 Q1_256_2
++ Q0_256_2 VDD WEN7 WEN6 WEN5 WEN4 WEN3 WEN2 WEN1 WEN0 VSS gf180mcu_ocd_ip_sram__sram256x8m8wm1
 Xocd_mux_array_0 select_256 Q0_256_1 Q1_256_1 Q2_256_1 Q3_256_1 Q4_256_1 Q5_256_1
 + Q6_256_1 Q7_256_1 Q0_256_2 Q1_256_2 Q2_256_2 Q3_256_2 Q4_256_2 Q5_256_2 Q6_256_2
 + Q7_256_2 ocd_mux_array_0/Y[7] ocd_mux_array_0/Y[3] ocd_mux_array_0/Y[5] ocd_mux_array_0/Y[1]
-+ ocd_mux_array_0/Y[6] D6 ocd_mux_array_0/Y[4] ocd_mux_array_0/Y[0] VSS ocd_mux_array_0/Y[2]
++ ocd_mux_array_0/Y[6] VDD ocd_mux_array_0/Y[4] ocd_mux_array_0/Y[0] VSS ocd_mux_array_0/Y[2]
 + ocd_mux_array
 Xocd_mux_array_1 select_512 Q0_512_1 Q1_512_1 Q2_512_1 Q3_512_1 Q4_512_1 Q5_512_1
 + Q6_512_1 Q7_512_1 Q0_512_2 Q1_512_2 Q2_512_2 Q3_512_2 Q4_512_2 Q5_512_2 Q6_512_2
 + Q7_512_2 ocd_mux_array_1/Y[7] ocd_mux_array_1/Y[3] ocd_mux_array_1/Y[5] ocd_mux_array_1/Y[1]
-+ ocd_mux_array_1/Y[6] D6 ocd_mux_array_1/Y[4] ocd_mux_array_1/Y[0] VSS ocd_mux_array_1/Y[2]
++ ocd_mux_array_1/Y[6] VDD ocd_mux_array_1/Y[4] ocd_mux_array_1/Y[0] VSS ocd_mux_array_1/Y[2]
 + ocd_mux_array
-Xchip_half_frame_0 simple_por_0/VDD chip_half_frame_0/analog_PAD[0] chip_half_frame_0/analog_PAD[1]
-+ chip_half_frame_0/analog_PAD[2] chip_half_frame_0/analog_PAD[3] chip_half_frame_0/input_PAD[0]
-+ chip_half_frame_0/input_PAD[1] chip_half_frame_0/input_PAD[2] chip_half_frame_0/input_PAD[3]
-+ chip_half_frame_0/clk_PAD chip_half_frame_0/rst_n_PAD chip_half_frame_0/bidir_PAD[0]
-+ chip_half_frame_0/bidir_PAD[1] chip_half_frame_0/bidir_PAD[2] chip_half_frame_0/bidir_PAD[3]
-+ chip_half_frame_0/bidir_PAD[4] chip_half_frame_0/bidir_PAD[5] chip_half_frame_0/bidir_PAD[6]
-+ chip_half_frame_0/bidir_PAD[7] chip_half_frame_0/bidir_PAD[8] chip_half_frame_0/bidir_PAD[9]
-+ chip_half_frame_0/bidir_PAD[10] chip_half_frame_0/bidir_PAD[11] chip_half_frame_0/bidir_PAD[12]
-+ chip_half_frame_0/bidir_PAD[13] chip_half_frame_0/bidir_PAD[14] chip_half_frame_0/bidir_PAD[15]
-+ chip_half_frame_0/bidir_PAD[16] chip_half_frame_0/bidir_PAD[17] chip_half_frame_0/bidir_PAD[18]
-+ chip_half_frame_0/bidir_PAD[19] chip_half_frame_0/bidir_PAD[20] chip_half_frame_0/bidir_PAD[21]
-+ chip_half_frame_0/bidir_PAD[22] chip_half_frame_0/bidir_PAD[23] chip_half_frame_0/bidir_PAD[24]
-+ chip_half_frame_0/bidir_PAD[25] chip_half_frame_0/bidir_PAD[26] chip_half_frame_0/bidir_PAD[27]
-+ chip_half_frame_0/bidir_PAD[28] chip_half_frame_0/bidir_PAD[29] chip_half_frame_0/bidir_PAD[30]
-+ chip_half_frame_0/bidir_PAD[31] chip_half_frame_0/bidir_PAD[32] chip_half_frame_0/bidir_PAD[33]
-+ chip_half_frame_0/bidir_PAD[34] chip_half_frame_0/bidir_PAD[35] chip_half_frame_0/bidir_PAD[36]
-+ chip_half_frame_0/bidir_PAD[37] chip_half_frame_0/bidir_PAD[38] chip_half_frame_0/bidir_PAD[39]
-+ chip_half_frame_0/bidir_PAD[40] chip_half_frame_0/bidir_PAD[41] chip_half_frame_0/bidir_PAD[42]
-+ chip_half_frame_0/bidir_PAD[43] chip_half_frame_0/bidir_PAD[44] chip_half_frame_0/bidir_PAD[45]
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/IE
-+ ENA_512_1 D1 chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/OE
-+ WEN6 A5 chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A
-+ select_256 chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_1/PD chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A ENA_256_2 chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/OE
-+ WEN5 chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/SL ocd_mux_array_0/Y[1] chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A D6 CLK A2 chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_0/PU select_512 chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/SL
-+ ocd_mux_array_0/Y[4] chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/SL chip_half_frame_0/gf180mcu_ocd_io__in_c_3/PU
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A chip_half_frame_0/gf180mcu_ocd_io__in_c_0/Y
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A
-+ D3 chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A
-+ ocd_mux_array_1/Y[0] chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/IE
-+ A7 chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A
-+ ocd_mux_array_0/Y[7] chip_half_frame_0/gf180mcu_ocd_io__in_c_3/PU chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/SL
-+ D6 chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/IE chip_half_frame_0/gf180mcu_ocd_io__in_c_2/PU
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/IE WEN0 chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A
-+ ocd_mux_array_1/Y[5] chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A
-+ WEN7 A4 chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/SL A8 chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/SL chip_half_frame_0/gf180mcu_ocd_io__in_c_1/PU
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A
-+ ocd_mux_array_1/Y[2] chip_half_frame_0/gf180mcu_ocd_io__in_c_0/PU chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/IE
-+ ENA_512_2 chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/IE chip_half_frame_0/gf180mcu_ocd_io__in_s_0/PU
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/SL ocd_mux_array_0/Y[2] chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A WEN3 chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/OE
-+ ocd_mux_array_1/Y[6] chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/IE D5 chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/OE A1 chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_1/PD chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/SL ENA_256_1 chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/OE
-+ GWEN chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__in_s_0/PU chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A
-+ ocd_mux_array_0/Y[5] chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_0/PD chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_1/PU chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A D6 chip_half_frame_0/gf180mcu_ocd_io__in_s_0/PU
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/OE
-+ ocd_mux_array_1/Y[1] chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A chip_half_frame_0/gf180mcu_ocd_io__in_c_2/PU
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/OE ocd_mux_array_1/Y[3] chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ A6 chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_2/PU WEN4 chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ ocd_mux_array_0/Y[0] chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_15/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_6/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/SL chip_half_frame_0/gf180mcu_ocd_io__in_c_0/PD
-+ D7 chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A
-+ A3 chip_half_frame_0/gf180mcu_ocd_io__bi_a_5/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_8/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_45/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_7/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_37/SL
-+ ocd_mux_array_0/Y[3] chip_half_frame_0/gf180mcu_ocd_io__bi_a_42/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/OE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_9/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_39/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/SL
-+ WEN1 chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_34/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_2/A
-+ chip_half_frame_0/gf180mcu_ocd_io__in_c_3/PU chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A
-+ ocd_mux_array_1/Y[7] chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_18/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/SL D6 chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_26/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_36/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_20/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_31/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_29/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A
-+ D6 chip_half_frame_0/gf180mcu_ocd_io__bi_a_28/SL lvlshift_down_0/YL chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_23/SL A0 chip_half_frame_0/gf180mcu_ocd_io__bi_a_33/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_21/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_25/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_30/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_44/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_38/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_13/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_43/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_12/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_22/SL
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_41/SL chip_half_frame_0/gf180mcu_ocd_io__bi_a_35/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_16/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_10/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_40/OE chip_half_frame_0/gf180mcu_ocd_io__bi_a_3/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/A WEN2 chip_half_frame_0/gf180mcu_ocd_io__bi_a_1/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_27/OE ocd_mux_array_1/Y[4] ocd_mux_array_0/Y[6]
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_32/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_11/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_14/IE chip_half_frame_0/gf180mcu_ocd_io__bi_a_0/IE
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_4/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_17/A
-+ chip_half_frame_0/gf180mcu_ocd_io__bi_a_19/A chip_half_frame_0/gf180mcu_ocd_io__bi_a_24/OE
+Xchip_half_frame_0 DVDD bidir_PAD[42] bidir_PAD[41] bidir_PAD[29] bidir_PAD[26] bidir_PAD[25]
++ bidir_PAD[23] bidir_PAD[11] bidir_PAD[10] clk_PAD chip_half_frame_0/bidir_SL[45]
++ chip_half_frame_0/bidir_SL[44] chip_half_frame_0/bidir_SL[43] chip_half_frame_0/bidir_SL[42]
++ chip_half_frame_0/bidir_SL[41] chip_half_frame_0/bidir_SL[40] chip_half_frame_0/bidir_SL[39]
++ chip_half_frame_0/bidir_SL[38] chip_half_frame_0/bidir_SL[37] chip_half_frame_0/bidir_SL[36]
++ chip_half_frame_0/bidir_SL[35] chip_half_frame_0/bidir_SL[34] chip_half_frame_0/bidir_SL[33]
++ chip_half_frame_0/bidir_SL[32] chip_half_frame_0/bidir_SL[31] chip_half_frame_0/bidir_SL[30]
++ chip_half_frame_0/bidir_A[29] chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27]
++ chip_half_frame_0/bidir_A[26] chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[24]
++ chip_half_frame_0/bidir_A[23] chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21]
++ chip_half_frame_0/bidir_A[20] chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18]
++ chip_half_frame_0/bidir_A[17] chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15]
++ chip_half_frame_0/bidir_A[14] chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12]
++ chip_half_frame_0/bidir_A[11] chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9]
++ chip_half_frame_0/bidir_A[8] chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6]
++ chip_half_frame_0/bidir_A[5] chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3]
++ chip_half_frame_0/bidir_A[2] chip_half_frame_0/bidir_SL[1] chip_half_frame_0/bidir_A[0]
++ chip_half_frame_0/bidir_SL[45] chip_half_frame_0/bidir_SL[44] chip_half_frame_0/bidir_SL[43]
++ chip_half_frame_0/bidir_SL[42] chip_half_frame_0/bidir_SL[41] chip_half_frame_0/bidir_SL[40]
++ chip_half_frame_0/bidir_SL[39] chip_half_frame_0/bidir_SL[38] chip_half_frame_0/bidir_SL[37]
++ chip_half_frame_0/bidir_SL[36] chip_half_frame_0/bidir_SL[35] chip_half_frame_0/bidir_SL[34]
++ chip_half_frame_0/bidir_SL[33] chip_half_frame_0/bidir_SL[32] chip_half_frame_0/bidir_SL[31]
++ chip_half_frame_0/bidir_SL[30] chip_half_frame_0/bidir_A[29] chip_half_frame_0/bidir_A[28]
++ chip_half_frame_0/bidir_A[27] chip_half_frame_0/bidir_A[26] chip_half_frame_0/bidir_A[25]
++ chip_half_frame_0/bidir_A[24] chip_half_frame_0/bidir_A[23] chip_half_frame_0/bidir_A[22]
++ chip_half_frame_0/bidir_A[21] chip_half_frame_0/bidir_A[20] chip_half_frame_0/bidir_A[19]
++ chip_half_frame_0/bidir_A[18] chip_half_frame_0/bidir_A[17] chip_half_frame_0/bidir_A[16]
++ chip_half_frame_0/bidir_A[15] chip_half_frame_0/bidir_A[14] chip_half_frame_0/bidir_A[13]
++ chip_half_frame_0/bidir_A[12] chip_half_frame_0/bidir_A[11] chip_half_frame_0/bidir_A[10]
++ chip_half_frame_0/bidir_A[9] chip_half_frame_0/bidir_A[8] chip_half_frame_0/bidir_A[7]
++ chip_half_frame_0/bidir_A[6] chip_half_frame_0/bidir_A[5] chip_half_frame_0/bidir_A[4]
++ chip_half_frame_0/bidir_A[3] chip_half_frame_0/bidir_A[2] chip_half_frame_0/bidir_SL[1]
++ chip_half_frame_0/bidir_A[0] chip_half_frame_0/bidir_OE[45] chip_half_frame_0/bidir_OE[44]
++ chip_half_frame_0/bidir_OE[43] chip_half_frame_0/bidir_OE[42] chip_half_frame_0/bidir_OE[41]
++ chip_half_frame_0/bidir_OE[40] chip_half_frame_0/bidir_OE[39] chip_half_frame_0/bidir_OE[38]
++ chip_half_frame_0/bidir_OE[37] chip_half_frame_0/bidir_OE[36] chip_half_frame_0/bidir_OE[35]
++ chip_half_frame_0/bidir_OE[34] chip_half_frame_0/bidir_OE[33] chip_half_frame_0/bidir_OE[32]
++ chip_half_frame_0/bidir_OE[31] chip_half_frame_0/bidir_OE[30] chip_half_frame_0/bidir_A[29]
++ chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27] chip_half_frame_0/bidir_A[26]
++ chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[24] chip_half_frame_0/bidir_A[23]
++ chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21] chip_half_frame_0/bidir_A[20]
++ chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18] chip_half_frame_0/bidir_A[17]
++ chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15] chip_half_frame_0/bidir_A[14]
++ chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12] chip_half_frame_0/bidir_A[11]
++ chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9] chip_half_frame_0/bidir_A[8]
++ chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6] chip_half_frame_0/bidir_A[5]
++ chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3] chip_half_frame_0/bidir_A[2]
++ chip_half_frame_0/bidir_OE[1] chip_half_frame_0/bidir_A[0] chip_half_frame_0/bidir_OE[45]
++ chip_half_frame_0/bidir_OE[44] chip_half_frame_0/bidir_OE[43] chip_half_frame_0/bidir_OE[42]
++ chip_half_frame_0/bidir_OE[41] chip_half_frame_0/bidir_OE[40] chip_half_frame_0/bidir_OE[39]
++ chip_half_frame_0/bidir_OE[38] chip_half_frame_0/bidir_OE[37] chip_half_frame_0/bidir_OE[36]
++ chip_half_frame_0/bidir_OE[35] chip_half_frame_0/bidir_OE[34] chip_half_frame_0/bidir_OE[33]
++ chip_half_frame_0/bidir_OE[32] chip_half_frame_0/bidir_OE[31] chip_half_frame_0/bidir_OE[30]
++ chip_half_frame_0/bidir_A[29] chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27]
++ chip_half_frame_0/bidir_A[26] chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[24]
++ chip_half_frame_0/bidir_A[23] chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21]
++ chip_half_frame_0/bidir_A[20] chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18]
++ chip_half_frame_0/bidir_A[17] chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15]
++ chip_half_frame_0/bidir_A[14] chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12]
++ chip_half_frame_0/bidir_A[11] chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9]
++ chip_half_frame_0/bidir_A[8] chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6]
++ chip_half_frame_0/bidir_A[5] chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3]
++ chip_half_frame_0/bidir_A[2] chip_half_frame_0/bidir_OE[1] chip_half_frame_0/bidir_A[0]
++ chip_half_frame_0/bidir_ANA[45] chip_half_frame_0/bidir_ANA[44] chip_half_frame_0/bidir_ANA[43]
++ chip_half_frame_0/bidir_ANA[42] chip_half_frame_0/bidir_ANA[41] chip_half_frame_0/bidir_ANA[40]
++ chip_half_frame_0/bidir_ANA[39] chip_half_frame_0/bidir_ANA[38] chip_half_frame_0/bidir_ANA[37]
++ chip_half_frame_0/bidir_ANA[36] chip_half_frame_0/bidir_ANA[35] chip_half_frame_0/bidir_ANA[34]
++ chip_half_frame_0/bidir_ANA[33] chip_half_frame_0/bidir_ANA[32] chip_half_frame_0/bidir_ANA[31]
++ chip_half_frame_0/bidir_ANA[30] chip_half_frame_0/bidir_ANA[29] chip_half_frame_0/bidir_ANA[28]
++ chip_half_frame_0/bidir_ANA[27] chip_half_frame_0/bidir_ANA[26] chip_half_frame_0/bidir_ANA[25]
++ chip_half_frame_0/bidir_ANA[24] chip_half_frame_0/bidir_ANA[23] chip_half_frame_0/bidir_ANA[22]
++ chip_half_frame_0/bidir_ANA[21] chip_half_frame_0/bidir_ANA[20] chip_half_frame_0/bidir_ANA[19]
++ chip_half_frame_0/bidir_ANA[18] chip_half_frame_0/bidir_ANA[17] chip_half_frame_0/bidir_ANA[16]
++ chip_half_frame_0/bidir_ANA[15] chip_half_frame_0/bidir_ANA[14] chip_half_frame_0/bidir_ANA[13]
++ chip_half_frame_0/bidir_ANA[12] chip_half_frame_0/bidir_ANA[11] chip_half_frame_0/bidir_ANA[10]
++ chip_half_frame_0/bidir_ANA[9] chip_half_frame_0/bidir_ANA[8] chip_half_frame_0/bidir_ANA[7]
++ chip_half_frame_0/bidir_ANA[6] chip_half_frame_0/bidir_ANA[5] chip_half_frame_0/bidir_ANA[4]
++ chip_half_frame_0/bidir_ANA[3] chip_half_frame_0/bidir_ANA[2] chip_half_frame_0/bidir_ANA[1]
++ chip_half_frame_0/bidir_ANA[0] chip_half_frame_0/bidir_SL[45] chip_half_frame_0/bidir_SL[44]
++ chip_half_frame_0/bidir_SL[43] chip_half_frame_0/bidir_SL[42] chip_half_frame_0/bidir_SL[41]
++ chip_half_frame_0/bidir_SL[40] chip_half_frame_0/bidir_SL[39] chip_half_frame_0/bidir_SL[38]
++ chip_half_frame_0/bidir_SL[37] chip_half_frame_0/bidir_SL[36] chip_half_frame_0/bidir_SL[35]
++ chip_half_frame_0/bidir_SL[34] chip_half_frame_0/bidir_SL[33] chip_half_frame_0/bidir_SL[32]
++ chip_half_frame_0/bidir_SL[31] chip_half_frame_0/bidir_SL[30] chip_half_frame_0/bidir_A[29]
++ chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27] chip_half_frame_0/bidir_A[26]
++ chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[24] chip_half_frame_0/bidir_A[23]
++ chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21] chip_half_frame_0/bidir_A[20]
++ chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18] chip_half_frame_0/bidir_A[17]
++ chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15] chip_half_frame_0/bidir_A[14]
++ chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12] chip_half_frame_0/bidir_A[11]
++ chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9] chip_half_frame_0/bidir_A[8]
++ chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6] chip_half_frame_0/bidir_A[5]
++ chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3] chip_half_frame_0/bidir_A[2]
++ chip_half_frame_0/bidir_SL[1] chip_half_frame_0/bidir_A[0] chip_half_frame_0/bidir_SL[45]
++ chip_half_frame_0/bidir_SL[44] chip_half_frame_0/bidir_SL[43] chip_half_frame_0/bidir_SL[42]
++ chip_half_frame_0/bidir_SL[41] chip_half_frame_0/bidir_SL[40] chip_half_frame_0/bidir_SL[39]
++ chip_half_frame_0/bidir_SL[38] chip_half_frame_0/bidir_SL[37] chip_half_frame_0/bidir_SL[36]
++ chip_half_frame_0/bidir_SL[35] chip_half_frame_0/bidir_SL[34] chip_half_frame_0/bidir_SL[33]
++ chip_half_frame_0/bidir_SL[32] chip_half_frame_0/bidir_SL[31] chip_half_frame_0/bidir_SL[30]
++ chip_half_frame_0/bidir_IE[29] chip_half_frame_0/bidir_IE[28] chip_half_frame_0/bidir_IE[27]
++ chip_half_frame_0/bidir_IE[26] chip_half_frame_0/bidir_IE[25] chip_half_frame_0/bidir_IE[24]
++ chip_half_frame_0/bidir_IE[23] chip_half_frame_0/bidir_IE[22] chip_half_frame_0/bidir_IE[21]
++ chip_half_frame_0/bidir_IE[20] chip_half_frame_0/bidir_IE[18] chip_half_frame_0/bidir_IE[17]
++ chip_half_frame_0/bidir_IE[16] chip_half_frame_0/bidir_IE[15] chip_half_frame_0/bidir_IE[14]
++ chip_half_frame_0/bidir_IE[13] chip_half_frame_0/bidir_IE[12] chip_half_frame_0/bidir_IE[11]
++ chip_half_frame_0/bidir_IE[10] chip_half_frame_0/bidir_IE[9] chip_half_frame_0/bidir_IE[8]
++ chip_half_frame_0/bidir_IE[7] chip_half_frame_0/bidir_IE[6] chip_half_frame_0/bidir_IE[5]
++ chip_half_frame_0/bidir_IE[4] chip_half_frame_0/bidir_IE[3] chip_half_frame_0/bidir_IE[2]
++ chip_half_frame_0/bidir_SL[1] chip_half_frame_0/bidir_IE[0] chip_half_frame_0/bidir_SL[45]
++ chip_half_frame_0/bidir_SL[44] chip_half_frame_0/bidir_SL[43] chip_half_frame_0/bidir_SL[42]
++ chip_half_frame_0/bidir_SL[41] chip_half_frame_0/bidir_SL[40] chip_half_frame_0/bidir_SL[39]
++ chip_half_frame_0/bidir_SL[38] chip_half_frame_0/bidir_SL[37] chip_half_frame_0/bidir_SL[36]
++ chip_half_frame_0/bidir_SL[35] chip_half_frame_0/bidir_SL[34] chip_half_frame_0/bidir_SL[33]
++ chip_half_frame_0/bidir_SL[32] chip_half_frame_0/bidir_SL[31] chip_half_frame_0/bidir_SL[30]
++ chip_half_frame_0/bidir_A[29] chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27]
++ chip_half_frame_0/bidir_A[26] chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[24]
++ chip_half_frame_0/bidir_A[23] chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21]
++ chip_half_frame_0/bidir_A[20] chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18]
++ chip_half_frame_0/bidir_A[17] chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15]
++ chip_half_frame_0/bidir_A[14] chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12]
++ chip_half_frame_0/bidir_A[11] chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9]
++ chip_half_frame_0/bidir_A[8] chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6]
++ chip_half_frame_0/bidir_A[5] chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3]
++ chip_half_frame_0/bidir_A[2] chip_half_frame_0/bidir_SL[1] chip_half_frame_0/bidir_A[0]
++ ocd_mux_array_1/Y[7] ocd_mux_array_1/Y[6] ocd_mux_array_1/Y[5] ocd_mux_array_1/Y[4]
++ ocd_mux_array_1/Y[3] ocd_mux_array_1/Y[2] ocd_mux_array_1/Y[1] ocd_mux_array_1/Y[0]
++ ocd_mux_array_0/Y[7] ocd_mux_array_0/Y[6] ocd_mux_array_0/Y[5] ocd_mux_array_0/Y[4]
++ ocd_mux_array_0/Y[3] ocd_mux_array_0/Y[2] ocd_mux_array_0/Y[1] ocd_mux_array_0/Y[0]
++ chip_half_frame_0/bidir_A[29] chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27]
++ chip_half_frame_0/bidir_A[26] chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[23]
++ chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21] chip_half_frame_0/bidir_A[20]
++ chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18] chip_half_frame_0/bidir_A[17]
++ chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15] chip_half_frame_0/bidir_A[14]
++ chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12] chip_half_frame_0/bidir_A[11]
++ chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9] chip_half_frame_0/bidir_A[8]
++ chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6] chip_half_frame_0/bidir_A[5]
++ chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3] chip_half_frame_0/bidir_A[2]
++ lvlshift_down_0/YL chip_half_frame_0/bidir_A[0] chip_half_frame_0/bidir_OE[45] chip_half_frame_0/bidir_OE[44]
++ chip_half_frame_0/bidir_OE[43] chip_half_frame_0/bidir_OE[42] chip_half_frame_0/bidir_OE[41]
++ chip_half_frame_0/bidir_OE[40] chip_half_frame_0/bidir_OE[39] chip_half_frame_0/bidir_OE[38]
++ chip_half_frame_0/bidir_OE[37] chip_half_frame_0/bidir_OE[36] chip_half_frame_0/bidir_OE[35]
++ chip_half_frame_0/bidir_OE[34] chip_half_frame_0/bidir_OE[33] chip_half_frame_0/bidir_OE[32]
++ chip_half_frame_0/bidir_OE[31] chip_half_frame_0/bidir_OE[30] chip_half_frame_0/bidir_A[29]
++ chip_half_frame_0/bidir_A[28] chip_half_frame_0/bidir_A[27] chip_half_frame_0/bidir_A[26]
++ chip_half_frame_0/bidir_A[25] chip_half_frame_0/bidir_A[24] chip_half_frame_0/bidir_A[23]
++ chip_half_frame_0/bidir_A[22] chip_half_frame_0/bidir_A[21] chip_half_frame_0/bidir_A[20]
++ chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[18] chip_half_frame_0/bidir_A[17]
++ chip_half_frame_0/bidir_A[16] chip_half_frame_0/bidir_A[15] chip_half_frame_0/bidir_A[14]
++ chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[12] chip_half_frame_0/bidir_A[11]
++ chip_half_frame_0/bidir_A[10] chip_half_frame_0/bidir_A[9] chip_half_frame_0/bidir_A[8]
++ chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_A[6] chip_half_frame_0/bidir_A[5]
++ chip_half_frame_0/bidir_A[4] chip_half_frame_0/bidir_A[3] chip_half_frame_0/bidir_A[2]
++ chip_half_frame_0/bidir_OE[1] chip_half_frame_0/bidir_A[0] chip_half_frame_0/bidir_Y[45]
++ chip_half_frame_0/bidir_Y[44] chip_half_frame_0/bidir_Y[43] chip_half_frame_0/bidir_Y[42]
++ chip_half_frame_0/bidir_Y[41] chip_half_frame_0/bidir_Y[40] chip_half_frame_0/bidir_Y[39]
++ chip_half_frame_0/bidir_Y[38] chip_half_frame_0/bidir_Y[37] chip_half_frame_0/bidir_Y[36]
++ chip_half_frame_0/bidir_Y[35] chip_half_frame_0/bidir_Y[34] chip_half_frame_0/bidir_Y[33]
++ chip_half_frame_0/bidir_Y[32] chip_half_frame_0/bidir_Y[31] chip_half_frame_0/bidir_Y[30]
++ WEN7 WEN6 WEN5 WEN4 WEN3 WEN2 WEN1 WEN0 ENA_256_2 ENA_256_1 ENA_512_2 ENA_512_1
++ D0 D1 D2 D3 D4 D5 D6 D7 A0 A1 A2 A3 A4 A5 A6 A7 chip_half_frame_0/bidir_Y[1] GWEN
++ chip_half_frame_0/rst_n_PU chip_half_frame_0/loopback_one[50] chip_half_frame_0/loopback_one[49]
++ chip_half_frame_0/loopback_one[48] chip_half_frame_0/input_PD[1] chip_half_frame_0/loopback_one[46]
++ chip_half_frame_0/bidir_OE[42] chip_half_frame_0/bidir_OE[39] chip_half_frame_0/bidir_OE[38]
++ chip_half_frame_0/bidir_OE[37] chip_half_frame_0/bidir_OE[36] chip_half_frame_0/bidir_OE[34]
++ chip_half_frame_0/bidir_OE[33] chip_half_frame_0/bidir_OE[32] chip_half_frame_0/bidir_OE[30]
++ chip_half_frame_0/bidir_IE[28] chip_half_frame_0/bidir_IE[27] chip_half_frame_0/bidir_IE[25]
++ chip_half_frame_0/bidir_IE[21] chip_half_frame_0/bidir_IE[19] chip_half_frame_0/bidir_IE[18]
++ chip_half_frame_0/bidir_IE[17] chip_half_frame_0/bidir_IE[16] chip_half_frame_0/bidir_IE[15]
++ chip_half_frame_0/bidir_IE[12] chip_half_frame_0/bidir_IE[11] chip_half_frame_0/bidir_IE[10]
++ chip_half_frame_0/bidir_IE[9] chip_half_frame_0/bidir_IE[8] chip_half_frame_0/bidir_IE[5]
++ chip_half_frame_0/bidir_IE[4] chip_half_frame_0/bidir_IE[0] chip_half_frame_0/input_PU[3]
++ chip_half_frame_0/input_PU[2] chip_half_frame_0/input_PU[1] chip_half_frame_0/input_PU[0]
++ chip_half_frame_0/bidir_SL[45] chip_half_frame_0/bidir_SL[44] chip_half_frame_0/bidir_SL[43]
++ chip_half_frame_0/bidir_SL[41] chip_half_frame_0/bidir_SL[40] chip_half_frame_0/bidir_SL[37]
++ chip_half_frame_0/bidir_SL[34] chip_half_frame_0/bidir_A[29] chip_half_frame_0/bidir_A[28]
++ chip_half_frame_0/bidir_A[27] chip_half_frame_0/bidir_A[26] chip_half_frame_0/bidir_A[25]
++ chip_half_frame_0/bidir_A[24] chip_half_frame_0/bidir_A[23] chip_half_frame_0/bidir_A[21]
++ chip_half_frame_0/bidir_A[20] chip_half_frame_0/bidir_A[19] chip_half_frame_0/bidir_A[17]
++ chip_half_frame_0/bidir_A[13] chip_half_frame_0/bidir_A[9] chip_half_frame_0/bidir_A[6]
++ chip_half_frame_0/input_PU[3] chip_half_frame_0/input_PU[1] chip_half_frame_0/input_PU[0]
++ chip_half_frame_0/input_PD[1] chip_half_frame_0/input_PU[0] A8 select_256 chip_half_frame_0/input_Y[1]
++ select_512 chip_half_frame_0/clk_PU chip_half_frame_0/clk_PU chip_half_frame_0/rst_n_PU
++ chip_half_frame_0/rst_n_PD chip_half_frame_0/rst_n_Y chip_half_frame_0/bidir_A[10]
++ CLK chip_half_frame_0/bidir_SL[31] bidir_PAD[15] chip_half_frame_0/bidir_A[3] chip_half_frame_0/bidir_A[14]
++ chip_half_frame_0/bidir_IE[29] chip_half_frame_0/bidir_IE[22] bidir_PAD[12] input_PAD[0]
++ bidir_PAD[18] bidir_PAD[0] bidir_PAD[30] bidir_PAD[36] chip_half_frame_0/bidir_OE[43]
++ chip_half_frame_0/bidir_A[0] analog_PAD[1] chip_half_frame_0/bidir_A[11] input_PAD[3]
++ bidir_PAD[33] chip_half_frame_0/bidir_SL[35] chip_half_frame_0/bidir_A[7] chip_half_frame_0/bidir_OE[1]
++ bidir_PAD[5] input_PAD[1] chip_half_frame_0/input_PU[3] bidir_PAD[4] chip_half_frame_0/bidir_SL[32]
++ chip_half_frame_0/bidir_IE[23] analog_PAD[0] bidir_PAD[6] chip_half_frame_0/bidir_A[4]
++ bidir_PAD[22] chip_half_frame_0/clk_PU bidir_PAD[14] chip_half_frame_0/bidir_SL[38]
++ chip_half_frame_0/bidir_A[15] chip_half_frame_0/bidir_OE[44] chip_half_frame_0/input_PU[2]
++ bidir_PAD[19] chip_half_frame_0/bidir_OE[40] bidir_PAD[1] bidir_PAD[40] chip_half_frame_0/bidir_A[24]
++ bidir_PAD[8] chip_half_frame_0/bidir_SL[1] chip_half_frame_0/bidir_A[12] bidir_PAD[43]
++ chip_half_frame_0/bidir_IE[6] chip_half_frame_0/bidir_IE[13] chip_half_frame_0/bidir_IE[2]
++ chip_half_frame_0/bidir_SL[36] chip_half_frame_0/input_PU[2] bidir_PAD[31] bidir_PAD[20]
++ chip_half_frame_0/bidir_A[8] chip_half_frame_0/bidir_OE[35] chip_half_frame_0/bidir_SL[42]
++ chip_half_frame_0/rst_n_PD chip_half_frame_0/bidir_OE[31] bidir_PAD[2] bidir_PAD[37]
++ bidir_PAD[32] bidir_PAD[13] chip_half_frame_0/bidir_IE[24] chip_half_frame_0/bidir_SL[33]
++ chip_half_frame_0/bidir_IE[20] rst_n_PAD chip_half_frame_0/bidir_OE[45] bidir_PAD[34]
++ chip_half_frame_0/bidir_A[22] bidir_PAD[3] chip_half_frame_0/bidir_A[5] bidir_PAD[7]
++ bidir_PAD[44] bidir_PAD[17] bidir_PAD[24] chip_half_frame_0/bidir_SL[39] bidir_PAD[27]
++ bidir_PAD[9] chip_half_frame_0/bidir_IE[19] chip_half_frame_0/bidir_OE[41] chip_half_frame_0/bidir_A[16]
++ chip_half_frame_0/bidir_A[18] bidir_PAD[28] bidir_PAD[39] chip_half_frame_0/bidir_IE[26]
++ analog_PAD[3] VDD chip_half_frame_0/bidir_SL[30] chip_half_frame_0/bidir_IE[7] analog_PAD[2]
++ input_PAD[2] chip_half_frame_0/bidir_IE[14] bidir_PAD[21] bidir_PAD[45] bidir_PAD[35]
++ bidir_PAD[16] chip_half_frame_0/bidir_IE[3] bidir_PAD[38] chip_half_frame_0/bidir_A[2]
 + VSS chip_half_frame
 .ends
 

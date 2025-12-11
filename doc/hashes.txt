@@ -1,0 +1,18 @@
+For submission to Wafer.Space:
+-----------------------------------------
+URL:
+-----------------------------------------
+https://github.com/RTimothyEdwards/gf180mcu_ocd_sram_test/blob/main/gds/gf180mcu_ocd_sram_filled.gds.gz
+
+Top level cellname:
+-----------------------------------------
+caravel_openframe_top
+
+Checksums:
+-----------------------------------------
+md5sum
+499d86bb2ab8871168310a7a03f4c3bf  gf180mcu_ocd_sram_filled.gds
+sha1sum
+29eda5ee4fe8d4481267a49e6e115c4a605a136f  gf180mcu_ocd_sram_filled.gds
+sha256sum
+c014bfe8d1d8aa9837b939dc0be7573a77a7da5adfecc54786be89eabd6b29a9  gf180mcu_ocd_sram_filled.gds

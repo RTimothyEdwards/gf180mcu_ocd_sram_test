@@ -99,3 +99,42 @@ changes are made:
     70 (input only) (unused)
     71 DVDD
     72 DVSS
+
+----------------------------------------------------
+Build procedure:
+----------------------------------------------------
+
+All cells in this layout can be generated directly
+from magic.  However, PDK library cells will be
+generated from the GDS references.
+
+From the magic/ directory, just run magic and do:
+
+	load gf180mcu_ocd_sram_top
+	addpath wafer_space
+	gds compress 9
+	gds write gf180mcu_ocd_sram_top
+
+Move the resulting .gds.gz file to gds/.
+In gds/, run the Wafer.Space fill script and output
+gf180mcu_ocd_sram_filled.gds.gz.  Run final
+klayout DRC verification from validate/run_drc.sh
+(runs on the "gf180mcu_ocd_sram_filled.gds.gz"
+file).
+
+The fill script is:
+
+klayout -zz -r \
+    ${PDK_ROOT}/gf180mcuD/libs.tech/klayout/tech/drc/filler_generation/fill_all.rb \
+    -rd input=gf180mcu_ocd_sram_top.gds.gz \
+    -rd output=gf180mcu_ocd_sram_filled.gds.gz
+
+Finally, run "md5sum", "sha1sum", and "sha256sum" (technically, only one
+of these is required by Wafer.Space) and enter the information into
+"hashes.txt".  IMPORTANT:  The hash sums need to be run on the
+*uncompressed* database, so it must be gunzipped then gzipped back
+again.  Klayout and magic at "compress 9" are doing the equivalent of:
+
+    gzip -n --best gf180mcu_ocd_sram_filled.gds
+
+To do:  Put all the above in scripts and a Makefile.

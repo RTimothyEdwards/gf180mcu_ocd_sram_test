@@ -111,6 +111,6 @@ rect 2400 600 784000 2400
 tri 784000 600 785800 2400 nw
 << properties >>
 string GDS_END 28412284
-string GDS_FILE ../../gds/wafer_space_stuff.gds
+string GDS_FILE ../../gds/sealring.gds.gz
 string GDS_START 104
 << end >>

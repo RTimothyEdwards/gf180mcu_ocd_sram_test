@@ -39,14 +39,14 @@ module chip_half_frame (
 	// Bidirectional Signal pins
 	input  [45:0] bidir_CS,
 	input  [45:0] bidir_PU,
-	input  [45:0] bidir_PD,
 	input  [45:0] bidir_PDRV0,
 	input  [45:0] bidir_PDRV1,
 	inout  [45:0] bidir_ANA,
+	input  [45:0] bidir_PD,
 	input  [45:0] bidir_IE,
 	input  [45:0] bidir_SL,
-	input  [45:0] bidir_OE,
 	input  [45:0] bidir_A,
+	input  [45:0] bidir_OE,
 	output [45:0] bidir_Y,
 
 	// Loopback digital values
@@ -60,53 +60,51 @@ module chip_half_frame (
 	output	[3:0] input_Y,
 
 	// Clock pad
-	input	[3:0] clk_PU,
-	input	[3:0] clk_PD,
-	output	[3:0] clk_Y,
+	input	clk_PU,
+	input	clk_PD,
+	output	clk_Y,
 
 	// Reset pad
-	input	[3:0] rst_n_PU,
-	input	[3:0] rst_n_PD,
-	output	[3:0] rst_n_Y
+	input	rst_n_PU,
+	input	rst_n_PD,
+	output	rst_n_Y
 );
 	// Instantiate power and ground pads for the two voltage
-	// domains vddio/vssio (5V) and vccd/vssd (3.3V).
-	// Within the pad cells, the 5V domain is DVDD/DVSS, and
-	// the 3.3V domain is VDD/VSS.
+	// domains DVDD/DVSS (5V) and VDD/VSS (3.3V).
 
-    	gf180mcu_ocd_io__dvdd vddio_pad [3:0] (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+    	gf180mcu_ocd_io__dvdd DVDD_pad [3:0] (
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
     	);
 
-    	gf180mcu_ocd_io__dvss vssio_pad [3:0] (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+    	gf180mcu_ocd_io__dvss DVSS_pad [3:0] (
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
     	);
 
-    	gf180mcu_ocd_io__vdd vccd_pad [3:0] (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+    	gf180mcu_ocd_io__vdd VDD_pad [3:0] (
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
     	);
 
-    	gf180mcu_ocd_io__vss vssd_pad [3:0] (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+    	gf180mcu_ocd_io__vss VSS_pad [3:0] (
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
     	);
 
 	gf180mcu_ocd_io__in_s rst_n_pad (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd),
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS),
 		.PU(rst_n_PU),
 		.PD(rst_n_PD),
 		.PAD(rst_n_PAD),
@@ -114,10 +112,10 @@ module chip_half_frame (
 	);
 
 	gf180mcu_ocd_io__in_c clk_pad (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd),
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS),
 		.PU(clk_PU),
 		.PD(clk_PD),
 		.PAD(clk_PAD),
@@ -127,20 +125,20 @@ module chip_half_frame (
 	// Corner cells
 
 	gf180mcu_ocd_io__cor padframe_corner [3:0] (
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
 	);
 
 	// Bidirectional general-purpose I/O
 
 	gf180mcu_ocd_io__bi_a bidir_pad [45:0] (
 		`ifdef USE_POWER_PINS
-			.DVDD(vddio),
-			.DVSS(vssio),
-			.VDD(vccd),
-			.VSS(vssd),
+			.DVDD(DVDD),
+			.DVSS(DVSS),
+			.VDD(VDD),
+			.VSS(VSS),
 		`endif
 		.PAD(bidir_PAD),
 		.CS(bidir_CS),
@@ -160,10 +158,10 @@ module chip_half_frame (
 
 	gf180mcu_ocd_io__in_c input_pad [3:0] (
 		`ifdef USE_POWER_PINS
-			.DVDD(vddio),
-			.DVSS(vssio),
-			.VDD(vccd),
-			.VSS(vssd),
+			.DVDD(DVDD),
+			.DVSS(DVSS),
+			.VDD(VDD),
+			.VSS(VSS),
 		`endif
 		.PAD(input_PAD),
 		.PU(input_PU),
@@ -175,10 +173,10 @@ module chip_half_frame (
 
 	gf180mcu_ocd_io__asig_5p0 analog_pad [3:0] (
 	`ifdef USE_POWER_PINS
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd),
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS),
 	`endif
 		.ASIG5V(analog_PAD)
 	);
@@ -189,37 +187,37 @@ module chip_half_frame (
 
 	gf180mcu_ocd_io__fillnc padframe_fillnc [19:0] (
 	`ifdef USE_POWER_PINS
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
 	`endif
 	);
 
 	gf180mcu_ocd_io__fill1 padframe_fill1 [225:0] (
 	`ifdef USE_POWER_PINS
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
 	`endif
 	);
 
 	gf180mcu_ocd_io__fill5 padframe_fill5 [21:0] (
 	`ifdef USE_POWER_PINS
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
 	`endif
 	);
 
 	gf180mcu_ocd_io__fill10 padframe_fill10 [361:0] (
 	`ifdef USE_POWER_PINS
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd)
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS)
 	`endif
 	);
 
@@ -232,10 +230,10 @@ module chip_half_frame (
 
 	gf180mcu_ocd_io__fill10x padframe_fill10x_gpio [51:0] (
 	`ifdef USE_POWER_PINS
-		.DVDD(vddio),
-		.DVSS(vssio),
-		.VDD(vccd),
-		.VSS(vssd),
+		.DVDD(DVDD),
+		.DVSS(DVSS),
+		.VDD(VDD),
+		.VSS(VSS),
 	`endif
 		.one(loopback_one),
 		.zero(loopback_zero)

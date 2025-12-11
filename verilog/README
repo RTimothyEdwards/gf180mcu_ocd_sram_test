@@ -1,0 +1,6 @@
+Testbench:
+The SRAM contains System Verilog "always_comb" and therefore requires the -g2012 switch
+to iverilog for (partial) system verilog support:
+
+iverilog -g2012 -DUSE_POWER_PINS -DSIM gf180mcu_ocd_sram_test_tb.v > & iverilog.out
+
