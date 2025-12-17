@@ -137,4 +137,10 @@ again.  Klayout and magic at "compress 9" are doing the equivalent of:
 
     gzip -n --best gf180mcu_ocd_sram_filled.gds
 
+Run precheck locally.  This must be done from nix-shell.
+The precheck command is:
+
+    python3 precheck.py --input gf180mcu_ocd_sram_filled.gds.gz \
+	--top gf180mcu_ocd_sram_top --slot 1x0p5
+
 To do:  Put all the above in scripts and a Makefile.

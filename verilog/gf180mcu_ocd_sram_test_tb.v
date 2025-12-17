@@ -1,6 +1,7 @@
 /* Verilog testbench for SRAM test chip */
 
 /* PDK libraries */
+`include "/usr/share/pdk/gf180mcuD/libs.ref/gf180mcu_ocd_ip_sram/verilog/gf180mcu_ocd_ip_sram__sram1024x8m8wm1.v"
 `include "/usr/share/pdk/gf180mcuD/libs.ref/gf180mcu_ocd_ip_sram/verilog/gf180mcu_ocd_ip_sram__sram512x8m8wm1.v"
 `include "/usr/share/pdk/gf180mcuD/libs.ref/gf180mcu_ocd_ip_sram/verilog/gf180mcu_ocd_ip_sram__sram256x8m8wm1.v"
 `include "/usr/share/pdk/gf180mcuD/libs.ref/gf180mcu_ocd_io/verilog/gf180mcu_ocd_io.v"
@@ -22,15 +23,15 @@ module gf180mcu_ocd_sram_test_tb();
 
 	/* Instantiate the chip */
 
-	reg  [8:0] sram_addr;
+	reg  [9:0] sram_addr;
 	reg  [7:0] sram_data_in;
-	wire [7:0] sram_512_data_out;
+	wire [7:0] sram_512_1024_data_out;
 	wire [7:0] sram_256_data_out;
-	reg 	   sram_512_1_cen;
-	reg 	   sram_512_2_cen;
+	reg 	   sram_512_cen;
+	reg 	   sram_1024_cen;
 	reg 	   sram_256_1_cen;
 	reg 	   sram_256_2_cen;
-	reg	   sram_512_sel;
+	reg	   sram_512_1024_sel;
 	reg	   sram_256_sel;
 	reg  [7:0] wenb;
 	reg 	   gwenb;
@@ -63,11 +64,11 @@ module gf180mcu_ocd_sram_test_tb();
 		gwenb <= 1'b1;
 		sram_addr <= 9'h000;
 		sram_data_in <= 8'h00;
-		sram_512_1_cen <= 1'b1;
-		sram_512_2_cen <= 1'b1;
+		sram_512_cen <= 1'b1;
+		sram_1024_cen <= 1'b1;
 		sram_256_1_cen <= 1'b1;
 		sram_256_2_cen <= 1'b1;
-		sram_512_sel <= 1'b0;
+		sram_512_1024_sel <= 1'b0;
 		sram_256_sel <= 1'b0;
 
 		/* Quick test:  Enable one SRAM, write a value,
@@ -75,30 +76,30 @@ module gf180mcu_ocd_sram_test_tb();
 		 */
 
 		#100;
-		sram_512_1_cen <= 1'b0;	  /* active low */
+		sram_512_cen <= 1'b0;	  /* active low */
 		#100;
 		$display("   SRAM in  = 8'h%2h", sram_data_in);
-		$display("   SRAM out = 8'h%2h", sram_512_data_out);
+		$display("   SRAM out = 8'h%2h", sram_512_1024_data_out);
 		sram_data_in <= 8'h55;
 		#100;
 		$display("   SRAM in  = 8'h%2h", sram_data_in);
-		$display("   SRAM out = 8'h%2h", sram_512_data_out);
+		$display("   SRAM out = 8'h%2h", sram_512_1024_data_out);
 		wenb <= 8'h00;
 		#100;
 		$display("   SRAM in  = 8'h%2h", sram_data_in);
-		$display("   SRAM out = 8'h%2h", sram_512_data_out);
+		$display("   SRAM out = 8'h%2h", sram_512_1024_data_out);
 		gwenb <= 1'b0;		/* force write */
 		#100;
 		$display("   SRAM in  = 8'h%2h", sram_data_in);
-		$display("   SRAM out = 8'h%2h", sram_512_data_out);
+		$display("   SRAM out = 8'h%2h", sram_512_1024_data_out);
 		sram_data_in <= 8'haa;	/* change data */
 		#100;
 		$display("   SRAM in  = 8'h%2h", sram_data_in);
-		$display("   SRAM out = 8'h%2h", sram_512_data_out);
-		sram_512_1_cen <= 1'b1;	  /* disable (data retained) */
+		$display("   SRAM out = 8'h%2h", sram_512_1024_data_out);
+		sram_512_cen <= 1'b1;	  /* disable (data retained) */
 		#100;
 		$display("   SRAM in  = 8'h%2h", sram_data_in);
-		$display("   SRAM out = 8'h%2h", sram_512_data_out);
+		$display("   SRAM out = 8'h%2h", sram_512_1024_data_out);
 
 		$finish;
 		
@@ -109,11 +110,11 @@ module gf180mcu_ocd_sram_test_tb();
 		.DVSS(DVSS),
 		.VDD(VDD),
 		.VSS(VSS),
-		.bidir_PAD({gwenb,sram_addr[7:0],por_out,sram_data_in,sram_512_1_cen,
-			sram_512_2_cen, sram_256_1_cen,sram_256_2_cen,wenb,
-			sram_512_data_out, sram_256_data_out}),
+		.bidir_PAD({gwenb,sram_addr[7:0],por_out,sram_data_in,sram_512_cen,
+			sram_1024_cen, sram_256_1_cen,sram_256_2_cen,wenb,
+			sram_512_1024_data_out, sram_256_data_out}),
 		.analog_PAD(ncana),
-		.input_PAD({sram_512_sel,sram_256_sel,sram_addr[8],ncin}),
+		.input_PAD({sram_512_1024_sel,sram_256_sel,sram_addr[8],sram_addr[9]}),
 		.clk_PAD(clk),
 		.rst_n_PAD(rst_n)
 	);

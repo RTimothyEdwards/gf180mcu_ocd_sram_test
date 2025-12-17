@@ -1,9 +1,9 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1765407464
+timestamp 1765934810
 use gf180mcu_ocd_sram_test  gf180mcu_ocd_sram_test_0
-timestamp 1765404328
+timestamp 1765934810
 transform 1 0 1 0 1 0
 box 5200 5200 781200 501000
 use gf180mcu_ws_ip__id  gf180mcu_ws_ip__id_0 wafer_space

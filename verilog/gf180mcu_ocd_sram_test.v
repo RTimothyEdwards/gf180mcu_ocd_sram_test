@@ -54,27 +54,27 @@ module gf180mcu_ocd_sram_test (
 
 	/* Main SRAM wiring */
 
-	wire [8:0]	shared_addr;
+	wire [9:0]	shared_addr;
 	wire [7:0]	shared_din;
-	wire [7:0]	sram_512_1_qout;
-	wire [7:0]	sram_512_2_qout;
+	wire [7:0]	sram_512_qout;
+	wire [7:0]	sram_1024_qout;
 	wire [7:0]	sram_256_1_qout;
 	wire [7:0]	sram_256_2_qout;
 	wire		shared_gwen;
 	wire [7:0]	shared_wen;
 	wire		shared_clk;
-	wire		sram_512_1_cen;
-	wire		sram_512_2_cen;
+	wire		sram_512_cen;
+	wire		sram_1024_cen;
 	wire		sram_256_1_cen;
 	wire		sram_256_2_cen;
 
 	/* Multiplexed SRAM outputs */
 
-	wire [7:0]	shared_512_qout;
+	wire [7:0]	shared_512_1024_qout;
 	wire [7:0]	shared_256_qout;
 
 	/* Multiplexer control */
-	wire		sram_output_select_512;
+	wire		sram_output_select_512_1024;
 	wire		sram_output_select_256;
 
 	/* POR test output */
@@ -82,7 +82,7 @@ module gf180mcu_ocd_sram_test (
 	wire		por_l;		/* output in 3.3V domain */
 
 	/* No-connects */
-	wire [18:0]	ncin;		/* unused pad input pins */
+	wire [17:0]	ncin;		/* unused pad input pins */
 	wire [28:0]	ncout;		/* unused pad output pins */
 
 	/* Implement the padframe.  All pad behavior is fixed by
@@ -142,14 +142,14 @@ module gf180mcu_ocd_sram_test (
 			   loopback_zero[29:2],
 			   loopback_one[1],
 			   loopback_zero[0]}),
-		.bidir_A({shared_512_qout[0],
-			  shared_512_qout[1],
-			  shared_512_qout[2],
-			  shared_512_qout[3],
-			  shared_512_qout[4],
-			  shared_512_qout[5],
-			  shared_512_qout[6],
-			  shared_512_qout[7],
+		.bidir_A({shared_512_1024_qout[0],
+			  shared_512_1024_qout[1],
+			  shared_512_1024_qout[2],
+			  shared_512_1024_qout[3],
+			  shared_512_1024_qout[4],
+			  shared_512_1024_qout[5],
+			  shared_512_1024_qout[6],
+			  shared_512_1024_qout[7],
 			  shared_256_qout[0],
 			  shared_256_qout[1],
 			  shared_256_qout[2],
@@ -172,8 +172,8 @@ module gf180mcu_ocd_sram_test (
 			  shared_wen[0],
 			  sram_256_2_cen,
 		  	  sram_256_1_cen,
-		  	  sram_512_2_cen,
-		  	  sram_512_1_cen,
+		  	  sram_512_cen,
+		  	  sram_1024_cen,
 			  shared_din[0],
 			  shared_din[1],
 			  shared_din[2],
@@ -201,8 +201,8 @@ module gf180mcu_ocd_sram_test (
 		.input_PD({loopback_zero[49:48],loopback_one[47],loopback_zero[46]}),
 		.input_Y({shared_addr[8],
 			  sram_output_select_256,
-			  ncin[17],
-			  sram_output_select_512}),
+			  shared_addr[9],
+			  sram_output_select_512_1024}),
 
 		.clk_PU(loopback_zero[50]),
 		.clk_PD(loopback_zero[50]),
@@ -210,37 +210,37 @@ module gf180mcu_ocd_sram_test (
 
 		.rst_n_PU(loopback_one[51]),		/* standard pull-up reset */
 		.rst_n_PD(loopback_zero[51]),
-		.rst_n_Y(ncin[18])			/* unused */
+		.rst_n_Y(ncin[17])			/* unused */
 	);
 
 	/* Implement the two 512 byte SRAMs */
 
-	gf180mcu_ocd_ip_sram__sram512x8m8wm1  sram512_0 (
+	gf180mcu_ocd_ip_sram__sram512x8m8wm1  sram512 (
         `ifdef USE_POWER_PINS
             .VDD(VDD),
             .VSS(VSS),
         `endif
             .CLK(shared_clk),
-            .CEN(sram_512_1_cen),
+            .CEN(sram_512_cen),
             .GWEN(shared_gwen),
             .WEN(shared_wen),
-            .A(shared_addr),
+            .A(shared_addr[8:0]),
             .D(shared_din),
-            .Q(sram_512_1_qout)
+            .Q(sram_512_qout)
 	);
 
-	gf180mcu_ocd_ip_sram__sram512x8m8wm1  sram512_1 (
+	gf180mcu_ocd_ip_sram__sram1024x8m8wm1  sram1024 (
         `ifdef USE_POWER_PINS
             .VDD(VDD),
             .VSS(VSS),
         `endif
             .CLK(shared_clk),
-            .CEN(sram_512_2_cen),
+            .CEN(sram_1024_cen),
             .GWEN(shared_gwen),
             .WEN(shared_wen),
             .A(shared_addr),
             .D(shared_din),
-            .Q(sram_512_2_qout)
+            .Q(sram_1024_qout)
 	);
 
 	/* Implement the two 256 byte SRAMs */
@@ -303,20 +303,20 @@ module gf180mcu_ocd_sram_test (
 		.vdd(VDD),
 		.vss(VSS),
 	`endif
-		.S(sram_output_select_512),
+		.S(sram_output_select_512_1024),
 		// The muxes are all numbered backwards from the SRAM outputs
-		.A({sram_512_1_qout[0],sram_512_1_qout[1],
-			sram_512_1_qout[2],sram_512_1_qout[3],
-			sram_512_1_qout[4],sram_512_1_qout[5],
-			sram_512_1_qout[6],sram_512_1_qout[7]}),
-		.B({sram_512_2_qout[0],sram_512_2_qout[1],
-			sram_512_2_qout[2],sram_512_2_qout[3],
-			sram_512_2_qout[4],sram_512_2_qout[5],
-			sram_512_2_qout[6],sram_512_2_qout[7]}),
-		.Y({shared_512_qout[0],shared_512_qout[1],
-			shared_512_qout[2],shared_512_qout[3],
-			shared_512_qout[4],shared_512_qout[5],
-			shared_512_qout[6],shared_512_qout[7]})
+		.A({sram_1024_qout[0],sram_1024_qout[1],
+			sram_1024_qout[2],sram_1024_qout[3],
+			sram_1024_qout[4],sram_1024_qout[5],
+			sram_1024_qout[6],sram_1024_qout[7]}),
+		.B({sram_512_qout[0],sram_512_qout[1],
+			sram_512_qout[2],sram_512_qout[3],
+			sram_512_qout[4],sram_512_qout[5],
+			sram_512_qout[6],sram_512_qout[7]}),
+		.Y({shared_512_1024_qout[0],shared_512_1024_qout[1],
+			shared_512_1024_qout[2],shared_512_1024_qout[3],
+			shared_512_1024_qout[4],shared_512_1024_qout[5],
+			shared_512_1024_qout[6],shared_512_1024_qout[7]})
 	);
 
 	/* Implement the multiplexer for the 256 byte SRAM outputs */

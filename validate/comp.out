@@ -11743,6 +11743,55 @@ vss                                                                          |vs
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes ocd_mux_array and ocd_mux_array are equivalent.
+
+Circuit 2 cell gf180mcu_ocd_ip_sram__sram1024x8m8wm1 is a black box; will not flatten Circuit 1
+Warning: Equate pins:  cell gf180mcu_ocd_ip_sram__sram1024x8m8wm1 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: gf180mcu_ocd_ip_sram__sram1024x8m8wm1                             |Circuit 2: gf180mcu_ocd_ip_sram__sram1024x8m8wm1                             
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+CEN                                                                          |CEN                                                                          
+CLK                                                                          |CLK                                                                          
+GWEN                                                                         |GWEN                                                                         
+Q[7]                                                                         |Q[7]                                                                         
+VDD                                                                          |VDD                                                                          
+VSS                                                                          |VSS                                                                          
+WEN[7]                                                                       |WEN[7]                                                                       
+WEN[6]                                                                       |WEN[6]                                                                       
+WEN[5]                                                                       |WEN[5]                                                                       
+WEN[4]                                                                       |WEN[4]                                                                       
+WEN[3]                                                                       |WEN[3]                                                                       
+WEN[2]                                                                       |WEN[2]                                                                       
+WEN[1]                                                                       |WEN[1]                                                                       
+WEN[0]                                                                       |WEN[0]                                                                       
+D[0]                                                                         |D[0]                                                                         
+A[0]                                                                         |A[0]                                                                         
+D[1]                                                                         |D[1]                                                                         
+A[1]                                                                         |A[1]                                                                         
+D[2]                                                                         |D[2]                                                                         
+A[2]                                                                         |A[2]                                                                         
+D[3]                                                                         |D[3]                                                                         
+A[3]                                                                         |A[3]                                                                         
+D[4]                                                                         |D[4]                                                                         
+A[4]                                                                         |A[4]                                                                         
+D[5]                                                                         |D[5]                                                                         
+A[5]                                                                         |A[5]                                                                         
+D[6]                                                                         |D[6]                                                                         
+A[6]                                                                         |A[6]                                                                         
+D[7]                                                                         |D[7]                                                                         
+A[7]                                                                         |A[7]                                                                         
+A[8]                                                                         |A[8]                                                                         
+A[9]                                                                         |A[9]                                                                         
+Q[0]                                                                         |Q[0]                                                                         
+Q[1]                                                                         |Q[1]                                                                         
+Q[2]                                                                         |Q[2]                                                                         
+Q[3]                                                                         |Q[3]                                                                         
+Q[4]                                                                         |Q[4]                                                                         
+Q[5]                                                                         |Q[5]                                                                         
+Q[6]                                                                         |Q[6]                                                                         
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes gf180mcu_ocd_ip_sram__sram1024x8m8wm1 and gf180mcu_ocd_ip_sram__sram1024x8m8wm1 are equivalent.
 Flattening unmatched subcell gf180mcu_ocd_io__fillnc in circuit chip_half_frame (0)(20 instances)
 Flattening unmatched subcell gf180mcu_ocd_io__fill1 in circuit chip_half_frame (0)(226 instances)
 
@@ -12403,7 +12452,6 @@ input_PD[1]                                                                  |in
 input_PD[0]                                                                  |input_PD[0]                                                                  
 input_Y[3]                                                                   |input_Y[3]                                                                   
 input_Y[2]                                                                   |input_Y[2]                                                                   
-input_Y[1]                                                                   |input_Y[1]                                                                   
 input_Y[0]                                                                   |input_Y[0]                                                                   
 clk_PU                                                                       |clk_PU                                                                       
 clk_PD                                                                       |clk_PD                                                                       
@@ -12474,6 +12522,7 @@ bidir_PAD[2]                                                                 |bi
 bidir_PAD[37]                                                                |bidir_PAD[37]                                                                
 bidir_PAD[32]                                                                |bidir_PAD[32]                                                                
 bidir_PAD[13]                                                                |bidir_PAD[13]                                                                
+input_Y[1]                                                                   |input_Y[1]                                                                   
 loopback_one[24]                                                             |loopback_one[24]                                                             
 loopback_zero[33]                                                            |loopback_zero[33]                                                            
 loopback_one[20]                                                             |loopback_one[20]                                                             
@@ -12521,11 +12570,12 @@ Device classes chip_half_frame and chip_half_frame are equivalent.
 Subcircuit summary:
 Circuit 1: gf180mcu_ocd_sram_test                                            |Circuit 2: gf180mcu_ocd_sram_test                                            
 -----------------------------------------------------------------------------|-----------------------------------------------------------------------------
-gf180mcu_ocd_ip_sram__sram512x8m8wm1 (2)                                     |gf180mcu_ocd_ip_sram__sram512x8m8wm1 (2)                                     
+gf180mcu_ocd_ip_sram__sram512x8m8wm1 (1)                                     |gf180mcu_ocd_ip_sram__sram512x8m8wm1 (1)                                     
 lvlshift_down (1)                                                            |lvlshift_down (1)                                                            
 simple_por (1)                                                               |simple_por (1)                                                               
 gf180mcu_ocd_ip_sram__sram256x8m8wm1 (2)                                     |gf180mcu_ocd_ip_sram__sram256x8m8wm1 (2)                                     
 ocd_mux_array (2)                                                            |ocd_mux_array (2)                                                            
+gf180mcu_ocd_ip_sram__sram1024x8m8wm1 (1)                                    |gf180mcu_ocd_ip_sram__sram1024x8m8wm1 (1)                                    
 chip_half_frame (1)                                                          |chip_half_frame (1)                                                          
 Number of devices: 9                                                         |Number of devices: 9                                                         
 Number of nets: 313                                                          |Number of nets: 313                                                          
@@ -12541,7 +12591,8 @@ Net: dummy_313                                                               |Ne
                                                                              |                                                                             
 Net: VSS                                                                     |Net: VSS                                                                     
   chip_half_frame/VSS = 1                                                    |  chip_half_frame/VSS = 1                                                    
-  gf180mcu_ocd_ip_sram__sram512x8m8wm1/VSS = 2                               |  gf180mcu_ocd_ip_sram__sram512x8m8wm1/VSS = 2                               
+  gf180mcu_ocd_ip_sram__sram512x8m8wm1/VSS = 1                               |  gf180mcu_ocd_ip_sram__sram512x8m8wm1/VSS = 1                               
+  gf180mcu_ocd_ip_sram__sram1024x8m8wm1/VSS = 1                              |  gf180mcu_ocd_ip_sram__sram1024x8m8wm1/VSS = 1                              
   gf180mcu_ocd_ip_sram__sram256x8m8wm1/VSS = 2                               |  gf180mcu_ocd_ip_sram__sram256x8m8wm1/VSS = 2                               
   ocd_mux_array/vss = 2                                                      |  ocd_mux_array/vss = 2                                                      
   simple_por/VSS = 1                                                         |                                                                             
