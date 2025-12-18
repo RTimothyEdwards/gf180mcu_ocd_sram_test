@@ -1,7 +1,9 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1764033565
+timestamp 1766089602
+<< isosubstrate >>
+rect 0 0 25156 8640
 << metal1 >>
 rect 3923 8654 6463 8714
 rect 3923 7964 3963 8654

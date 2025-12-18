@@ -100,7 +100,7 @@ module chip_half_frame (
 		.VSS(VSS)
     	);
 
-	gf180mcu_ocd_io__in_s rst_n_pad (
+	gf180mcu_ocd_io__in_c rst_n_pad (
 		.DVDD(DVDD),
 		.DVSS(DVSS),
 		.VDD(VDD),
@@ -111,7 +111,7 @@ module chip_half_frame (
 		.Y(rst_n_Y)
 	);
 
-	gf180mcu_ocd_io__in_c clk_pad (
+	gf180mcu_ocd_io__in_s clk_pad (
 		.DVDD(DVDD),
 		.DVSS(DVSS),
 		.VDD(VDD),
