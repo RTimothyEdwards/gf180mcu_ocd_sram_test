@@ -9,9 +9,9 @@ echo "Running netlist extraction on gf180mcu_ocd_sram_test"
 magic -dnull -noconsole -rcfile ${PDK_ROOT}/${PDK}/libs.tech/magic/${PDK}.magicrc << EOF
 load gf180mcu_ocd_sram_test
 select top cell
-# extract unique notopports
 extract path extfiles
-extract unique notopports
+# extract unique notopports
+extract unique
 extract no all
 extract all
 ext2spice lvs
