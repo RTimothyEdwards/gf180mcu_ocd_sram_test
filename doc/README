@@ -144,3 +144,14 @@ The precheck command is:
 	--top gf180mcu_ocd_sram_top --slot 1x0p5
 
 To do:  Put all the above in scripts and a Makefile.
+January 2, 2026 update:  Created scripts for all steps except the
+precheck (which still needs to be done in a nix shell;  haven't
+tried automating that yet).
+
+    cd magic
+    ../scripts/run_gen_gds.sh
+    ../scripts/run_fill_gds.sh
+
+Then copy the hash results into doc/hashes.txt, run precheck as shown
+above, then push back to the repository once validated.
+

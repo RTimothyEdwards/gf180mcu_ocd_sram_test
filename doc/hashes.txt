@@ -6,13 +6,13 @@ https://github.com/RTimothyEdwards/gf180mcu_ocd_sram_test/blob/main/gds/gf180mcu
 
 Top level cellname:
 -----------------------------------------
-caravel_openframe_top
+caravel_ocd_sram_top
 
 Checksums:
 -----------------------------------------
-md5sum
-bb2d8365cc90ec711512145b4f5bbfee  gf180mcu_ocd_sram_filled.gds
-sha1sum
-6b11764df9a58342ffd6d3bae3245167a96626b3  gf180mcu_ocd_sram_filled.gds
-sha256sum
-7e63cafc97dd398e55b2721d74fc983aa29d778df548f40e203c5eb3f89bc02c  gf180mcu_ocd_sram_filled.gds
+md5sum:
+2003145ca07cf2230f843b95d867ed01  gf180mcu_ocd_sram_filled.gds
+sha1sum:
+d2d82ba5e6055d75509ff587735239fae36966c8  gf180mcu_ocd_sram_filled.gds
+sha256sum:
+94ad68c589fdfcf649566bbcfe27592eaa7536b9132e782b5746eed59c0f3584  gf180mcu_ocd_sram_filled.gds
