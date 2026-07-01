@@ -598,9 +598,7 @@ Flattening unmatched subcell nmos_5p04310591302059_3v1024x8m81 in circuit alatch
 Flattening unmatched subcell pmos_1p2_160_3v1024x8m81 in circuit alatch_3v1024x8m81 (1)(1 instance)
 Flattening unmatched subcell pmos_5p04310591302014_3v1024x8m81 in circuit alatch_3v1024x8m81 (1)(1 instance)
 
-Cell alatch_3v1024x8m81 (1) disconnected node: en
 Class alatch_3v1024x8m81 (1):  Merged 2 parallel devices.
-Cell alatch_3v1024x8m81 (1) disconnected node: en
 Subcircuit summary:
 Circuit 1: alatch_3v1024x8m81                                                |Circuit 2: alatch_3v1024x8m81                                                
 -----------------------------------------------------------------------------|-----------------------------------------------------------------------------
@@ -609,7 +607,7 @@ pfet_03v3 (5->4)                                                             |pf
 Number of devices: 8                                                         |Number of devices: 8                                                         
 Number of nets: 8                                                            |Number of nets: 8                                                            
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-Netlists match uniquely with port errors.
+Netlists match uniquely.
 
 Subcircuit pins:
 Circuit 1: alatch_3v1024x8m81                                                |Circuit 2: alatch_3v1024x8m81                                                
@@ -617,12 +615,11 @@ Circuit 1: alatch_3v1024x8m81                                                |Ci
 ab                                                                           |ab                                                                           
 vss                                                                          |vss                                                                          
 vdd                                                                          |vdd                                                                          
-a_886_665#                                                                   |en **Mismatch**                                                              
+en                                                                           |en                                                                           
 a                                                                            |a                                                                            
 enb                                                                          |enb                                                                          
-en                                                                           |(no matching pin)                                                            
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-Cell pin lists for alatch_3v1024x8m81 and alatch_3v1024x8m81 altered to match.
+Cell pin lists are equivalent.
 Device classes alatch_3v1024x8m81 and alatch_3v1024x8m81 are equivalent.
 
 Circuit 1 cell cap_nmos_06v0 and Circuit 2 cell cap_nmos_06v0 are black boxes.

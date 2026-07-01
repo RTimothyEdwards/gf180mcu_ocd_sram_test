@@ -49,10 +49,10 @@ changes are made:
    Right side
     25 VSS
     26 VDD
-    27 ENA (1st 512 byte SRAM)
-    28 ENA (2nd 512 byte SRAM)
-    29 ENA (1st 256 byte SRAM)
-    30 ENA (2nd 256 byte SRAM)
+    27 CEN (1st 512 byte SRAM)
+    28 CEN (2nd 512 byte SRAM)
+    29 CEN (1st 256 byte SRAM)
+    30 CEN (2nd 256 byte SRAM)
     31 WEN7
     32 WEN6
     33 WEN5
@@ -94,9 +94,9 @@ changes are made:
     65 (analog, unused)
     66 (analog, unused)
     67 (input only) output select:  512 byte 1 or 2
-    68 (input only) output select:  256 byte 1 or 2
-    69 (input only) A8 (512 byte SRAMs only)
-    70 (input only) (unused)
+    68 (input only) A9 (1024 byte SRAM only)
+    69 (input only) output select:  256 byte 1 or 2
+    70 (input only) A8 (512 and 1024 byte SRAMs only)
     71 DVDD
     72 DVSS
 
@@ -155,3 +155,122 @@ tried automating that yet).
 Then copy the hash results into doc/hashes.txt, run precheck as shown
 above, then push back to the repository once validated.
 
+-----------------------------------------------------------------
+Wafer.Space COB:
+
+Mezzanine connector pin assignments
+
+---------------------------------------------------------------------------------
+test    pad	pad	     mezz.	mezz.	pad		pad	test
+pin	num	name	      pin	pin	name		num	pin
+---------------------------------------------------------------------------------
+A3	11	bidir_6		70	1	bidir_5		10	A4
+A2	12	bidir_7		69	2	bidir_4		9	A5
+A1	13	bidir_8		68	3	bidir_3		8	A6
+A0	14	bidir_9		67	4	bidir_2		7	A7
+D7	15	bidir_10	66	5	bidir_1		4	POR out
+D6	16	bidir_11	65	6	bidir_0		3	GWEN
+D5	17	bidir_12	64	7	rst_n		2	rst_n
+D4	18	bidir_13	63	8	clk		1	CLK
+5.0V	20	VDD_IO_0	62	9	VDD_IO_3	71	5.0V
+GND	  	GND		61	10	GND		  	GND
+D3	21	bidir_14	60	11	VDD_CORE_1	6 	3.3V 
+D2	22	bidir_15	59	12	in_3		70	A8
+D1	23	bidir_16	58	13	in_2		69	SEL2
+D0	24	bidir_17	57	14	in_1		68	A9
+CEN1/5	27	bidir_18	56	15	in_0		67	SEL5
+CEN2/5	28	bidir_19	55	16	an_3		66
+3.3V	26  	PWR_AUX_0	54	17	an_2		65
+GND	  	GND		53	18	GND		  	GND
+CEN1/2	29	bidir_20	52	19	PWR_AUX_1	61	3.3V
+CEN2/2	30	bidir_21	51	20	an_1		64
+WEN0	31	bidir_22	50	21	an_0		63
+WEN1	32	bidir_23	49	22	bidir_45	60	Q0/2
+WEN2	33	bidir_24	48	23	bidir_44	59	Q1/2
+WEN3	34	bidir_25	47	24	VDD_IO_2	55	5.0V  
+3.3V	41  	VDD_CORE_0	46	25	GND		  	GND
+GND	  	GND		45	26	bidir_43	58	Q2/2
+5.0V	36  	VDD_IO_1	44	27	bidir_42	57	Q3/2
+WEN4	37	bidir_26	43	28	bidir_41	54	Q4/2
+WEN5	38	bidir_27	42	29	bidir_40	53	Q5/2
+WEN6	39	bidir_28	41	30	bidir_39	52	Q6/2
+WEN7	40	bidir_29	40	31	bidir_38	51	Q7/2
+Q7/5	43	bidir_30	39	32	bidir_37	50	Q0/5
+Q6/5	44	bidir_31	38	33	bidir_36	49	Q1/5
+Q5/5	45	bidir_32	37	34	bidir_35	48	Q2/5
+Q4/5	46	bidir_33	36	35	bidir_34	47	Q3/5
+
+-----------------------------------------------------------------------------
+Test with single Digilent Analog Discovery 2:
+Exercise Lowest four data bits on D and Q, and lowest six address bits.
+Start with the 256 byte side.
+
+Assignments:
+Digilent signal board pin
+-------------------------
+DIO 0	 clk	 8
+
+DIO 1	 gwen	 6
+
+DIO 2	 A0	67
+DIO 3	 A1	68
+DIO 4	 A2	69
+DIO 5	 A3	70
+DIO 6	 A4	 1
+DIO 7	 A5	 2
+
+DIO 8	 Q3/2	27
+DIO 9	 Q2/2	26
+DIO 10	 Q1/2	23
+DIO 11	 Q0/2	22
+
+DIO 12	 D3	60
+DIO 13	 D2	59
+DIO 14	 D1	58
+DIO 15	 D0	57
+
+All Q pins are for the 256 byte macros.
+Data and address pins are shared by both sides.
+
+Constant values:
+GND	 D4	63
+GND	 D5	64
+GND	 D6	65
+GND	 D7	66
+
+GND	 A6	 3
+GND	 A7	 4
+GND	 A8	12
+GND	 A9	14
+
+GND	 WEN7	40
+GND	 WEN6	41
+GND	 WEN5	42
+GND	 WEN4	43
+GND	 WEN3	47
+GND	 WEN2	48
+GND	 WEN1	49
+GND	 WEN0	50
+
+open	 Q4/2	28
+open	 Q5/2	29
+open	 Q6/2	30
+open	 Q7/2	31
+
+GND	 SEL2	13	(select 256 byte bank 1 or 2 on Q/2 outputs)
+GND	 SEL5	15	(select 512 or 1024 byte bank on Q/5 outputs))
+
+GND	 CEN1/5	56	(enable all four for starters)
+GND	 CEN2/5	55
+GND	 CEN1/2	52
+GND	 CEN2/2 51
+
+Because the Digilent DIO channels only go to 3.3V, use 3.3V on the
+periphery as well as the core (can also test the core at 1.8V).
+
+Local WEN bits are set to zero;  GWEN controls the read/write state.
+
+SEL lines:  GND selects bank 1, VDD selects bank 2
+
+Functional note:  CEN must be high on power-on and then set to zero for
+first use.

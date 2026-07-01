@@ -11,7 +11,7 @@ load gf180mcu_ocd_sram_test
 select top cell
 extract path extfiles
 # extract unique notopports
-extract unique
+extract do unique
 extract no all
 extract all
 ext2spice lvs
