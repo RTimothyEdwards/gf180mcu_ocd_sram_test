@@ -23,7 +23,7 @@ cd ../gds
 # unused and is pure fill.
 
 klayout -zz -r \
-    ${PDK_ROOT}/gf180mcuD/libs.tech/klayout/tech/drc/filler_generation/fill_all.rb \
+    ${PDK_ROOT}/gf180mcuD/libs.tech/klayout/tech/scripts/fill_all.rb \
     -rd input=gf180mcu_ocd_sram2_top.gds.gz \
     -rd output=gf180mcu_ocd_sram2_filled.gds
 

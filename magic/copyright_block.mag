@@ -1,10 +1,22 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1764012043
+timestamp 1783194594
+<< checkpaint >>
+rect -1640 4292 5168 4502
+rect -1640 4252 5228 4292
+rect -1640 4242 5248 4252
+rect -1640 2690 9718 4242
+rect -2050 -1810 10980 2690
+rect -1740 -2768 9678 -1810
+rect -1740 -3340 5068 -2768
 << fillblock >>
 rect 0 2420 19550 9198
-rect 0 570 8380 2420
+rect 0 190 8380 2420
+use font_4A  font_4A_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 390 0 1 740
+box 0 0 648 1512
 use font_4B  font_4B_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 14804 0 1 2909
@@ -13,10 +25,6 @@ use font_4D  font_4D_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 4720 0 1 2912
 box 0 0 1080 1512
-use font_4E  font_4E_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
-timestamp 1654634570
-transform 1 0 370 0 1 720
-box 0 0 864 1512
 use font_4F  font_4F_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 390 0 1 5162
@@ -28,6 +36,10 @@ box 0 0 648 1512
 use font_6C  font_6C_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 5567 0 1 7307
+box 0 0 216 1512
+use font_6C  font_6C_1
+timestamp 1654634570
+transform 1 0 2100 0 1 770
 box 0 0 216 1512
 use font_6D  font_6D_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
@@ -52,10 +64,6 @@ box 0 0 648 1080
 use font_6F  font_6F_2 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 8844 0 1 2906
-box 0 0 648 1080
-use font_6F  font_6F_5
-timestamp 1654634570
-transform 1 0 1440 0 1 720
 box 0 0 648 1080
 use font_28  font_28_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
@@ -85,9 +93,9 @@ use font_32  font_32_1
 timestamp 1654634570
 transform 1 0 6232 0 1 734
 box 0 0 648 1512
-use font_35  font_35_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+use font_36  font_36_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
-transform 1 0 7060 0 1 730
+transform 1 0 7070 0 1 730
 box 0 0 648 1512
 use font_38  font_38_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
@@ -233,7 +241,11 @@ use font_74  font_74_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 9160 0 1 5172
 box 0 0 648 1296
-use font_75  font_75_1 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+use font_75  font_75_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
+timestamp 1654634570
+transform 1 0 1250 0 1 740
+box 0 0 648 1080
+use font_75  font_75_1
 timestamp 1654634570
 transform 1 0 7670 0 1 5172
 box 0 0 648 1080
@@ -241,8 +253,8 @@ use font_76  font_76_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
 transform 1 0 3874 0 1 7307
 box 0 0 648 1080
-use font_76  font_76_1
+use font_79  font_79_0 $PDKPATH/libs.ref/gf180mcu_ocd_alpha_small/mag
 timestamp 1654634570
-transform 1 0 2300 0 1 720
-box 0 0 648 1080
+transform 1 0 2550 0 1 760
+box 0 -432 648 1080
 << end >>

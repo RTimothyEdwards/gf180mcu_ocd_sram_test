@@ -1,6 +1,6 @@
 magic
 tech gf180mcuD
-timestamp 1765407047
+timestamp 1783193842
 << metal1 >>
 rect 2775 2610 2850 2625
 rect 2715 2595 2850 2610
@@ -3205,7 +3205,4 @@ rect 1320 300 1545 315
 rect 0 0 2865 2865
 << properties >>
 string FIXED_BBOX 0 0 2865 2865
-string GDS_END 91846
-string GDS_FILE ../../gds/gf180mcu_ws_ip__logo.gds
-string GDS_START 114
 << end >>

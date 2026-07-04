@@ -2,17 +2,17 @@ For submission to Wafer.Space:
 -----------------------------------------
 URL:
 -----------------------------------------
-https://github.com/RTimothyEdwards/gf180mcu_ocd_sram_test/blob/main/gds/gf180mcu_ocd_sram_filled.gds.gz
+https://github.com/RTimothyEdwards/gf180mcu_ocd_sram_test/blob/main/gds/gf180mcu_ocd_sram2_filled.gds.gz
 
 Top level cellname:
 -----------------------------------------
-caravel_ocd_sram_top
+gf180mcu_ocd_sram2_top
 
 Checksums:
 -----------------------------------------
 md5sum:
-2003145ca07cf2230f843b95d867ed01  gf180mcu_ocd_sram_filled.gds
+42371f6d6604bfe095d1c525ca1de886  gf180mcu_ocd_sram2_filled.gds
 sha1sum:
-d2d82ba5e6055d75509ff587735239fae36966c8  gf180mcu_ocd_sram_filled.gds
+31ac0f9b6cbce78b846d68f6f686d646b328ee4d  gf180mcu_ocd_sram2_filled.gds
 sha256sum:
-94ad68c589fdfcf649566bbcfe27592eaa7536b9132e782b5746eed59c0f3584  gf180mcu_ocd_sram_filled.gds
+e63108009a58e1d1704bbb5aeb56033efd7327f7145afbbae402fe73c74e532b  gf180mcu_ocd_sram2_filled.gds

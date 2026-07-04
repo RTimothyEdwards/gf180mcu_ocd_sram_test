@@ -22,13 +22,13 @@ changes are made:
 
     Bottom row:
      1 (input only) CLK
-     2 (input only) rst_n	(unused)
+     2 (input only) rst_n	(PoR enable)
      3 GWEN
-     4 POR output
+     4 POR output (porb---low during reset)
      5 VSS
      6 VDD
-     7 A7
-     8 A6
+     7 A7	(except for 64 byte SRAM)
+     8 A6	(except for 64 byte SRAM)
      9 A5
     10 A4
     11 A3
@@ -49,10 +49,10 @@ changes are made:
    Right side
     25 VSS
     26 VDD
-    27 CEN (1st 512 byte SRAM)
-    28 CEN (2nd 512 byte SRAM)
-    29 CEN (1st 256 byte SRAM)
-    30 CEN (2nd 256 byte SRAM)
+    27 CEN (1024 byte SRAM)
+    28 CEN (512 byte SRAM)
+    29 CEN (256 byte SRAM)
+    30 CEN (64 byte SRAM)
     31 WEN7
     32 WEN6
     33 WEN5
@@ -67,24 +67,24 @@ changes are made:
     40 WEN0
     41 VDD
     42 VSS
-    43 Q7 (512 byte)
-    44 Q6 (512 byte)
-    45 Q5 (512 byte)
-    46 Q4 (512 byte)
-    47 Q3 (512 byte)
-    48 Q2 (512 byte)
-    49 Q1 (512 byte)
-    50 Q0 (512 byte)
-    51 Q7 (256 byte)
-    52 Q6 (256 byte)
-    53 Q5 (256 byte)
-    54 Q4 (256 byte)
+    43 Q7 (1024/512 byte)
+    44 Q6 (1024/512 byte)
+    45 Q5 (1024/512 byte)
+    46 Q4 (1024/512 byte)
+    47 Q3 (1024/512 byte)
+    48 Q2 (1024/512 byte)
+    49 Q1 (1024/512 byte)
+    50 Q0 (1024/512 byte)
+    51 Q7 (256/64 byte)
+    52 Q6 (256/64 byte)
+    53 Q5 (256/64 byte)
+    54 Q4 (256/64 byte)
     55 DVDD
     56 DVSS
-    57 Q3 (256 byte)
-    58 Q2 (256 byte)
-    59 Q1 (256 byte)
-    60 Q0 (256 byte)
+    57 Q3 (256/64 byte)
+    58 Q2 (256/64 byte)
+    59 Q1 (256/64 byte)
+    60 Q0 (256/64 byte)
 
    Left side
     61 VDD
@@ -93,9 +93,9 @@ changes are made:
     64 (analog, unused)
     65 (analog, unused)
     66 (analog, unused)
-    67 (input only) output select:  512 byte 1 or 2
+    67 (input only) output select:  1024 byte or 512 byte
     68 (input only) A9 (1024 byte SRAM only)
-    69 (input only) output select:  256 byte 1 or 2
+    69 (input only) output select:  256 byte or 64 byte
     70 (input only) A8 (512 and 1024 byte SRAMs only)
     71 DVDD
     72 DVSS
@@ -104,59 +104,44 @@ changes are made:
 Build procedure:
 ----------------------------------------------------
 
-All cells in this layout can be generated directly
-from magic.  However, PDK library cells will be
-generated from the GDS references.
-
-From the magic/ directory, just run magic and do:
-
-	load gf180mcu_ocd_sram_top
-	addpath wafer_space
-	gds compress 9
-	gds write gf180mcu_ocd_sram_top
-
-Move the resulting .gds.gz file to gds/.
-In gds/, run the Wafer.Space fill script and output
-gf180mcu_ocd_sram_filled.gds.gz.  Run final
-klayout DRC verification from validate/run_drc.sh
-(runs on the "gf180mcu_ocd_sram_filled.gds.gz"
-file).
-
-The fill script is:
-
-klayout -zz -r \
-    ${PDK_ROOT}/gf180mcuD/libs.tech/klayout/tech/drc/filler_generation/fill_all.rb \
-    -rd input=gf180mcu_ocd_sram_top.gds.gz \
-    -rd output=gf180mcu_ocd_sram_filled.gds.gz
-
-Finally, run "md5sum", "sha1sum", and "sha256sum" (technically, only one
-of these is required by Wafer.Space) and enter the information into
-"hashes.txt".  IMPORTANT:  The hash sums need to be run on the
-*uncompressed* database, so it must be gunzipped then gzipped back
-again.  Klayout and magic at "compress 9" are doing the equivalent of:
-
-    gzip -n --best gf180mcu_ocd_sram_filled.gds
-
-Run precheck locally.  This must be done from nix-shell.
-The precheck command is:
-
-    python3 precheck.py --input gf180mcu_ocd_sram_filled.gds.gz \
-	--top gf180mcu_ocd_sram_top --slot 1x0p5
-
-To do:  Put all the above in scripts and a Makefile.
-January 2, 2026 update:  Created scripts for all steps except the
-precheck (which still needs to be done in a nix shell;  haven't
-tried automating that yet).
-
     cd magic
     ../scripts/run_gen_gds.sh
     ../scripts/run_fill_gds.sh
 
-Then copy the hash results into doc/hashes.txt, run precheck as shown
-above, then push back to the repository once validated.
+Copy the hash results from the last of the scripts into doc/hashes.txt
+
+Run LVS and DRC:
+
+    cd validate
+    ./run_lvs.sh
+    ./run_drc.sh
+
+Run the complete precheck.  The precheck repository can be cloned and
+is https://github.com/wafer-space/gf180mcu-precheck
+
+    1. Start a nix-shell with the "shell.nix" file in the repository above.
+	e.g.,
+
+	cd ~/gits/gf180mcu-precheck
+	nix-shell shell.nix
+
+    2. Run the command:
+
+	python3 precheck.py \
+		--input ~/gits/gf180mcu_ocd_sram_test/gf180mcu_ocd_sram2_filled.gds.gz \
+		--top gf180mcu_ocd_sram2_top \
+		--slot 1x0p5 --cob \
+		--workers max --threads 1
+
+Push back to the repository once validated.
 
 -----------------------------------------------------------------
 Wafer.Space COB:
+
+Using the breakout board found at:  https://codeberg.org/rebelmike/ws-breakout
+
+This breakout board routes the 70-pin mezzanine connector to two 0.1" row
+headers with 35 positions per row.
 
 Mezzanine connector pin assignments
 
@@ -199,6 +184,10 @@ Q7/5	43	bidir_30	39	32	bidir_37	50	Q0/5
 Q6/5	44	bidir_31	38	33	bidir_36	49	Q1/5
 Q5/5	45	bidir_32	37	34	bidir_35	48	Q2/5
 Q4/5	46	bidir_33	36	35	bidir_34	47	Q3/5
+
+Test results below are for the original test chip manufactured on the first
+Wafer.Space shuttle run, but the test setup below should be valid for both
+versions of the SRAM test chip.
 
 -----------------------------------------------------------------------------
 Test with single Digilent Analog Discovery 2:
@@ -274,3 +263,12 @@ SEL lines:  GND selects bank 1, VDD selects bank 2
 
 Functional note:  CEN must be high on power-on and then set to zero for
 first use.
+
+Writes must be done by setting GWEN low and applying a pulse on CLK, then
+returning GWEN high.  The written value is not immediately available at
+the output;  reading the output requires an additional pulse on CLK with
+GWEN set high.
+
+Additional testing to be done with two Digilent Analog Discovery units
+(TBD).  The driver code for testing will be committed to the repository
+when it is available.
