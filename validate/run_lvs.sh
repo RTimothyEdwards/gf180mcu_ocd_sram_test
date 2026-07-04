@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Run LVS on the SRAM test chip (gf180mcu_ocd_sram_test)
+# Run LVS on the SRAM test chip (gf180mcu_ocd_sram_test2)
 #
 echo ${PDK_ROOT:=/usr/share/pdk} > /dev/null
 echo ${PDK:=gf180mcuD} > /dev/null

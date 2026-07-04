@@ -9,15 +9,16 @@ readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_as_sc_mcu7t3v3/spice/gf180mcu
 readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_ocd_ip_sram/spice/gf180mcu_ocd_ip_sram__sram1024x8m8wm1.spice $circuit2
 readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_ocd_ip_sram/spice/gf180mcu_ocd_ip_sram__sram512x8m8wm1.spice $circuit2
 readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_ocd_ip_sram/spice/gf180mcu_ocd_ip_sram__sram256x8m8wm1.spice $circuit2
+readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_ocd_ip_sram/spice/gf180mcu_ocd_ip_sram__sram64x8m8wm1.spice $circuit2
+readnet spice ../ip/simple_por_3v3_regulated/netlist/schematic/por_3v3_selfbiased.spice $circuit2
 readnet verilog defs.v $circuit2
 readnet verilog ../verilog/ocd_mux_array.v $circuit2
-readnet verilog ../verilog/lvlshift_down.v $circuit2
 readnet verilog ../verilog/constant_block.v $circuit2
 readnet verilog ../verilog/gf180mcu_ocd_io__fill10x.v $circuit2
 readnet verilog ../verilog/chip_half_frame.v $circuit2
-readnet verilog ../verilog/gf180mcu_ocd_sram_test.v $circuit2
+readnet verilog ../verilog/gf180mcu_ocd_sram_test2.v $circuit2
 
-set circuit1 [readnet spice ../magic/gf180mcu_ocd_sram_test.spice]
+set circuit1 [readnet spice ../netlist/layout/gf180mcu_ocd_sram_test2.spice]
 
-lvs "$circuit1 gf180mcu_ocd_sram_test" "$circuit2 gf180mcu_ocd_sram_test" \
+lvs "$circuit1 gf180mcu_ocd_sram_test2" "$circuit2 gf180mcu_ocd_sram_test2" \
 ${PDK_ROOT}/${PDK}/libs.tech/netgen/${PDK}_setup.tcl comp.out

@@ -7,7 +7,7 @@
 # cds up one directory level and then down to gds/.  It could be
 # made smarter about this.
 
-echo "Generating fill for gf180mcu_ocd_sram_test"
+echo "Generating fill for gf180mcu_ocd_sram_test2"
 
 # NOTE:  Hash sums cannot be run on the compressed layout, so
 # generate an uncompressed layout, run the hash sums, then
@@ -24,19 +24,19 @@ cd ../gds
 
 klayout -zz -r \
     ${PDK_ROOT}/gf180mcuD/libs.tech/klayout/tech/drc/filler_generation/fill_all.rb \
-    -rd input=gf180mcu_ocd_sram_top.gds.gz \
-    -rd output=gf180mcu_ocd_sram_filled.gds
+    -rd input=gf180mcu_ocd_sram2_top.gds.gz \
+    -rd output=gf180mcu_ocd_sram2_filled.gds
 
 echo "md5sum:"
-md5sum gf180mcu_ocd_sram_filled.gds
+md5sum gf180mcu_ocd_sram2_filled.gds
 
 echo "sha1sum:"
-sha1sum gf180mcu_ocd_sram_filled.gds
+sha1sum gf180mcu_ocd_sram2_filled.gds
 
 echo "sha256sum:"
-sha256sum gf180mcu_ocd_sram_filled.gds
+sha256sum gf180mcu_ocd_sram2_filled.gds
 
-gzip -n --best gf180mcu_ocd_sram_filled.gds
+gzip -n --best gf180mcu_ocd_sram2_filled.gds
 
 echo "Done!"
 exit 0
